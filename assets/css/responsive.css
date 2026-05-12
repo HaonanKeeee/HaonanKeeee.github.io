@@ -1,0 +1,116 @@
+@media (max-width: 900px) {
+  .site {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s3);
+    padding: 0 var(--s5);
+    border-bottom: 1px solid var(--line);
+    background: rgba(247, 244, 239, 0.88);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-nav__name {
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  .mobile-nav__right {
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+  }
+
+  .mobile-nav .language-switcher {
+    gap: 4px;
+    margin: 0;
+  }
+
+  .mobile-nav .lang-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .mobile-nav__burger {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.56);
+  }
+
+  .mobile-nav__burger span {
+    width: 18px;
+    height: 1px;
+    background: var(--text);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 64px 0 auto 0;
+    z-index: 35;
+    flex-direction: column;
+    gap: var(--s4);
+    padding: var(--s5);
+    border-bottom: 1px solid var(--line);
+    background: rgba(247, 244, 239, 0.96);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-menu.is-open {
+    display: flex;
+  }
+
+  .mobile-menu__link {
+    font-size: 22px;
+    letter-spacing: -0.05em;
+  }
+
+  .content {
+    max-width: none;
+    padding: 128px var(--s5) var(--s6);
+  }
+
+  .timeline-item,
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+
+  .timeline-item__date {
+    padding-top: 0;
+  }
+
+  .timeline-item__content {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item__img {
+    min-height: 180px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
