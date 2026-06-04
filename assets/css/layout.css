@@ -2,6 +2,11 @@
   display: grid;
   grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
   min-height: 100vh;
+  transition: grid-template-columns 220ms ease;
+}
+
+body.is-sidebar-collapsed .site {
+  grid-template-columns: var(--sidebar-collapsed-w) minmax(0, 1fr);
 }
 
 .sidebar {
@@ -18,6 +23,12 @@
   border-right: 1px solid var(--line);
   background: rgba(247, 244, 239, 0.84);
   backdrop-filter: blur(18px);
+  transition: width 220ms ease, padding 220ms ease;
+}
+
+body.is-sidebar-collapsed .sidebar {
+  width: var(--sidebar-collapsed-w);
+  padding: var(--s7) 14px;
 }
 
 .content {

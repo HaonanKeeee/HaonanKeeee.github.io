@@ -7,6 +7,10 @@
     display: none;
   }
 
+  body.is-sidebar-collapsed .site {
+    display: block;
+  }
+
   .mobile-nav {
     position: fixed;
     top: 0;
@@ -101,7 +105,11 @@
   }
 
   .projects-timeline::before {
-    left: 4px;
+    left: 6px;
+  }
+
+  .projects-timeline.is-grid {
+    grid-template-columns: 1fr;
   }
 
   .timeline-item {
@@ -128,6 +136,15 @@
 
   .timeline-item__arrow {
     display: none;
+  }
+
+  .projects-timeline.is-grid .timeline-item {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "date"
+      "info";
+    padding: var(--s5);
   }
 
   .experience-grid {

@@ -1,5 +1,5 @@
-import { experience, projects, site } from "./data/content.js";
-import { t } from "./i18n.js";
+import { experience, projects, site } from "./data/content.js?v=20260604-21";
+import { t } from "./i18n.js?v=20260604-21";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -52,6 +52,9 @@ function renderMobileNav() {
 function renderSidebar() {
   return `
     <aside class="sidebar">
+      <button class="sidebar__toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" data-sidebar-toggle>
+        <span class="sidebar__toggle-icon"></span>
+      </button>
       <div>
         <a href="index.html" class="sidebar__name-link">
           <p class="sidebar__name" data-i18n="name.display">${t("name.display")}</p>
@@ -80,7 +83,7 @@ function renderIntro() {
       <div class="intro__links reveal">
         <a href="#projects" class="intro__link" data-i18n="intro.linkWork">${t("intro.linkWork")}</a>
         <a href="#experience" class="intro__link" data-i18n="intro.linkExperience">${t("intro.linkExperience")}</a>
-        <a href="mailto:${site.email}" class="intro__link">Email</a>
+        <a href="mailto:${site.email}" class="intro__link">${site.email}</a>
       </div>
     </section>
   `;
@@ -93,15 +96,30 @@ function renderProjectMeta(project) {
   }).join("");
 }
 
+function getProjectSlug(project) {
+  return project.titleKey.replace(".", "-");
+}
+
+function renderProjectTitle(project) {
+  const institution = project.institution ? `<span class="timeline-item__institution">(${project.institution})</span>` : "";
+
+  return `
+    <h4 class="timeline-item__title">
+      <span data-i18n="${project.titleKey}">${t(project.titleKey)}</span>
+      ${institution}
+    </h4>
+  `;
+}
+
 function renderProjects() {
-  const items = projects.map((project, index) => `
+  const items = projects.map((project) => `
     <a href="${project.href}" class="timeline-item reveal">
       <span class="timeline-item__date">${project.year}</span>
-      <div class="timeline-item__img timeline-item__img--${index + 1}">
+      <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}">
         <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
       </div>
       <div class="timeline-item__info">
-        <h4 class="timeline-item__title" data-i18n="${project.titleKey}">${t(project.titleKey)}</h4>
+        ${renderProjectTitle(project)}
         <p class="timeline-item__desc" data-i18n="${project.descKey}">${t(project.descKey)}</p>
         <div class="timeline-item__tech">${renderProjectMeta(project)}</div>
       </div>
@@ -116,12 +134,12 @@ function renderProjects() {
           <span class="section-label" data-i18n="projects.label">${t("projects.label")}</span>
           <h2 class="section-title" data-i18n="projects.title">${t("projects.title")}</h2>
         </div>
-        <div class="view-switcher" aria-hidden="true">
-          <span class="view-switcher__item is-active" data-i18n="projects.viewTimeline">${t("projects.viewTimeline")}</span>
-          <span class="view-switcher__item" data-i18n="projects.viewGrid">${t("projects.viewGrid")}</span>
+        <div class="view-switcher" aria-label="Project view">
+          <button class="view-switcher__item is-active" type="button" data-project-view="timeline" data-i18n="projects.viewTimeline" aria-pressed="true">${t("projects.viewTimeline")}</button>
+          <button class="view-switcher__item" type="button" data-project-view="grid" data-i18n="projects.viewGrid" aria-pressed="false">${t("projects.viewGrid")}</button>
         </div>
       </div>
-      <div class="projects-timeline">${items}</div>
+      <div class="projects-timeline is-timeline" data-projects-view>${items}</div>
     </section>
   `;
 }
@@ -129,7 +147,7 @@ function renderProjects() {
 function renderExperience() {
   const cards = experience.map((item) => `
     <div class="experience-card reveal">
-      <span class="experience-card__period">${item.period}</span>
+      <span class="experience-card__period" data-i18n="${item.periodKey}">${t(item.periodKey)}</span>
       <h3 data-i18n="${item.titleKey}">${t(item.titleKey)}</h3>
       <p class="experience-card__role" data-i18n="${item.roleKey}">${t(item.roleKey)}</p>
       <p data-i18n="${item.descKey}">${t(item.descKey)}</p>
