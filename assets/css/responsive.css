@@ -90,24 +90,44 @@
     padding: 128px var(--s5) var(--s6);
   }
 
-  .timeline-item,
-  .pub-item {
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--s4);
+  }
+
+  .view-switcher {
+    display: none;
+  }
+
+  .projects-timeline::before {
+    left: 4px;
+  }
+
+  .timeline-item {
     grid-template-columns: 1fr;
     gap: var(--s3);
+    padding-left: 26px;
+    padding-bottom: var(--s7);
   }
 
   .timeline-item__date {
+    padding-left: 0;
     padding-top: 0;
   }
 
-  .timeline-item__content {
-    grid-template-columns: 1fr;
+  .timeline-item__date::before {
+    left: -26px;
+    top: 4px;
   }
 
   .timeline-item__img {
-    min-height: 180px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+    width: 100%;
+    min-height: 150px;
+  }
+
+  .timeline-item__arrow {
+    display: none;
   }
 
   .experience-grid {

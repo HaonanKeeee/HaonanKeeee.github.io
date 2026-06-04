@@ -1,4 +1,4 @@
-import { experience, projects, research, site } from "./data/content.js";
+import { experience, projects, site } from "./data/content.js";
 import { t } from "./i18n.js";
 
 function attrsForExternalLink(item) {
@@ -79,73 +79,49 @@ function renderIntro() {
       <p class="intro__text reveal" data-i18n="intro.text">${t("intro.text")}</p>
       <div class="intro__links reveal">
         <a href="#projects" class="intro__link" data-i18n="intro.linkWork">${t("intro.linkWork")}</a>
-        <a href="#research" class="intro__link" data-i18n="intro.linkResearch">${t("intro.linkResearch")}</a>
+        <a href="#experience" class="intro__link" data-i18n="intro.linkExperience">${t("intro.linkExperience")}</a>
         <a href="mailto:${site.email}" class="intro__link">Email</a>
       </div>
     </section>
   `;
 }
 
-function renderTag(tag) {
-  const mainClass = tag.main ? " tag--main" : "";
-
-  if (tag.key) {
-    return `<span class="tag${mainClass}" data-i18n="${tag.key}">${t(tag.key)}</span>`;
-  }
-
-  return `<span class="tag${mainClass}">${tag.label}</span>`;
+function renderProjectMeta(project) {
+  return project.tags.map((tag) => {
+    if (tag.key) return `<span data-i18n="${tag.key}">${t(tag.key)}</span>`;
+    return `<span>${tag.label}</span>`;
+  }).join("");
 }
 
 function renderProjects() {
-  const items = projects.map((project) => `
+  const items = projects.map((project, index) => `
     <a href="${project.href}" class="timeline-item reveal">
       <span class="timeline-item__date">${project.year}</span>
-      <div class="timeline-item__content">
-        <div class="timeline-item__img">
-          <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
-        </div>
-        <div class="timeline-item__info">
-          <div>
-            <div class="timeline-item__info-top">
-              <h4 class="timeline-item__title" data-i18n="${project.titleKey}">${t(project.titleKey)}</h4>
-              <span class="timeline-item__arrow">→</span>
-            </div>
-            <p class="timeline-item__desc" data-i18n="${project.descKey}">${t(project.descKey)}</p>
-          </div>
-          <div class="timeline-item__tech">
-            ${project.tags.map(renderTag).join("")}
-          </div>
-        </div>
+      <div class="timeline-item__img timeline-item__img--${index + 1}">
+        <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
       </div>
+      <div class="timeline-item__info">
+        <h4 class="timeline-item__title" data-i18n="${project.titleKey}">${t(project.titleKey)}</h4>
+        <p class="timeline-item__desc" data-i18n="${project.descKey}">${t(project.descKey)}</p>
+        <div class="timeline-item__tech">${renderProjectMeta(project)}</div>
+      </div>
+      <span class="timeline-item__arrow">→</span>
     </a>
   `).join("");
 
   return `
     <section class="content-section" id="projects">
-      <span class="section-label reveal" data-i18n="projects.label">${t("projects.label")}</span>
-      <h2 class="section-title reveal" data-i18n="projects.title">${t("projects.title")}</h2>
-      <div class="projects-timeline">${items}</div>
-    </section>
-  `;
-}
-
-function renderResearch() {
-  const items = research.map((item) => `
-    <li class="pub-item reveal">
-      <div><span class="pub-year">${item.year}</span></div>
-      <div>
-        <p class="pub-title" data-i18n="${item.titleKey}">${t(item.titleKey)}</p>
-        <p class="pub-authors"><strong>${item.authors}</strong></p>
-        <p class="pub-venue" data-i18n="${item.venueKey}">${t(item.venueKey)}</p>
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-label" data-i18n="projects.label">${t("projects.label")}</span>
+          <h2 class="section-title" data-i18n="projects.title">${t("projects.title")}</h2>
+        </div>
+        <div class="view-switcher" aria-hidden="true">
+          <span class="view-switcher__item is-active" data-i18n="projects.viewTimeline">${t("projects.viewTimeline")}</span>
+          <span class="view-switcher__item" data-i18n="projects.viewGrid">${t("projects.viewGrid")}</span>
+        </div>
       </div>
-    </li>
-  `).join("");
-
-  return `
-    <section class="content-section" id="research">
-      <span class="section-label reveal" data-i18n="research.label">${t("research.label")}</span>
-      <h2 class="section-title reveal" data-i18n="research.title">${t("research.title")}</h2>
-      <ol class="pub-list">${items}</ol>
+      <div class="projects-timeline">${items}</div>
     </section>
   `;
 }
@@ -153,8 +129,13 @@ function renderResearch() {
 function renderExperience() {
   const cards = experience.map((item) => `
     <div class="experience-card reveal">
+      <span class="experience-card__period">${item.period}</span>
       <h3 data-i18n="${item.titleKey}">${t(item.titleKey)}</h3>
+      <p class="experience-card__role" data-i18n="${item.roleKey}">${t(item.roleKey)}</p>
       <p data-i18n="${item.descKey}">${t(item.descKey)}</p>
+      <div class="experience-card__tech">
+        ${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+      </div>
     </div>
   `).join("");
 
@@ -185,7 +166,6 @@ export function renderSite() {
       <main class="content">
         ${renderIntro()}
         ${renderProjects()}
-        ${renderResearch()}
         ${renderExperience()}
         ${renderFooter()}
       </main>

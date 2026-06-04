@@ -30,8 +30,7 @@ Personal portfolio site for GitHub Pages. The page is intentionally kept as a st
 Most site content lives in `assets/js/data/content.js`.
 
 - Update `projects` to add or reorder selected work.
-- Update `research` for thesis and research entries.
-- Update `experience` for background cards.
+- Update `experience` for institutional experience cards.
 - Update `translations` for English, Chinese, and German copy.
 - Update `site.socials` for email, GitHub, LinkedIn, or other links.
 

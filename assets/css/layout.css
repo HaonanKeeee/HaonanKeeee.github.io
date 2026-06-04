@@ -23,7 +23,7 @@
 .content {
   grid-column: 2;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1320px;
   padding: var(--s9) var(--s7) var(--s7);
 }
 
