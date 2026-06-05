@@ -883,9 +883,13 @@ body.is-sidebar-collapsed .sidebar__bottom {
 }
 
 .studio-hero p {
-  font-size: clamp(28px, 3.7vw, 50px);
+  font-size: clamp(28px, 3.4vw, 46px);
   line-height: 1.12;
   text-align: center;
+}
+
+.studio-hero p span {
+  white-space: normal;
 }
 
 .reveal {

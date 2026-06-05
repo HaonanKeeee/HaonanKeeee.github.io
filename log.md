@@ -39,6 +39,133 @@ Review English, Chinese, and German site copy for natural language quality and l
 ## 2026-06-05
 
 ### Task goal
+Slightly reduce the Studio quote font size on large screens.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: 0 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Reduced the Studio quote base font-size clamp from `clamp(30px, 4vw, 52px)` to `clamp(28px, 3.4vw, 46px)`.
+
+### Removed functionality or changed behavior
+- Studio appears quieter on full-width screens while keeping medium and mobile responsive rules intact.
+- CSS cache-busting versions were updated to `20260605-29`.
+
+### Verification steps
+- Searched source files to confirm the updated Studio font-size rule and `20260605-29` CSS cache-busting references are present.
+- Reviewed the CSS diff for the Studio-only font-size change.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Fix Gallery quote clipping while keeping Studio large on full-width screens.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~14 lines
+- Modified: ~8 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added 1280px responsive quote rules for both Gallery and Studio.
+- Allowed Gallery and Studio quote lines to wrap at medium widths.
+- Added balanced text wrapping for quote lines where supported.
+
+### Removed functionality or changed behavior
+- Studio's full-width font size was restored to a larger range.
+- Gallery no longer keeps nowrap behavior at medium widths where it can clip.
+- CSS cache-busting versions were updated to `20260605-28`.
+
+### Verification steps
+- Searched source files to confirm the new quote rules and `20260605-28` CSS cache-busting references are present.
+- Reviewed the CSS diff for full-width, medium-width, and narrow-width quote sizing behavior.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Prevent the Studio quote from clipping at all viewport widths.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~7 lines
+- Modified: ~8 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added a base `.studio-hero p span` override so Studio quote lines can wrap at every viewport width.
+- Added more conservative Studio quote font sizing in base and responsive CSS.
+
+### Removed functionality or changed behavior
+- Studio quote no longer inherits Gallery's nowrap behavior outside mobile breakpoints.
+- CSS cache-busting versions were updated to `20260605-27`.
+
+### Verification steps
+- Searched source files to confirm the Studio nowrap override, adjusted Studio font sizes, and `20260605-27` CSS cache-busting references are present.
+- Reviewed the CSS diff for the Studio quote rules.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Make the Studio quote fit at medium viewport widths.
+
+### Changed files
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~8 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added medium-width responsive rules for the Studio quote.
+- Reduced Studio quote font size earlier and allowed quote lines to wrap before the narrow mobile breakpoint.
+
+### Removed functionality or changed behavior
+- Studio quote no longer waits until very narrow screens to shrink and wrap, preventing clipping at medium widths.
+- CSS cache-busting versions were updated to `20260605-26`.
+
+### Verification steps
+- Searched source files to confirm `studio-hero` medium-width rules and `20260605-26` CSS cache-busting references are present.
+- Reviewed the CSS diff for the new responsive quote sizing and wrapping rules.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
 Balance experience logos and localize the Siemens experience.
 
 ### Changed files
