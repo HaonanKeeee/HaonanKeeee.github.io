@@ -1,6 +1,10 @@
 export const site = {
   name: "Haonan Ke",
   email: "haonan.ke@outlook.com",
+  portrait: {
+    src: "pic/Portrait/portrait.jpg",
+    alt: "Portrait of Haonan Ke",
+  },
   socials: [
     { label: "Email", href: "mailto:haonan.ke@outlook.com" },
     { label: "GitHub", href: "https://github.com/HaonanKeeee", external: true },
@@ -10,6 +14,7 @@ export const site = {
     { id: "about", labelKey: "nav.about" },
     { id: "projects", labelKey: "nav.projects" },
     { id: "experience", labelKey: "nav.experience" },
+    { id: "gallery", labelKey: "nav.gallery" },
   ],
   languages: [
     { code: "en", label: "EN" },
@@ -18,13 +23,22 @@ export const site = {
   ],
 };
 
+export const logoAssets = {
+  audi: { src: "pic/Audi-Logo_2016.svg.png", alt: "Audi logo" },
+  bmw: { src: "pic/BMW_logo_(gray).svg.png", alt: "BMW logo" },
+  iav: { src: "pic/IAV_claim-CO_rgb.svg.png", alt: "IAV logo" },
+  tum: { src: "pic/Logo_of_the_Technical_University_of_Munich.svg.png", alt: "TUM logo" },
+  uva: { src: "pic/University-of-Virginia-Logo.png", alt: "University of Virginia logo" },
+};
+
 export const projects = [
   {
     year: "2026",
     href: "#",
     visualKey: "project1.visual",
     titleKey: "project1.title",
-    institution: "TUM-AIR",
+    institutionKey: "institutions.tumAir",
+    logoKeys: ["tum"],
     descKey: "project1.desc",
     tags: [
       { key: "tags.edgeAI", main: true },
@@ -54,7 +68,8 @@ export const projects = [
     href: "#",
     visualKey: "project2.visual",
     titleKey: "project2.title",
-    institution: "TUM",
+    institutionKey: "institutions.tum",
+    logoKeys: ["tum"],
     descKey: "project2.desc",
     tags: [
       { key: "tags.aiHardware", main: true },
@@ -70,7 +85,8 @@ export const projects = [
     href: "#",
     visualKey: "project3.visual",
     titleKey: "project3.title",
-    institution: "University of Virginia",
+    institutionKey: "institutions.uva",
+    logoKeys: ["uva"],
     descKey: "project3.desc",
     tags: [
       { key: "tags.robotics", main: true },
@@ -86,7 +102,8 @@ export const projects = [
     href: "#",
     visualKey: "project4.visual",
     titleKey: "project4.title",
-    institution: "University of Virginia",
+    institutionKey: "institutions.uva",
+    logoKeys: ["uva"],
     descKey: "project4.desc",
     tags: [
       { key: "tags.humanFactors", main: true },
@@ -102,7 +119,8 @@ export const projects = [
     href: "#",
     visualKey: "project5.visual",
     titleKey: "project5.title",
-    institution: "University of Virginia",
+    institutionKey: "institutions.uva",
+    logoKeys: ["uva"],
     descKey: "project5.desc",
     tags: [
       { key: "tags.immersiveMedia", main: true },
@@ -117,7 +135,8 @@ export const projects = [
     href: "#",
     visualKey: "project6.visual",
     titleKey: "project6.title",
-    institution: "TUM",
+    institutionKey: "institutions.tum",
+    logoKeys: ["tum"],
     descKey: "project6.desc",
     tags: [
       { key: "tags.hardwareValidation", main: true },
@@ -137,6 +156,7 @@ export const experience = [
     titleKey: "experience.card1.title",
     roleKey: "experience.card1.role",
     descKey: "experience.card1.desc",
+    logoKeys: ["tum"],
     tags: ["STM32", "SPI", "C/C++", "Python", "March Test", "Memory Reliability"],
   },
   {
@@ -144,6 +164,7 @@ export const experience = [
     titleKey: "experience.card2.title",
     roleKey: "experience.card2.role",
     descKey: "experience.card2.desc",
+    logoKeys: ["iav", "bmw"],
     tags: ["Python", "ECU-Test", "CANoe", "Voice Assistant", "Test Automation"],
   },
   {
@@ -151,34 +172,47 @@ export const experience = [
     titleKey: "experience.card3.title",
     roleKey: "experience.card3.role",
     descKey: "experience.card3.desc",
+    logoKeys: ["audi"],
     tags: ["LIN", "CAN", "CANoe", "CAPL", "OBD", "ECU Validation"],
   },
 ];
 
+export const gallery = [];
+
 export const translations = {
   en: {
     name: { display: "Haonan Ke", hero: "Haonan Ke" },
-    nav: { about: "About", projects: "Selected Work", experience: "Experience" },
+    nav: { about: "About", projects: "Selected Work", experience: "Experience", gallery: "Gallery" },
+    institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "University of Virginia" },
     intro: {
       eyebrow: "ECE · Human Factors",
-      text: "I am a dual-major master's student in Electrical and Computer Engineering and Human Factors Engineering at the Technical University of Munich (TUM), working at the intersection of edge AI, robotics, embedded systems, and hardware-aware computing. My work focuses on embedded systems, real-time control, and hardware/software co-design. At the same time, I am interested in bringing these technologies closer to people through human factors engineering, building intelligent products that are powerful, intuitive, and meaningful in real-world interaction.",
+      text: "I am a master's student at the Technical University of Munich (TUM) with a dual focus in Electrical and Computer Engineering and Human Factors Engineering. My work sits at the intersection of edge AI, robotics, embedded systems, and hardware-aware computing, with a focus on real-time control and hardware/software co-design. At the same time, I am interested in bringing these technologies closer to people through human factors engineering, building intelligent products that are powerful, intuitive, and meaningful in real-world interaction.",
       linkWork: "View Projects",
       linkExperience: "Experience",
     },
     projects: { label: "Projects", title: "Selected Work", viewTimeline: "Timeline", viewGrid: "Grid" },
-    project1: { visual: "RK3588 · FPGA · ROS 2", title: "Edge VLA Robotic Control on RK3588 + FPGA", desc: "A master thesis project deploying vision-language-action models on an RK3588 edge SoC and extending the system with FPGA-based high-rate visual tracking for low-latency robotic control." },
-    project2: { visual: "HDC · SPICE · Reliability", title: "Hardware-Aware Hyperdimensional Computing", desc: "A hardware-aware AI project that looks beneath the algorithm: how circuit-level variability in memory and device structures can shape the reliability of language recognition systems." },
-    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "LiDAR-Based Autonomous Navigation", desc: "A robotics project about giving a mobile robot enough perception and control structure to move through changing environments with deliberate, closed-loop behavior." },
-    project4: { visual: "TOR · Multimodal Warning", title: "Multimodal Take-Over Request Study", desc: "A human factors study on how semi-autonomous vehicles should ask people to take control, comparing visual, auditory, and haptic warnings in safety-critical moments." },
-    project5: { visual: "Spatial Audio · Light", title: "Immersive Sound & Light Composition", desc: "An immersive media project exploring spatial audio and interactive light design using Meyer Constellation 20.1, Spacemap Go, and QLab, resulting in an original exhibited composition." },
-    project6: { visual: "PCB · Thermal Measurement", title: "Thermography-Based Power Dissipation Reference Board", desc: "A bachelor thesis project around building a controlled hardware platform where electrical behavior and thermal images can be compared carefully, from PCB design and firmware to bring-up and measurement." },
-    project7: { visual: "Product · Beta Testing", title: "Personal App Project in Beta Testing", desc: "A personal app project focused on turning an idea into a usable product through iterative design, testing, early user feedback, and product refinement." },
+    project1: { visual: "RK3588 · FPGA · ROS 2", title: "Edge VLA Robotic Control on RK3588 + FPGA", desc: "A master's thesis project deploying vision-language-action models on an RK3588 edge SoC and extending the system with FPGA-based high-rate visual tracking for low-latency robotic control." },
+    project2: { visual: "HDC · SPICE · Reliability", title: "Hardware-Aware Hyperdimensional Computing", desc: "A hardware-aware AI project that connects algorithms with the hardware beneath them, exploring how circuit-level variability in memory and device structures can shape the reliability of language recognition systems." },
+    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "LiDAR-Based Autonomous Navigation", desc: "A robotics project that combines LiDAR perception and closed-loop control so a mobile robot can navigate changing environments in a structured way." },
+    project4: { visual: "TOR · Multimodal Warning", title: "Multimodal Take-Over Request Study", desc: "A human factors study on how semi-autonomous vehicles should prompt drivers to take back control, comparing visual, auditory, and haptic warnings in safety-critical moments." },
+    project5: { visual: "Spatial Audio · Light", title: "Immersive Sound & Light Composition", desc: "An immersive media project exploring spatial audio and interactive lighting with Meyer Constellation 20.1, Spacemap Go, and QLab, resulting in an original exhibited composition." },
+    project6: { visual: "PCB · Thermal Measurement", title: "Thermography-Based Power Dissipation Reference Board", desc: "A bachelor's thesis project building a controlled hardware platform where electrical behavior and thermal images can be compared carefully, from PCB design and firmware to hardware bring-up and measurement." },
+    project7: { visual: "Product · Beta Testing", title: "Personal App Project in Beta Testing", desc: "A personal app project focused on turning an idea into a usable product through iterative design, early user feedback, testing, and product refinement." },
     experience: {
       label: "Experience",
       title: "Internships",
-      card1: { period: "Apr 2025 - Oct 2025", title: "Chair of AI Processor Design, TUM", role: "Research Intern · Memory Characterization", desc: "Worked on experimental memory reliability from the hardware bench upward, building a microcontroller-based test setup and Python tooling to turn low-level measurements into analyzable behavior." },
-      card2: { period: "Jan 2024 - Dec 2024", title: "IAV", role: "Working Student · Vehicle Infotainment", desc: "Worked on automated validation for voice-based in-vehicle interaction, connecting test automation, infotainment behavior, and early LLM-related evaluation for automotive user experiences." },
-      card3: { period: "Apr 2023 - Sep 2023", title: "Audi", role: "Intern · Vehicle Electronics", desc: "Worked close to automotive electronics and bus communication, using diagnostic scripts and data-processing workflows to understand and validate ECU behavior on test benches." },
+      card1: { period: "Apr 2025 - Oct 2025", title: "Chair of AI Processor Design, TUM", role: "Research Intern · Memory Testing and Reliability Analysis", desc: "Conducted hardware experiments on external memory reliability, built a microcontroller-based test platform, and developed Python tooling for data acquisition, cleaning, and analysis. SPI read/write tests, March tests, and signal debugging helped turn low-level measurements into reliability evaluation data." },
+      card2: { period: "Jan 2024 - Dec 2024", title: "IAV", role: "Working Student · In-Vehicle Voice Interaction", desc: "Worked on automated validation of voice interaction in in-vehicle infotainment systems, using Python and ECU-Test to build test flows and analyze voice assistant recognition, system responses, and test bench behavior for intelligent cockpit features." },
+      card3: { period: "Apr 2023 - Sep 2023", title: "Audi", role: "Intern · Vehicle Electronics", desc: "Supported testing and validation for vehicle thermal-management electronics, working with LIN/CAN communication, diagnostic data, and test bench debugging. Test scripts, bus signal analysis, and data processing were used to validate ECU behavior in the test environment." },
+    },
+    gallery: {
+      label: "Photography",
+      title: "Gallery",
+      quoteLine1: '"Make sure your offline world is',
+      quoteLine2: 'better than your online one"',
+      attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
+      emptyTitle: "Photographs coming soon.",
+      emptyText: "A quiet place for field notes, light, streets, and the offline world.",
     },
     tags: {
       edgeAI: "Edge AI",
@@ -218,20 +252,21 @@ export const translations = {
   },
   zh: {
     name: { display: "柯皓楠", hero: "柯皓楠" },
-    nav: { about: "关于我", projects: "代表项目", experience: "经历" },
+    nav: { about: "关于我", projects: "代表项目", experience: "经历", gallery: "摄影" },
+    institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "弗吉尼亚大学" },
     intro: {
       eyebrow: "电子工程 · 人因工程",
-      text: "我是慕尼黑工业大学（TUM）电子与计算机工程和人因工程双专业方向的硕士生，研究兴趣位于边缘 AI、机器人、嵌入式系统和硬件感知计算的交叉领域。我的工作关注嵌入式系统、实时控制和软硬件协同设计。同时，我也希望通过人因工程让这些技术更贴近真实用户，构建强大、直观且在现实交互中有意义的智能产品。",
+      text: "我是慕尼黑工业大学（TUM）电子与计算机工程和人因工程双方向硕士生，研究兴趣位于边缘 AI、机器人、嵌入式系统和硬件感知计算的交叉领域。我的工作关注嵌入式系统、实时控制和软硬件协同设计。同时，我也希望通过人因工程让这些技术更贴近真实用户，构建强大、直观且在现实交互中有意义的智能产品。",
       linkWork: "查看项目",
       linkExperience: "经历",
     },
     projects: { label: "项目", title: "代表项目", viewTimeline: "时间线", viewGrid: "网格" },
     project1: { visual: "RK3588 · FPGA · ROS 2", title: "RK3588 + FPGA 边缘 VLA 机器人控制", desc: "一个硕士论文项目，将视觉-语言-动作模型部署到 RK3588 边缘 SoC，并引入 FPGA 高频视觉跟踪，用于低延迟机器人闭环控制。" },
     project2: { visual: "HDC · SPICE · 可靠性", title: "硬件感知的超维计算语言识别", desc: "一个从算法往硬件底层看的 AI 项目：探索存储器和器件级电路波动如何影响语言识别系统的可靠性。" },
-    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "基于 LiDAR 的自主导航与机器人控制", desc: "一个关于机器人感知与控制结构的项目，让移动机器人能够在变化环境中进行有意识的闭环运动。" },
+    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "基于 LiDAR 的自主导航与机器人控制", desc: "一个关于机器人感知与控制结构的项目，让移动机器人能够在变化环境中进行稳定的闭环导航。" },
     project4: { visual: "接管请求 · 多模态警告", title: "自动驾驶多模态接管请求研究", desc: "一个人因工程研究，关注半自动驾驶系统应该如何提醒驾驶员重新接管，并比较视觉、听觉和触觉警告在安全关键时刻的作用。" },
     project5: { visual: "空间音频 · 灯光", title: "沉浸式声音与灯光作品", desc: "一个沉浸式媒体项目，使用 Meyer Constellation 20.1、Spacemap Go 和 QLab 探索空间音频与互动灯光，并完成原创展演作品。" },
-    project6: { visual: "PCB · 热测量", title: "热成像功耗估计参考电路板", desc: "一个围绕硬件实验平台的本科论文项目，用可控电路板把真实电行为和热成像结果对应起来，覆盖 PCB 设计、固件、bring-up 和测量验证。" },
+    project6: { visual: "PCB · 热学测量", title: "热成像功耗估计参考电路板", desc: "一个围绕硬件实验平台的本科论文项目，用可控电路板把真实电行为和热成像结果对应起来，覆盖 PCB 设计、固件开发、上电调试和测量验证。" },
     project7: { visual: "产品 · Beta 测试", title: "个人 App Beta 测试项目", desc: "一个个人产品项目，围绕想法验证、用户流程、功能迭代、早期用户反馈和体验优化推进到 Beta 测试阶段。" },
     experience: {
       label: "经历",
@@ -239,6 +274,15 @@ export const translations = {
       card1: { period: "2025 年 4 月 - 2025 年 10 月", title: "TUM 人工智能处理器研究所", role: "研究实习生 · 存储器测试与可靠性分析", desc: "围绕外部存储器可靠性开展硬件实验，搭建基于微控制器的测试平台，并开发 Python 工具用于数据采集、整理和分析。通过 SPI 读写测试、March 测试和信号调试，将底层测量结果转化为可用于可靠性评估的实验数据。" },
       card2: { period: "2024 年 1 月 - 2024 年 12 月", title: "IAV（艾尔维汽车工程）", role: "学生助理 · 汽车智能座舱", desc: "参与车载信息娱乐系统中语音交互功能的自动化验证，使用 Python 和 ECU-Test 搭建测试流程，分析语音助手识别结果、系统响应和测试台行为，为智能座舱功能验证提供支持。" },
       card3: { period: "2023 年 4 月 - 2023 年 9 月", title: "奥迪", role: "实习生 · 车辆电子", desc: "参与车辆热管理电子系统的测试与验证，围绕 LIN/CAN 通信、诊断数据和测试台调试开展工作。通过测试脚本、总线信号分析和实验数据处理，验证 ECU 在测试环境中的功能与通信行为。" },
+    },
+    gallery: {
+      label: "摄影",
+      title: "Gallery",
+      quoteLine1: '"Make sure your offline world is',
+      quoteLine2: 'better than your online one"',
+      attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
+      emptyTitle: "摄影作品即将整理上线。",
+      emptyText: "这里会留给光线、街景、旅行和离线世界里的片刻。",
     },
     tags: {
       edgeAI: "边缘 AI",
@@ -278,33 +322,43 @@ export const translations = {
   },
   de: {
     name: { display: "Haonan Ke", hero: "Haonan Ke" },
-    nav: { about: "Über mich", projects: "Ausgewählte Projekte", experience: "Erfahrung" },
+    nav: { about: "Über mich", projects: "Ausgewählte Projekte", experience: "Erfahrung", gallery: "Galerie" },
+    institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "University of Virginia" },
     intro: {
       eyebrow: "Elektrotechnik · Human Factors",
-      text: "Ich bin Masterstudent mit dualem Schwerpunkt in Electrical and Computer Engineering und Human Factors Engineering an der Technischen Universität München (TUM) und arbeite an der Schnittstelle von Edge AI, Robotik, eingebetteten Systemen und hardwarebewusstem Computing. Meine Arbeit konzentriert sich auf eingebettete Systeme, Echtzeitregelung und Hardware-Software-Co-Design. Gleichzeitig interessiere ich mich dafür, diese Technologien durch Human Factors Engineering näher an Menschen heranzubringen und intelligente Produkte zu entwickeln, die leistungsfähig, intuitiv und in realer Interaktion bedeutsam sind.",
+      text: "Ich bin Masterstudent an der Technischen Universität München (TUM) mit zwei Schwerpunkten: Electrical and Computer Engineering sowie Human Factors Engineering. Meine Arbeit liegt an der Schnittstelle von Edge AI, Robotik, eingebetteten Systemen und hardwarebewusster KI, mit Fokus auf Echtzeitregelung und Hardware-Software-Co-Design. Gleichzeitig interessiert mich, wie sich diese Technologien durch Human Factors Engineering näher an Menschen heranbringen lassen, um intelligente Produkte zu entwickeln, die leistungsfähig, intuitiv und in realer Interaktion bedeutsam sind.",
       linkWork: "Projekte ansehen",
       linkExperience: "Erfahrung",
     },
     projects: { label: "Projekte", title: "Ausgewählte Projekte", viewTimeline: "Timeline", viewGrid: "Raster" },
-    project1: { visual: "RK3588 · FPGA · ROS 2", title: "Edge-VLA-Robotiksteuerung auf RK3588 + FPGA", desc: "Ein Masterarbeitsprojekt zur Bereitstellung von Vision-Language-Action-Modellen auf einem RK3588 Edge-SoC, erweitert durch FPGA-basiertes visuelles Tracking mit hoher Rate für latenzarme Robotikregelung." },
-    project2: { visual: "HDC · SPICE · Zuverlässigkeit", title: "Hardwarebewusstes Hyperdimensional Computing", desc: "Ein AI-Projekt mit Blick unter die Algorithmusebene: wie Variabilität in Speicher- und Gerätestrukturen die Zuverlässigkeit von Spracherkennungssystemen prägen kann." },
-    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "LiDAR-basierte autonome Navigation", desc: "Ein Robotikprojekt über Wahrnehmung und Regelungsstruktur, damit ein mobiler Roboter sich in wechselnden Umgebungen bewusst und geschlossen geregelt bewegen kann." },
-    project4: { visual: "TOR · Multimodale Warnung", title: "Multimodale Take-Over-Request-Studie", desc: "Eine Human-Factors-Studie darüber, wie teilautomatisierte Fahrzeuge Menschen zur Übernahme auffordern sollten, mit Vergleich visueller, auditiver und haptischer Warnungen in sicherheitskritischen Momenten." },
-    project5: { visual: "Spatial Audio · Licht", title: "Immersive Klang- und Lichtkomposition", desc: "Ein immersives Medienprojekt zu räumlichem Audio und interaktivem Lichtdesign mit Meyer Constellation 20.1, Spacemap Go und QLab, resultierend in einer ausgestellten Originalkomposition." },
-    project6: { visual: "PCB · Thermische Messung", title: "Referenzplatine für thermografische Verlustleistungsschätzung", desc: "Ein Bachelorarbeitsprojekt rund um eine kontrollierte Hardwareplattform, auf der elektrisches Verhalten und Wärmebilder sorgfältig miteinander verglichen werden können, von PCB-Design und Firmware bis Bring-up und Messvalidierung." },
-    project7: { visual: "Produkt · Beta-Test", title: "Persönliches App-Projekt im Beta-Test", desc: "Ein persönliches App-Projekt, das eine Idee durch iteratives Design, Tests, frühes Nutzerfeedback und Produktverbesserung in Richtung Beta-Version entwickelt." },
+    project1: { visual: "RK3588 · FPGA · ROS 2", title: "Edge-VLA-Robotiksteuerung auf RK3588 + FPGA", desc: "Ein Masterarbeitsprojekt, das Vision-Language-Action-Modelle auf einem RK3588 Edge-SoC bereitstellt und das System um FPGA-basiertes visuelles Tracking mit hoher Rate für latenzarme Robotikregelung erweitert." },
+    project2: { visual: "HDC · SPICE · Zuverlässigkeit", title: "Hardwarebewusstes Hyperdimensional Computing", desc: "Ein hardwarebewusstes KI-Projekt, das Algorithmen mit der darunterliegenden Hardware verbindet und untersucht, wie Variabilität in Speicher- und Bauelementstrukturen die Zuverlässigkeit von Spracherkennungssystemen prägen kann." },
+    project3: { visual: "TurtleBot4 · LiDAR · FSM", title: "LiDAR-basierte autonome Navigation", desc: "Ein Robotikprojekt, das LiDAR-Wahrnehmung und geschlossene Regelung verbindet, damit ein mobiler Roboter strukturierter durch wechselnde Umgebungen navigieren kann." },
+    project4: { visual: "TOR · Multimodale Warnung", title: "Multimodale Take-Over-Request-Studie", desc: "Eine Human-Factors-Studie darüber, wie teilautomatisierte Fahrzeuge Fahrer zur Rückübernahme auffordern sollten, mit Vergleich visueller, auditiver und haptischer Warnungen in sicherheitskritischen Momenten." },
+    project5: { visual: "Spatial Audio · Licht", title: "Immersive Klang- und Lichtkomposition", desc: "Ein immersives Medienprojekt zu räumlichem Audio und interaktivem Lichtdesign mit Meyer Constellation 20.1, Spacemap Go und QLab, aus dem eine ausgestellte Originalkomposition entstanden ist." },
+    project6: { visual: "PCB · Thermische Messung", title: "Referenzplatine für thermografische Verlustleistungsschätzung", desc: "Eine Bachelorarbeit über eine kontrollierte Hardwareplattform, auf der elektrisches Verhalten und Wärmebilder sorgfältig miteinander verglichen werden können, von PCB-Design und Firmware bis Inbetriebnahme und Messvalidierung." },
+    project7: { visual: "Produkt · Beta-Test", title: "Persönliches App-Projekt im Beta-Test", desc: "Ein persönliches App-Projekt, das eine Idee durch iteratives Design, frühes Nutzerfeedback, Tests und Produktverbesserung in Richtung Beta-Version entwickelt." },
     experience: {
       label: "Erfahrung",
       title: "Praktika",
-      card1: { period: "Apr. 2025 - Okt. 2025", title: "Chair of AI Processor Design, TUM", role: "Forschungspraktikant · Speichercharakterisierung", desc: "Arbeit an experimenteller Speicherzuverlässigkeit vom Hardware-Prüfstand aus, mit mikrocontrollerbasierter Testplattform und Python-Werkzeugen, die Low-Level-Messdaten in analysierbares Verhalten übersetzen." },
-      card2: { period: "Jan. 2024 - Dez. 2024", title: "IAV", role: "Werkstudent · Fahrzeuginfotainment", desc: "Arbeit an automatisierter Validierung sprachbasierter Fahrzeugininteraktion, an der Schnittstelle von Testautomatisierung, Infotainment-Verhalten und früher LLM-bezogener Evaluation für Automotive User Experience." },
-      card3: { period: "Apr. 2023 - Sept. 2023", title: "Audi", role: "Praktikant · Fahrzeugelektronik", desc: "Arbeit nahe an Fahrzeugelektronik und Buskommunikation, mit Diagnoseskripten und Datenverarbeitungsabläufen zur Analyse und Validierung von ECU-Verhalten am Prüfstand." },
+      card1: { period: "Apr. 2025 - Okt. 2025", title: "Chair of AI Processor Design, TUM", role: "Forschungspraktikant · Speichertests und Zuverlässigkeitsanalyse", desc: "Hardwareexperimente zur Zuverlässigkeit externer Speicher, mit einer mikrocontrollerbasierten Testplattform und Python-Werkzeugen für Datenerfassung, Aufbereitung und Analyse. SPI-Lese-/Schreibtests, March-Tests und Signaldebugging machen Low-Level-Messungen für die Zuverlässigkeitsbewertung nutzbar." },
+      card2: { period: "Jan. 2024 - Dez. 2024", title: "IAV", role: "Werkstudent · Sprachinteraktion im Fahrzeug", desc: "Automatisierte Validierung von Sprachinteraktion in Infotainment-Systemen, mit Python und ECU-Test für Testabläufe sowie Analyse von Spracherkennung, Systemreaktionen und Prüfstandsverhalten zur Unterstützung von Intelligent-Cockpit-Funktionen." },
+      card3: { period: "Apr. 2023 - Sept. 2023", title: "Audi", role: "Praktikant · Fahrzeugelektronik", desc: "Unterstützung bei Test und Validierung elektronischer Systeme im Fahrzeug-Thermomanagement, mit LIN/CAN-Kommunikation, Diagnosedaten und Prüfstandsdebugging. Testskripte, Bussignalanalyse und Datenverarbeitung halfen, ECU-Verhalten in der Testumgebung zu validieren." },
+    },
+    gallery: {
+      label: "Fotografie",
+      title: "Gallery",
+      quoteLine1: '"Make sure your offline world is',
+      quoteLine2: 'better than your online one"',
+      attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
+      emptyTitle: "Fotografien folgen bald.",
+      emptyText: "Ein ruhiger Ort für Licht, Straßen, Reisen und die Offline-Welt.",
     },
     tags: {
       edgeAI: "Edge AI",
       embeddedControl: "Eingebettete Steuerung",
       masterThesis: "Masterarbeit",
-      aiHardware: "AI-Hardware",
+      aiHardware: "KI-Hardware",
       hdc: "HDC",
       reliability: "Zuverlässigkeit",
       robotics: "Robotik",

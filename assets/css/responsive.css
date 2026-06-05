@@ -1,3 +1,51 @@
+@media (max-width: 1280px) {
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(78px, 10vw, 96px);
+    grid-template-areas:
+      "heading media"
+      "text text"
+      "links links";
+    align-items: flex-start;
+    column-gap: var(--s4);
+    row-gap: var(--s5);
+  }
+
+  .intro__copy {
+    display: contents;
+  }
+
+  .intro__heading {
+    grid-area: heading;
+    align-self: center;
+    min-width: 0;
+  }
+
+  .intro__name {
+    margin-bottom: 0;
+  }
+
+  .intro__media {
+    grid-area: media;
+    width: 100%;
+    margin: 0;
+    justify-self: end;
+  }
+
+  .intro__portrait {
+    border-radius: 12px;
+  }
+
+  .intro__text {
+    grid-area: text;
+  }
+
+  .intro__links {
+    grid-area: links;
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 900px) {
   .site {
     display: block;
@@ -113,10 +161,64 @@
   }
 
   .timeline-item {
+    grid-template-columns: 72px clamp(150px, 28vw, 210px) minmax(0, 1fr);
+    gap: var(--s4);
+    padding-left: 0;
+    padding-bottom: var(--s7);
+  }
+
+  .timeline-item__date {
+    padding-left: 22px;
+    padding-top: 8px;
+  }
+
+  .timeline-item__date::before {
+    left: 0;
+    top: 12px;
+  }
+
+  .timeline-item__img {
+    width: 100%;
+  }
+
+  .timeline-item__arrow {
+    display: none;
+  }
+
+  .projects-timeline.is-grid .timeline-item {
+    grid-template-columns: clamp(150px, 32vw, 210px) minmax(0, 1fr) 22px;
+    grid-template-areas:
+      "image date arrow"
+      "image info info";
+    padding: var(--s5);
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-hero {
+    min-height: 300px;
+  }
+
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .intro__media {
+    width: clamp(72px, 20vw, 86px);
+  }
+
+  .intro__portrait {
+    border-radius: 10px;
+  }
+
+  .timeline-item {
     grid-template-columns: 1fr;
     gap: var(--s3);
     padding-left: 26px;
-    padding-bottom: var(--s7);
   }
 
   .timeline-item__date {
@@ -129,25 +231,33 @@
     top: 4px;
   }
 
-  .timeline-item__img {
-    width: 100%;
-    min-height: 150px;
-  }
-
-  .timeline-item__arrow {
-    display: none;
-  }
-
   .projects-timeline.is-grid .timeline-item {
     grid-template-columns: 1fr;
     grid-template-areas:
       "image"
       "date"
       "info";
-    padding: var(--s5);
   }
 
-  .experience-grid {
-    grid-template-columns: 1fr;
+  .gallery-hero {
+    min-height: 280px;
+  }
+
+  .gallery-hero p {
+    font-size: clamp(30px, 10vw, 46px);
+  }
+
+  .gallery-hero p span {
+    white-space: normal;
+  }
+
+  .gallery-hero cite {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--s2);
+  }
+
+  .gallery-grid {
+    column-count: 1;
   }
 }

@@ -1,4 +1,4 @@
-import { translations } from "./data/content.js?v=20260604-21";
+import { translations } from "./data/content.js?v=20260605-17";
 
 export function getValue(obj, path) {
   return path.split(".").reduce((current, key) => current && current[key], obj);

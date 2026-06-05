@@ -7,7 +7,8 @@ Personal portfolio site for GitHub Pages. The page is intentionally kept as a st
 ```text
 .
 ├─ index.html
-├─ style.css
+├─ pic/
+│  └─ logos and image assets
 └─ assets/
    ├─ css/
    │  ├─ base.css
@@ -21,8 +22,10 @@ Personal portfolio site for GitHub Pages. The page is intentionally kept as a st
       ├─ i18n.js
       ├─ main.js
       ├─ navigation.js
+      ├─ projectView.js
       ├─ render.js
-      └─ reveal.js
+      ├─ reveal.js
+      └─ sidebar.js
 ```
 
 ## Editing Content
@@ -31,7 +34,10 @@ Most site content lives in `assets/js/data/content.js`.
 
 - Update `projects` to add or reorder selected work.
 - Update `experience` for institutional experience cards.
-- Update `translations` for English, Chinese, and German copy.
+- Update `gallery` to add photography entries with image paths, alt text, and optional captions.
+- Update `translations` for English, Chinese, and German copy, including localized institution labels.
+- Update `logoAssets` and `logoKeys` to control institution and company logos.
+- Update `site.portrait` to change the rounded intro portrait on the homepage.
 - Update `site.socials` for email, GitHub, LinkedIn, or other links.
 
 The page is rendered from this data by `assets/js/render.js`.

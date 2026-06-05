@@ -1,5 +1,5 @@
-import { experience, projects, site } from "./data/content.js?v=20260604-21";
-import { t } from "./i18n.js?v=20260604-21";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20260605-17";
+import { t } from "./i18n.js?v=20260605-17";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -76,15 +76,22 @@ function renderSidebar() {
 
 function renderIntro() {
   return `
-    <section class="content-section" id="about">
-      <span class="intro__eyebrow reveal" data-i18n="intro.eyebrow">${t("intro.eyebrow")}</span>
-      <h1 class="intro__name reveal" data-i18n="name.hero">${t("name.hero")}</h1>
-      <p class="intro__text reveal" data-i18n="intro.text">${t("intro.text")}</p>
-      <div class="intro__links reveal">
-        <a href="#projects" class="intro__link" data-i18n="intro.linkWork">${t("intro.linkWork")}</a>
-        <a href="#experience" class="intro__link" data-i18n="intro.linkExperience">${t("intro.linkExperience")}</a>
-        <a href="mailto:${site.email}" class="intro__link">${site.email}</a>
+    <section class="content-section intro" id="about">
+      <div class="intro__copy">
+        <div class="intro__heading">
+          <span class="intro__eyebrow reveal" data-i18n="intro.eyebrow">${t("intro.eyebrow")}</span>
+          <h1 class="intro__name reveal" data-i18n="name.hero">${t("name.hero")}</h1>
+        </div>
+        <p class="intro__text reveal" data-i18n="intro.text">${t("intro.text")}</p>
+        <div class="intro__links reveal">
+          <a href="#projects" class="intro__link" data-i18n="intro.linkWork">${t("intro.linkWork")}</a>
+          <a href="#experience" class="intro__link" data-i18n="intro.linkExperience">${t("intro.linkExperience")}</a>
+          <a href="mailto:${site.email}" class="intro__link">${site.email}</a>
+        </div>
       </div>
+      <figure class="intro__media reveal">
+        <img src="${site.portrait.src}" alt="${site.portrait.alt}" class="intro__portrait" loading="eager" />
+      </figure>
     </section>
   `;
 }
@@ -96,12 +103,26 @@ function renderProjectMeta(project) {
   }).join("");
 }
 
+function renderLogos(keys = [], className) {
+  const logos = keys
+    .map((key) => logoAssets[key])
+    .filter(Boolean)
+    .map((logo) => `<img src="${logo.src}" alt="${logo.alt}" loading="lazy" />`)
+    .join("");
+
+  return logos ? `<div class="${className}">${logos}</div>` : "";
+}
+
 function getProjectSlug(project) {
   return project.titleKey.replace(".", "-");
 }
 
 function renderProjectTitle(project) {
-  const institution = project.institution ? `<span class="timeline-item__institution">(${project.institution})</span>` : "";
+  const institution = project.institutionKey
+    ? `<span class="timeline-item__institution">(<span data-i18n="${project.institutionKey}">${t(project.institutionKey)}</span>)</span>`
+    : project.institution
+      ? `<span class="timeline-item__institution">(${project.institution})</span>`
+      : "";
 
   return `
     <h4 class="timeline-item__title">
@@ -117,6 +138,7 @@ function renderProjects() {
       <span class="timeline-item__date">${project.year}</span>
       <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}">
         <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
+        ${renderLogos(project.logoKeys, "project-logo-overlay")}
       </div>
       <div class="timeline-item__info">
         ${renderProjectTitle(project)}
@@ -147,6 +169,7 @@ function renderProjects() {
 function renderExperience() {
   const cards = experience.map((item) => `
     <div class="experience-card reveal">
+      ${renderLogos(item.logoKeys, "experience-card__logos")}
       <span class="experience-card__period" data-i18n="${item.periodKey}">${t(item.periodKey)}</span>
       <h3 data-i18n="${item.titleKey}">${t(item.titleKey)}</h3>
       <p class="experience-card__role" data-i18n="${item.roleKey}">${t(item.roleKey)}</p>
@@ -162,6 +185,50 @@ function renderExperience() {
       <span class="section-label reveal" data-i18n="experience.label">${t("experience.label")}</span>
       <h2 class="section-title reveal" data-i18n="experience.title">${t("experience.title")}</h2>
       <div class="experience-grid">${cards}</div>
+    </section>
+  `;
+}
+
+function renderGalleryItems() {
+  if (!gallery.length) {
+    return `
+      <div class="gallery-empty reveal">
+        <p class="gallery-empty__title" data-i18n="gallery.emptyTitle">${t("gallery.emptyTitle")}</p>
+        <p data-i18n="gallery.emptyText">${t("gallery.emptyText")}</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="gallery-grid">
+      ${gallery.map((item) => `
+        <figure class="gallery-item reveal">
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
+          ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ""}
+        </figure>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderGallery() {
+  return `
+    <section class="content-section gallery-section" id="gallery">
+      <span class="section-label reveal" data-i18n="gallery.label">${t("gallery.label")}</span>
+      <h2 class="section-title reveal" data-i18n="gallery.title">${t("gallery.title")}</h2>
+      <div class="gallery-hero reveal">
+        <blockquote>
+          <p>
+            <span data-i18n="gallery.quoteLine1">${t("gallery.quoteLine1")}</span>
+            <span data-i18n="gallery.quoteLine2">${t("gallery.quoteLine2")}</span>
+          </p>
+          <cite>
+            <span class="gallery-hero__dash">—</span>
+            <span data-i18n="gallery.attribution">${t("gallery.attribution")}</span>
+          </cite>
+        </blockquote>
+      </div>
+      ${renderGalleryItems()}
     </section>
   `;
 }
@@ -185,6 +252,7 @@ export function renderSite() {
         ${renderIntro()}
         ${renderProjects()}
         ${renderExperience()}
+        ${renderGallery()}
         ${renderFooter()}
       </main>
     </div>
