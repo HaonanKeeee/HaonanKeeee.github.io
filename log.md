@@ -39,6 +39,270 @@ Review English, Chinese, and German site copy for natural language quality and l
 ## 2026-06-05
 
 ### Task goal
+Balance experience logos and localize the Siemens experience.
+
+### Changed files
+- `assets/js/data/content.js`
+- `assets/js/render.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~9 lines
+- Modified: ~16 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added Chinese and German translations for the Siemens working student experience.
+- Added per-logo CSS classes during logo rendering.
+- Added Siemens-specific logo sizing and a BMW-specific cap so experience logos have more consistent visual height.
+
+### Removed functionality or changed behavior
+- Siemens now appears larger and more proportional as a horizontal wordmark.
+- Experience logo sizing now uses key-specific rules instead of one shared max width for every logo shape.
+- CSS and JS cache-busting versions were updated to `20260605-25`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/data/content.js` and `assets/js/render.js` using the bundled Node runtime.
+- Imported the content module to confirm English, Chinese, and German Siemens titles are present.
+- Checked source references for `logo-img--siemens`, `logo-img--bmw`, and `20260605-25` cache-busting strings.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Remove the Beyond Engineering intro sentence and reduce Gallery/Studio title size.
+
+### Changed files
+- `assets/js/data/content.js`
+- `assets/js/render.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~4 lines
+- Modified: ~8 lines
+- Removed: ~2 lines
+
+### Added functionality or content
+- Added a `section-title--sub` style for Gallery and Studio subsection headings.
+
+### Removed functionality or changed behavior
+- Removed the Beyond Engineering intro sentence from content and rendering.
+- Gallery and Studio headings now render smaller than the parent Beyond Engineering heading.
+- CSS and JS cache-busting versions were updated to `20260605-24`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/data/content.js` and `assets/js/render.js` using the bundled Node runtime.
+- Searched source files to confirm `beyond.text` and the removed sentence are gone.
+- Confirmed `section-title--sub` and `20260605-24` cache-busting references are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Add a CV button and the latest Siemens AG experience.
+
+### Changed files
+- `assets/js/data/content.js`
+- `assets/js/render.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `README.md`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~20 lines
+- Modified: ~14 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added `site.cv` pointing to `cv/CV_en_general_web_jun26.pdf`.
+- Added a `CV` pill button after the email button in the intro link row.
+- Added Siemens logo metadata for `pic/Siemens-logo.svg.png`.
+- Added the latest Siemens AG, Munich, Germany working student experience at the top of the experience list.
+- Added Siemens-related tags for Industrial Metaverse, XR, digital twin, simulation, robotics, and human-centered design.
+- Documented `site.cv` in `README.md`.
+
+### Removed functionality or changed behavior
+- Experience cards now allow slightly wider company logos so the Siemens wordmark can display more clearly.
+- CSS and JS cache-busting versions were updated to `20260605-23`.
+
+### Verification steps
+- Confirmed `cv/CV_en_general_web_jun26.pdf` exists.
+- Confirmed `pic/Siemens-logo.svg.png` exists.
+- Ran JavaScript syntax checks for `assets/js/data/content.js`, `assets/js/render.js`, and `assets/js/main.js` using the bundled Node runtime.
+- Imported the content module to confirm the CV link, Siemens logo key, first experience logo, and Siemens card title.
+- Searched source files to confirm `site.cv`, Siemens references, and `20260605-23` cache-busting references are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Reduce and center the Studio quote text so both lines fit.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~13 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added Studio-specific quote sizing that keeps the Gallery-style hero format but uses a smaller font.
+- Centered the Studio quote block and widened its blockquote container.
+- Added mobile-specific Studio quote sizing.
+
+### Removed functionality or changed behavior
+- Studio quote no longer inherits the full Gallery quote font size, which caused clipping on longer lines.
+- CSS cache-busting versions were updated to `20260605-22`.
+
+### Verification steps
+- Searched source files to confirm `studio-hero` sizing rules and `20260605-22` CSS cache-busting references are present.
+- Reviewed the CSS diff for Studio-specific text alignment and font-size rules.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Split the Studio quote into two Gallery-style lines at the semicolon.
+
+### Changed files
+- `assets/js/data/content.js`
+- `assets/js/render.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~10 lines
+- Modified: ~8 lines
+- Removed: ~1 line
+
+### Added functionality or content
+- Split the Studio quote into `quoteLine1` and `quoteLine2`, with the line break after the semicolon.
+- Added the same Studio quote lines to English, Chinese, and German dictionaries.
+
+### Removed functionality or changed behavior
+- Studio no longer renders the quote as a single nowrap line, preventing horizontal clipping.
+- CSS and JS cache-busting versions were updated to `20260605-21`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/data/content.js` and `assets/js/render.js` using the bundled Node runtime.
+- Imported the content module to confirm all three languages expose the same two Studio quote lines.
+- Searched source files to confirm `studio.quoteLine1`, `studio.quoteLine2`, and `20260605-21` cache-busting references are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Make the Studio quote match the Gallery quote format.
+
+### Changed files
+- `assets/js/render.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~5 lines
+- Modified: ~12 lines
+- Removed: ~18 lines
+
+### Added functionality or content
+- Rendered the Studio sentence inside the same `gallery-hero` quote layout used by Gallery.
+- Added visible quotation marks around the Studio sentence without adding a citation line.
+
+### Removed functionality or changed behavior
+- Replaced the separate `studio-quote` styling with a lightweight `studio-hero` modifier so Studio visually matches Gallery.
+- CSS and JS cache-busting versions were updated to `20260605-20`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/render.js` and `assets/js/main.js` using the bundled Node runtime.
+- Searched source files to confirm `studio-hero`, the removed `studio-quote` references, and `20260605-20` cache-busting references.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
+Add a Beyond Engineering navigation group with Gallery and Studio subsections.
+
+### Changed files
+- `assets/js/data/content.js`
+- `assets/js/render.js`
+- `assets/js/navigation.js`
+- `assets/js/main.js`
+- `assets/js/i18n.js`
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `README.md`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~120 lines
+- Modified: ~18 lines
+- Removed: ~10 lines
+
+### Added functionality or content
+- Added a `Beyond Engineering` parent navigation item with nested `Gallery` and `Studio` links.
+- Added a Beyond Engineering intro section before Gallery.
+- Kept the existing Gallery content under the new Beyond Engineering area.
+- Added a new Studio section with the sentence: "Science and engineering are how we stay alive; art and culture are what we live for."
+- Added sidebar and mobile-menu styles for nested navigation items.
+- Updated navigation highlighting so the Beyond Engineering parent remains active when Gallery or Studio is active.
+- Documented the new `beyond` and `studio` content areas in `README.md`.
+
+### Removed functionality or changed behavior
+- Gallery is no longer a top-level navigation item; it is nested under Beyond Engineering.
+- CSS and JS cache-busting versions were updated to `20260605-19`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/data/content.js`, `assets/js/render.js`, `assets/js/navigation.js`, and `assets/js/main.js` using the bundled Node runtime.
+- Imported `assets/js/data/content.js` with Node to confirm the navigation tree and Studio quote data.
+- Searched source files to confirm Beyond Engineering, Studio, nested navigation styles, and `20260605-19` cache-busting references are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-06-05
+
+### Task goal
 Remove the medium-width state where the intro portrait becomes a large standalone row.
 
 ### Changed files

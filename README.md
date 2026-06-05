@@ -35,9 +35,11 @@ Most site content lives in `assets/js/data/content.js`.
 - Update `projects` to add or reorder selected work.
 - Update `experience` for institutional experience cards.
 - Update `gallery` to add photography entries with image paths, alt text, and optional captions.
+- Update `beyond` and `studio` copy for the Beyond Engineering section.
 - Update `translations` for English, Chinese, and German copy, including localized institution labels.
 - Update `logoAssets` and `logoKeys` to control institution and company logos.
 - Update `site.portrait` to change the rounded intro portrait on the homepage.
+- Update `site.cv` to change the CV PDF link shown in the intro buttons.
 - Update `site.socials` for email, GitHub, LinkedIn, or other links.
 
 The page is rendered from this data by `assets/js/render.js`.

@@ -137,6 +137,24 @@
     letter-spacing: -0.05em;
   }
 
+  .mobile-menu__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+  }
+
+  .mobile-menu__children {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+    padding-left: var(--s4);
+  }
+
+  .mobile-menu__link--child {
+    color: var(--text-sec);
+    font-size: 18px;
+  }
+
   .content {
     max-width: none;
     padding: 128px var(--s5) var(--s6);
@@ -201,6 +219,10 @@
     min-height: 300px;
   }
 
+  .studio-hero {
+    min-height: 300px;
+  }
+
   .gallery-grid {
     column-count: 2;
   }
@@ -241,6 +263,15 @@
 
   .gallery-hero {
     min-height: 280px;
+  }
+
+  .studio-hero {
+    min-height: 220px;
+  }
+
+  .studio-hero p {
+    font-size: clamp(24px, 7.2vw, 34px);
+    line-height: 1.16;
   }
 
   .gallery-hero p {

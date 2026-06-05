@@ -1,6 +1,10 @@
 export const site = {
   name: "Haonan Ke",
   email: "haonan.ke@outlook.com",
+  cv: {
+    href: "cv/CV_en_general_web_jun26.pdf",
+    label: "CV",
+  },
   portrait: {
     src: "pic/Portrait/portrait.jpg",
     alt: "Portrait of Haonan Ke",
@@ -14,7 +18,14 @@ export const site = {
     { id: "about", labelKey: "nav.about" },
     { id: "projects", labelKey: "nav.projects" },
     { id: "experience", labelKey: "nav.experience" },
-    { id: "gallery", labelKey: "nav.gallery" },
+    {
+      id: "beyond",
+      labelKey: "nav.beyond",
+      children: [
+        { id: "gallery", labelKey: "nav.gallery" },
+        { id: "studio", labelKey: "nav.studio" },
+      ],
+    },
   ],
   languages: [
     { code: "en", label: "EN" },
@@ -27,6 +38,7 @@ export const logoAssets = {
   audi: { src: "pic/Audi-Logo_2016.svg.png", alt: "Audi logo" },
   bmw: { src: "pic/BMW_logo_(gray).svg.png", alt: "BMW logo" },
   iav: { src: "pic/IAV_claim-CO_rgb.svg.png", alt: "IAV logo" },
+  siemens: { src: "pic/Siemens-logo.svg.png", alt: "Siemens logo" },
   tum: { src: "pic/Logo_of_the_Technical_University_of_Munich.svg.png", alt: "TUM logo" },
   uva: { src: "pic/University-of-Virginia-Logo.png", alt: "University of Virginia logo" },
 };
@@ -152,6 +164,14 @@ export const projects = [
 
 export const experience = [
   {
+    periodKey: "experience.card0.period",
+    titleKey: "experience.card0.title",
+    roleKey: "experience.card0.role",
+    descKey: "experience.card0.desc",
+    logoKeys: ["siemens"],
+    tags: ["Industrial Metaverse", "XR", "Digital Twin", "Robotics", "Human-Centered Design"],
+  },
+  {
     periodKey: "experience.card1.period",
     titleKey: "experience.card1.title",
     roleKey: "experience.card1.role",
@@ -165,7 +185,7 @@ export const experience = [
     roleKey: "experience.card2.role",
     descKey: "experience.card2.desc",
     logoKeys: ["iav", "bmw"],
-    tags: ["Python", "ECU-Test", "CANoe", "Voice Assistant", "Test Automation"],
+    tags: ["Python", "ECU-Test", "NLP", "Voice Assistant", "Test Automation"],
   },
   {
     periodKey: "experience.card3.period",
@@ -182,7 +202,7 @@ export const gallery = [];
 export const translations = {
   en: {
     name: { display: "Haonan Ke", hero: "Haonan Ke" },
-    nav: { about: "About", projects: "Selected Work", experience: "Experience", gallery: "Gallery" },
+    nav: { about: "About", projects: "Selected Work", experience: "Experience", beyond: "Beyond Engineering", gallery: "Gallery", studio: "Studio" },
     institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "University of Virginia" },
     intro: {
       eyebrow: "ECE · Human Factors",
@@ -201,9 +221,14 @@ export const translations = {
     experience: {
       label: "Experience",
       title: "Internships",
-      card1: { period: "Apr 2025 - Oct 2025", title: "Chair of AI Processor Design, TUM", role: "Research Intern · Memory Testing and Reliability Analysis", desc: "Conducted hardware experiments on external memory reliability, built a microcontroller-based test platform, and developed Python tooling for data acquisition, cleaning, and analysis. SPI read/write tests, March tests, and signal debugging helped turn low-level measurements into reliability evaluation data." },
-      card2: { period: "Jan 2024 - Dec 2024", title: "IAV", role: "Working Student · In-Vehicle Voice Interaction", desc: "Worked on automated validation of voice interaction in in-vehicle infotainment systems, using Python and ECU-Test to build test flows and analyze voice assistant recognition, system responses, and test bench behavior for intelligent cockpit features." },
-      card3: { period: "Apr 2023 - Sep 2023", title: "Audi", role: "Intern · Vehicle Electronics", desc: "Supported testing and validation for vehicle thermal-management electronics, working with LIN/CAN communication, diagnostic data, and test bench debugging. Test scripts, bus signal analysis, and data processing were used to validate ECU behavior in the test environment." },
+      card0: { period: "Jun 2026 - Present", title: "Siemens AG (Munich)", role: "Working Student · Industrial Metaverse Lab", desc: "Contributing to industrial metaverse and XR prototypes, including interactive simulation, human-centered design, digital twin workflows, and robotics-related industrial applications." },
+      card1: { period: "Apr 2025 - Oct 2025", title: "TUM - Chair of AI Processor Design (Munich)", role: "Research Intern · Memory Testing and Reliability Analysis", desc: "Conducted hardware experiments on external memory reliability, built a microcontroller-based test platform, and developed Python tooling for data acquisition, cleaning, and analysis. SPI read/write tests, March tests, and signal debugging helped turn low-level measurements into reliability evaluation data." },
+      card2: { period: "Jan 2024 - Dec 2024", title: "IAV (Munich)", role: "Working Student · In-Vehicle Voice Interaction", desc: "Worked on automated validation of voice interaction in in-vehicle infotainment systems, using Python and ECU-Test to build test flows and analyze voice assistant recognition, system responses, and test bench behavior for intelligent cockpit features." },
+      card3: { period: "Apr 2023 - Sep 2023", title: "AUDI (Ingolstadt)", role: "Intern · Vehicle Electronics", desc: "Supported testing and validation for vehicle thermal-management electronics, working with LIN/CAN communication, diagnostic data, and test bench debugging. Test scripts, bus signal analysis, and data processing were used to validate ECU behavior in the test environment." },
+    },
+    beyond: {
+      label: "Beyond Engineering",
+      title: "Beyond Engineering",
     },
     gallery: {
       label: "Photography",
@@ -213,6 +238,12 @@ export const translations = {
       attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
       emptyTitle: "Photographs coming soon.",
       emptyText: "A quiet place for field notes, light, streets, and the offline world.",
+    },
+    studio: {
+      label: "Studio",
+      title: "Studio",
+      quoteLine1: '"Science and engineering are how we stay alive;',
+      quoteLine2: 'art and culture are what we live for."',
     },
     tags: {
       edgeAI: "Edge AI",
@@ -271,9 +302,10 @@ export const translations = {
     experience: {
       label: "经历",
       title: "实习经历",
-      card1: { period: "2025 年 4 月 - 2025 年 10 月", title: "TUM 人工智能处理器研究所", role: "研究实习生 · 存储器测试与可靠性分析", desc: "围绕外部存储器可靠性开展硬件实验，搭建基于微控制器的测试平台，并开发 Python 工具用于数据采集、整理和分析。通过 SPI 读写测试、March 测试和信号调试，将底层测量结果转化为可用于可靠性评估的实验数据。" },
-      card2: { period: "2024 年 1 月 - 2024 年 12 月", title: "IAV（艾尔维汽车工程）", role: "学生助理 · 汽车智能座舱", desc: "参与车载信息娱乐系统中语音交互功能的自动化验证，使用 Python 和 ECU-Test 搭建测试流程，分析语音助手识别结果、系统响应和测试台行为，为智能座舱功能验证提供支持。" },
-      card3: { period: "2023 年 4 月 - 2023 年 9 月", title: "奥迪", role: "实习生 · 车辆电子", desc: "参与车辆热管理电子系统的测试与验证，围绕 LIN/CAN 通信、诊断数据和测试台调试开展工作。通过测试脚本、总线信号分析和实验数据处理，验证 ECU 在测试环境中的功能与通信行为。" },
+      card0: { period: "2026 年 6 月 - 至今", title: "西门子（慕尼黑）", role: "学生助理 · 工业元宇宙实验室", desc: "参与工业元宇宙与 XR 原型开发，围绕交互式仿真、人本设计、数字孪生流程以及机器人相关工业应用开展工作。" },
+      card1: { period: "2025 年 4 月 - 2025 年 10 月", title: "TUM 人工智能处理器研究所 （慕尼黑）", role: "研究实习生 · 存储器测试与可靠性分析", desc: "围绕外部存储器可靠性开展硬件实验，搭建基于微控制器的测试平台，并开发 Python 工具用于数据采集、整理和分析。通过 SPI 读写测试、March 测试和信号调试，将底层测量结果转化为可用于可靠性评估的实验数据。" },
+      card2: { period: "2024 年 1 月 - 2024 年 12 月", title: "IAV（艾尔维汽车工程，慕尼黑）", role: "学生助理 · 汽车智能座舱", desc: "参与车载信息娱乐系统中语音交互功能的自动化验证，使用 Python 和 ECU-Test 搭建测试流程，分析语音助手识别结果、系统响应和测试台行为，为智能座舱功能验证提供支持。" },
+      card3: { period: "2023 年 4 月 - 2023 年 9 月", title: "奥迪（因戈尔施塔特）", role: "实习生 · 车辆电子", desc: "参与车辆热管理电子系统的测试与验证，围绕 LIN/CAN 通信、诊断数据和测试台调试开展工作。通过测试脚本、总线信号分析和实验数据处理，验证 ECU 在测试环境中的功能与通信行为。" },
     },
     gallery: {
       label: "摄影",
@@ -283,6 +315,12 @@ export const translations = {
       attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
       emptyTitle: "摄影作品即将整理上线。",
       emptyText: "这里会留给光线、街景、旅行和离线世界里的片刻。",
+    },
+    studio: {
+      label: "Studio",
+      title: "Studio",
+      quoteLine1: '"Science and engineering are how we stay alive;',
+      quoteLine2: 'art and culture are what we live for."',
     },
     tags: {
       edgeAI: "边缘 AI",
@@ -341,9 +379,10 @@ export const translations = {
     experience: {
       label: "Erfahrung",
       title: "Praktika",
-      card1: { period: "Apr. 2025 - Okt. 2025", title: "Chair of AI Processor Design, TUM", role: "Forschungspraktikant · Speichertests und Zuverlässigkeitsanalyse", desc: "Hardwareexperimente zur Zuverlässigkeit externer Speicher, mit einer mikrocontrollerbasierten Testplattform und Python-Werkzeugen für Datenerfassung, Aufbereitung und Analyse. SPI-Lese-/Schreibtests, March-Tests und Signaldebugging machen Low-Level-Messungen für die Zuverlässigkeitsbewertung nutzbar." },
-      card2: { period: "Jan. 2024 - Dez. 2024", title: "IAV", role: "Werkstudent · Sprachinteraktion im Fahrzeug", desc: "Automatisierte Validierung von Sprachinteraktion in Infotainment-Systemen, mit Python und ECU-Test für Testabläufe sowie Analyse von Spracherkennung, Systemreaktionen und Prüfstandsverhalten zur Unterstützung von Intelligent-Cockpit-Funktionen." },
-      card3: { period: "Apr. 2023 - Sept. 2023", title: "Audi", role: "Praktikant · Fahrzeugelektronik", desc: "Unterstützung bei Test und Validierung elektronischer Systeme im Fahrzeug-Thermomanagement, mit LIN/CAN-Kommunikation, Diagnosedaten und Prüfstandsdebugging. Testskripte, Bussignalanalyse und Datenverarbeitung halfen, ECU-Verhalten in der Testumgebung zu validieren." },
+      card0: { period: "Juni 2026 - Heute", title: "Siemens AG (München)", role: "Werkstudent · Industrial Metaverse Lab", desc: "Mitarbeit an Industrial-Metaverse- und XR-Prototypen, darunter interaktive Simulation, menschenzentriertes Design, Digital-Twin-Workflows und robotikbezogene industrielle Anwendungen." },
+      card1: { period: "Apr. 2025 - Okt. 2025", title: "TUM - Chair of AI Processor Design (München)", role: "Forschungspraktikant · Speichertests und Zuverlässigkeitsanalyse", desc: "Hardwareexperimente zur Zuverlässigkeit externer Speicher, mit einer mikrocontrollerbasierten Testplattform und Python-Werkzeugen für Datenerfassung, Aufbereitung und Analyse. SPI-Lese-/Schreibtests, March-Tests und Signaldebugging machen Low-Level-Messungen für die Zuverlässigkeitsbewertung nutzbar." },
+      card2: { period: "Jan. 2024 - Dez. 2024", title: "IAV (München)", role: "Werkstudent · Sprachinteraktion im Fahrzeug", desc: "Automatisierte Validierung von Sprachinteraktion in Infotainment-Systemen, mit Python und ECU-Test für Testabläufe sowie Analyse von Spracherkennung, Systemreaktionen und Prüfstandsverhalten zur Unterstützung von Intelligent-Cockpit-Funktionen." },
+      card3: { period: "Apr. 2023 - Sept. 2023", title: "AUDI (Ingolstadt)", role: "Praktikant · Fahrzeugelektronik", desc: "Unterstützung bei Test und Validierung elektronischer Systeme im Fahrzeug-Thermomanagement, mit LIN/CAN-Kommunikation, Diagnosedaten und Prüfstandsdebugging. Testskripte, Bussignalanalyse und Datenverarbeitung halfen, ECU-Verhalten in der Testumgebung zu validieren." },
     },
     gallery: {
       label: "Fotografie",
@@ -353,6 +392,12 @@ export const translations = {
       attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
       emptyTitle: "Fotografien folgen bald.",
       emptyText: "Ein ruhiger Ort für Licht, Straßen, Reisen und die Offline-Welt.",
+    },
+    studio: {
+      label: "Studio",
+      title: "Studio",
+      quoteLine1: '"Science and engineering are how we stay alive;',
+      quoteLine2: 'art and culture are what we live for."',
     },
     tags: {
       edgeAI: "Edge AI",

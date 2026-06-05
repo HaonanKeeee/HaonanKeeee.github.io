@@ -24,7 +24,8 @@ export function initNavigation() {
       if (entry.isIntersecting) {
         const id = entry.target.id;
         navItems.forEach((item) => {
-          item.classList.toggle("is-active", item.dataset.section === id);
+          const children = (item.dataset.children || "").split(" ").filter(Boolean);
+          item.classList.toggle("is-active", item.dataset.section === id || children.includes(id));
         });
       }
     });

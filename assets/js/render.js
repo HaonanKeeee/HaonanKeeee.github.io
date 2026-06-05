@@ -1,5 +1,5 @@
-import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20260605-17";
-import { t } from "./i18n.js?v=20260605-17";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20260605-25";
+import { t } from "./i18n.js?v=20260605-25";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -13,20 +13,38 @@ function languageSwitcher() {
   `;
 }
 
+function navLink(item, className, closeOnClick = false, isChild = false) {
+  const closeAttr = closeOnClick ? " data-close" : "";
+  const sectionAttr = closeOnClick ? "" : ` data-section="${item.id}"`;
+  const childClass = isChild ? ` ${className}--child` : "";
+  const childrenAttr = !closeOnClick && item.children ? ` data-children="${item.children.map((child) => child.id).join(" ")}"` : "";
+
+  if (closeOnClick) {
+    return `<a href="#${item.id}" class="${className}${childClass}"${closeAttr} data-i18n="${item.labelKey}">${t(item.labelKey)}</a>`;
+  }
+
+  return `
+    <a href="#${item.id}" class="${className}${childClass}"${sectionAttr}${childrenAttr}>
+      <span class="side-nav__line"></span>
+      <span class="side-nav__label" data-i18n="${item.labelKey}">${t(item.labelKey)}</span>
+    </a>
+  `;
+}
+
 function navLinks(className, closeOnClick = false) {
   return site.nav.map((item) => {
-    const closeAttr = closeOnClick ? " data-close" : "";
-    const sectionAttr = closeOnClick ? "" : ` data-section="${item.id}"`;
+    if (!item.children) return navLink(item, className, closeOnClick);
 
-    if (closeOnClick) {
-      return `<a href="#${item.id}" class="${className}"${closeAttr} data-i18n="${item.labelKey}">${t(item.labelKey)}</a>`;
-    }
+    const groupClass = closeOnClick ? "mobile-menu__group" : "side-nav__group";
+    const childrenClass = closeOnClick ? "mobile-menu__children" : "side-nav__children";
 
     return `
-      <a href="#${item.id}" class="${className}"${sectionAttr}>
-        <span class="side-nav__line"></span>
-        <span class="side-nav__label" data-i18n="${item.labelKey}">${t(item.labelKey)}</span>
-      </a>
+      <div class="${groupClass}">
+        ${navLink(item, className, closeOnClick)}
+        <div class="${childrenClass}">
+          ${item.children.map((child) => navLink(child, className, closeOnClick, true)).join("")}
+        </div>
+      </div>
     `;
   }).join("");
 }
@@ -87,6 +105,7 @@ function renderIntro() {
           <a href="#projects" class="intro__link" data-i18n="intro.linkWork">${t("intro.linkWork")}</a>
           <a href="#experience" class="intro__link" data-i18n="intro.linkExperience">${t("intro.linkExperience")}</a>
           <a href="mailto:${site.email}" class="intro__link">${site.email}</a>
+          <a href="${site.cv.href}" class="intro__link" target="_blank" rel="noopener">${site.cv.label}</a>
         </div>
       </div>
       <figure class="intro__media reveal">
@@ -105,9 +124,9 @@ function renderProjectMeta(project) {
 
 function renderLogos(keys = [], className) {
   const logos = keys
-    .map((key) => logoAssets[key])
-    .filter(Boolean)
-    .map((logo) => `<img src="${logo.src}" alt="${logo.alt}" loading="lazy" />`)
+    .map((key) => ({ key, logo: logoAssets[key] }))
+    .filter((item) => item.logo)
+    .map((item) => `<img src="${item.logo.src}" alt="${item.logo.alt}" class="logo-img logo-img--${item.key}" loading="lazy" />`)
     .join("");
 
   return logos ? `<div class="${className}">${logos}</div>` : "";
@@ -189,6 +208,15 @@ function renderExperience() {
   `;
 }
 
+function renderBeyondIntro() {
+  return `
+    <section class="content-section beyond-section" id="beyond">
+      <span class="section-label reveal" data-i18n="beyond.label">${t("beyond.label")}</span>
+      <h2 class="section-title reveal" data-i18n="beyond.title">${t("beyond.title")}</h2>
+    </section>
+  `;
+}
+
 function renderGalleryItems() {
   if (!gallery.length) {
     return `
@@ -215,7 +243,7 @@ function renderGallery() {
   return `
     <section class="content-section gallery-section" id="gallery">
       <span class="section-label reveal" data-i18n="gallery.label">${t("gallery.label")}</span>
-      <h2 class="section-title reveal" data-i18n="gallery.title">${t("gallery.title")}</h2>
+      <h2 class="section-title section-title--sub reveal" data-i18n="gallery.title">${t("gallery.title")}</h2>
       <div class="gallery-hero reveal">
         <blockquote>
           <p>
@@ -229,6 +257,23 @@ function renderGallery() {
         </blockquote>
       </div>
       ${renderGalleryItems()}
+    </section>
+  `;
+}
+
+function renderStudio() {
+  return `
+    <section class="content-section studio-section" id="studio">
+      <span class="section-label reveal" data-i18n="studio.label">${t("studio.label")}</span>
+      <h2 class="section-title section-title--sub reveal" data-i18n="studio.title">${t("studio.title")}</h2>
+      <div class="gallery-hero studio-hero reveal">
+        <blockquote>
+          <p>
+            <span data-i18n="studio.quoteLine1">${t("studio.quoteLine1")}</span>
+            <span data-i18n="studio.quoteLine2">${t("studio.quoteLine2")}</span>
+          </p>
+        </blockquote>
+      </div>
     </section>
   `;
 }
@@ -252,7 +297,9 @@ export function renderSite() {
         ${renderIntro()}
         ${renderProjects()}
         ${renderExperience()}
+        ${renderBeyondIntro()}
         ${renderGallery()}
+        ${renderStudio()}
         ${renderFooter()}
       </main>
     </div>

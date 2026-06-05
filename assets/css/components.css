@@ -54,6 +54,12 @@ body.is-sidebar-collapsed .sidebar__name {
   gap: var(--s4);
 }
 
+.side-nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
 .side-nav__item {
   display: flex;
   align-items: center;
@@ -88,8 +94,37 @@ body.is-sidebar-collapsed .sidebar__name {
   background: var(--text);
 }
 
+.side-nav__children {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding-left: 38px;
+}
+
+.side-nav__item--child {
+  font-size: 12px;
+}
+
+.side-nav__item--child .side-nav__line {
+  width: 14px;
+}
+
+.side-nav__item--child:hover .side-nav__line,
+.side-nav__item--child.is-active .side-nav__line {
+  width: 24px;
+}
+
 body.is-sidebar-collapsed .side-nav {
   align-items: center;
+}
+
+body.is-sidebar-collapsed .side-nav__group {
+  align-items: center;
+}
+
+body.is-sidebar-collapsed .side-nav__children {
+  gap: var(--s2);
+  padding-left: 0;
 }
 
 body.is-sidebar-collapsed .side-nav__item {
@@ -256,6 +291,10 @@ body.is-sidebar-collapsed .sidebar__bottom {
   font-size: clamp(28px, 4vw, 46px);
   line-height: 1.06;
   letter-spacing: -0.05em;
+}
+
+.section-title--sub {
+  font-size: clamp(24px, 3vw, 34px);
 }
 
 .content-section > .section-title {
@@ -661,7 +700,7 @@ body.is-sidebar-collapsed .sidebar__bottom {
   top: var(--s5);
   right: var(--s5);
   display: flex;
-  max-width: 128px;
+  max-width: 170px;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
@@ -669,13 +708,22 @@ body.is-sidebar-collapsed .sidebar__bottom {
 
 .experience-card__logos img {
   display: block;
-  max-width: 58px;
-  max-height: 28px;
+  max-width: 74px;
+  max-height: 30px;
   object-fit: contain;
 }
 
+.experience-card__logos .logo-img--siemens {
+  max-width: 118px;
+  max-height: 30px;
+}
+
+.experience-card__logos .logo-img--bmw {
+  max-width: 30px;
+}
+
 .experience-card__period {
-  max-width: calc(100% - 138px);
+  max-width: calc(100% - 180px);
   color: var(--accent);
   font-size: 12px;
   font-weight: 600;
@@ -707,6 +755,10 @@ body.is-sidebar-collapsed .sidebar__bottom {
   gap: 8px;
   margin-top: auto;
   padding-top: var(--s3);
+}
+
+.beyond-section {
+  padding-bottom: var(--s7);
 }
 
 .gallery-section {
@@ -814,6 +866,26 @@ body.is-sidebar-collapsed .sidebar__bottom {
 
 .gallery-empty__title + p {
   margin-top: var(--s2);
+}
+
+.studio-section {
+  padding-bottom: var(--s9);
+}
+
+.studio-hero {
+  margin-bottom: 0;
+}
+
+.studio-hero blockquote {
+  width: min(100%, 1120px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.studio-hero p {
+  font-size: clamp(28px, 3.7vw, 50px);
+  line-height: 1.12;
+  text-align: center;
 }
 
 .reveal {

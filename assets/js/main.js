@@ -1,9 +1,9 @@
-import { setLanguage } from "./i18n.js?v=20260605-17";
-import { initNavigation } from "./navigation.js?v=20260605-17";
-import { initProjectViewToggle } from "./projectView.js?v=20260605-17";
-import { initReveal } from "./reveal.js?v=20260605-17";
-import { renderSite } from "./render.js?v=20260605-17";
-import { initSidebarToggle } from "./sidebar.js?v=20260605-17";
+import { setLanguage } from "./i18n.js?v=20260605-25";
+import { initNavigation } from "./navigation.js?v=20260605-25";
+import { initProjectViewToggle } from "./projectView.js?v=20260605-25";
+import { initReveal } from "./reveal.js?v=20260605-25";
+import { renderSite } from "./render.js?v=20260605-25";
+import { initSidebarToggle } from "./sidebar.js?v=20260605-25";
 
 renderSite();
 
