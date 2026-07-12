@@ -26,6 +26,12 @@ body.is-sidebar-collapsed .site {
   transition: width 220ms ease, padding 220ms ease;
 }
 
+body.is-art-section .sidebar {
+  border-right-color: rgba(255, 255, 255, 0.22);
+  background: rgba(3, 12, 44, 0.76);
+  backdrop-filter: blur(28px) saturate(1.18);
+}
+
 body.is-sidebar-collapsed .sidebar {
   width: var(--sidebar-collapsed-w);
   padding: var(--s7) 14px;
@@ -49,6 +55,12 @@ body.is-sidebar-collapsed .sidebar {
   border-top: 1px solid var(--line);
   color: var(--text-sec);
   font-size: 13px;
+  transition: border-color 220ms ease, color 220ms ease;
+}
+
+body.is-art-section .footer {
+  border-top-color: rgba(255, 255, 255, 0.34);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .mobile-nav,

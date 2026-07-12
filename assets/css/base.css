@@ -31,6 +31,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background:
     radial-gradient(circle at 18% 8%, rgba(186, 204, 212, 0.42), transparent 34vw),
@@ -40,6 +41,61 @@ body {
   background-attachment: fixed;
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 199, 88, 0.24), transparent 19vw),
+    radial-gradient(circle at 52% 32%, rgba(255, 223, 126, 0.18), transparent 17vw),
+    radial-gradient(circle at 82% 18%, rgba(78, 43, 150, 0.54), transparent 32vw),
+    radial-gradient(circle at 36% 70%, rgba(58, 24, 100, 0.54), transparent 32vw),
+    radial-gradient(circle at 72% 76%, rgba(11, 70, 178, 0.86), transparent 40vw),
+    radial-gradient(circle at 22% 84%, rgba(5, 27, 112, 0.88), transparent 36vw),
+    radial-gradient(circle at 42% 58%, rgba(8, 45, 148, 0.46), transparent 34vw),
+    linear-gradient(135deg, rgba(2, 11, 45, 0.92) 0%, rgba(10, 31, 106, 0.84) 32%, rgba(41, 20, 88, 0.74) 62%, rgba(2, 9, 38, 0.90) 100%);
+  opacity: 0;
+  transition: opacity 900ms ease;
+  content: "";
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 224, 118, 0.88) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 198, 84, 0.78) 0 1.4px, transparent 2.6px),
+    radial-gradient(circle, rgba(255, 241, 174, 0.68) 0 1px, transparent 2px);
+  background-position:
+    18px 26px,
+    112px 76px,
+    68px 134px;
+  background-size:
+    220px 180px,
+    320px 260px,
+    180px 220px;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  content: "";
+}
+
+body.is-art-section::before {
+  opacity: 0.96;
+}
+
+body.is-art-section::after {
+  opacity: 0.56;
+}
+
+#site-root {
+  position: relative;
+  z-index: 1;
 }
 
 a {

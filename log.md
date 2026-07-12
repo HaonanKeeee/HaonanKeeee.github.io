@@ -1077,3 +1077,292 @@ Center the main content area inside the available space to reduce the left-heavy
 
 ### Known limitations or TODOs
 - Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Add a blue-dominant La La Land-inspired background mood when scrolling into Gallery and Studio.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/main.css`
+- `assets/js/main.js`
+- `assets/js/sectionMood.js`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~35 lines
+- Modified: ~12 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added a fixed background overlay that fades in when Gallery or Studio enters the viewport.
+- Added `initSectionMood()` to toggle `body.is-art-section` for the art-oriented sections.
+- Used a blue-heavy La La Land-style palette with cobalt, midnight blue, violet, and a small warm amber spotlight.
+
+### Removed functionality or changed behavior
+- Gallery and Studio now transition away from the default subtle background into a deeper blue-purple studio mood.
+- CSS cache-busting versions were updated to `20260713-05`; the new section mood JavaScript remains cache-busted as `20260713-03`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS, JS, and HTML to confirm the art-section class, blue-dominant gradient values, module import, and cache-busting versions are present.
+- Reviewed the local diff for the changed files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Add a subtle Starry Night-like yellow star texture to the Gallery and Studio background mood.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~24 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added a fixed `body::after` star texture layer with small golden radial-gradient points.
+- The star texture fades in only while `body.is-art-section` is active.
+
+### Removed functionality or changed behavior
+- Gallery and Studio now combine the blue-purple La La Land background with a restrained yellow star-field accent.
+- CSS cache-busting versions were updated to `20260713-06`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the star texture layer, opacity rule, blend mode, and cache-busting version are present.
+- Reviewed the local diff summary for the changed files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Warm up the Gallery and Studio art background and make the yellow star accents more visible.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: 0 lines
+- Modified: ~10 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Increased the warm yellow light areas in the art-section background overlay.
+- Increased the star texture visibility by enlarging the brighter star points and raising the star layer opacity.
+
+### Removed functionality or changed behavior
+- Reduced the cold purple dominance in the Gallery/Studio mood while keeping a blue La La Land-style base.
+- CSS cache-busting versions were updated to `20260713-07`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the warmer yellow gradient values, reduced purple opacity, stronger star opacity, and cache-busting version are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Make the Gallery and Studio art background deeper and more blue while keeping yellow accents.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: 0 lines
+- Modified: ~8 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Strengthened the midnight blue and cobalt layers in the Gallery/Studio art background.
+
+### Removed functionality or changed behavior
+- Reduced the yellow light opacity so it reads as accent rather than overall warmth.
+- Increased the art background overlay opacity for a deeper studio-like mood.
+- CSS cache-busting versions were updated to `20260713-08`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the deeper blue gradient values, reduced warm-light values, stronger overlay opacity, and cache-busting version are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Improve footer readability when the Gallery and Studio art background is active.
+
+### Changed files
+- `assets/css/layout.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~5 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added an art-section footer state with a brighter divider and light text color.
+- Added a transition for footer border and text color changes.
+
+### Removed functionality or changed behavior
+- The copyright footer no longer appears too muted against the darker blue Gallery/Studio background.
+- CSS cache-busting versions were updated to `20260713-09`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the footer art-section state and cache-busting version are present.
+- Reviewed the local diff summary for the changed files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Add deeper purple night-sky tones to the Gallery and Studio art background.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~1 line
+- Modified: ~6 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added deeper violet and purple shadow layers to the art-section background while preserving the blue night-sky base.
+
+### Removed functionality or changed behavior
+- The Gallery/Studio mood now reads more like a dark starry-night scene with La La Land-style purple-blue lighting.
+- CSS cache-busting versions were updated to `20260713-12`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the new purple gradient values and cache-busting version are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Make the Beyond Engineering heading respond to the art-section background state.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `assets/js/main.js`
+- `assets/js/sectionMood.js`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~2 lines
+- Modified: ~8 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added `#beyond` to the art-section background trigger list.
+- Added art-section text color rules for `.beyond-section` labels and titles.
+
+### Removed functionality or changed behavior
+- Beyond Engineering now shifts into the same warm-gold label and warm-white title color treatment when the night-sky background is active.
+- CSS and JS cache-busting versions were updated to `20260713-13`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS, JS, and HTML to confirm the Beyond trigger, Beyond text color rules, and cache-busting versions are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Make the left sidebar visually adapt when the art-section night-sky background is active.
+
+### Changed files
+- `assets/css/layout.css`
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~38 lines
+- Modified: ~5 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added an art-section sidebar state with a deep blue translucent background and brighter border.
+- Added warm-white and gold color states for sidebar labels, active navigation lines, language buttons, social links, and the collapse toggle.
+
+### Removed functionality or changed behavior
+- The left sidebar no longer remains a bright neutral panel against the Gallery/Studio/Beyond night-sky background.
+- CSS cache-busting versions were updated to `20260713-14`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the sidebar art-section rules and cache-busting version are present.
+- Reviewed the local diff summary for the changed files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Make the art-section night-sky color system deeper and more subdued overall.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/components.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: 0 lines
+- Modified: ~16 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Deepened the art-section background, sidebar, toggle, language buttons, and quote hero container.
+
+### Removed functionality or changed behavior
+- Reduced overall brightness and warmth so the Beyond/Gallery/Studio mood feels more like a deep blue-purple night sky.
+- CSS cache-busting versions were updated to `20260713-15`.
+
+### Verification steps
+- Ran JavaScript syntax checks for `assets/js/main.js` and `assets/js/sectionMood.js`.
+- Searched CSS and HTML to confirm the darker night-sky values and cache-busting version are present.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.

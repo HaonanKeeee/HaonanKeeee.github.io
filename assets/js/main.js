@@ -3,6 +3,7 @@ import { initNavigation } from "./navigation.js?v=20260605-25";
 import { initProjectViewToggle } from "./projectView.js?v=20260605-25";
 import { initReveal } from "./reveal.js?v=20260605-25";
 import { renderSite } from "./render.js?v=20260605-25";
+import { initSectionMood } from "./sectionMood.js?v=20260713-13";
 import { initSidebarToggle } from "./sidebar.js?v=20260605-25";
 
 renderSite();
@@ -15,4 +16,5 @@ initNavigation();
 initProjectViewToggle();
 initSidebarToggle();
 initReveal();
+initSectionMood();
 setLanguage(localStorage.getItem("siteLanguage") || "en");

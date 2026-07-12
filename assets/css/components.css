@@ -196,6 +196,52 @@ body.is-sidebar-collapsed .sidebar__bottom {
   color: var(--text);
 }
 
+body.is-art-section .sidebar__toggle {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(3, 14, 48, 0.80);
+  color: rgba(255, 250, 226, 0.86);
+}
+
+body.is-art-section .sidebar__toggle:hover {
+  border-color: rgba(255, 218, 114, 0.58);
+  background: rgba(8, 28, 88, 0.88);
+  color: rgba(255, 232, 138, 0.96);
+}
+
+body.is-art-section .sidebar__name,
+body.is-art-section .side-nav__item,
+body.is-art-section .sidebar__bottom {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+body.is-art-section .side-nav__line {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+body.is-art-section .side-nav__item:hover,
+body.is-art-section .side-nav__item.is-active,
+body.is-art-section .sidebar__social:hover {
+  color: rgba(255, 250, 226, 0.96);
+}
+
+body.is-art-section .side-nav__item:hover .side-nav__line,
+body.is-art-section .side-nav__item.is-active .side-nav__line {
+  background: rgba(255, 218, 114, 0.92);
+}
+
+body.is-art-section .lang-btn {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(3, 14, 48, 0.56);
+  color: rgba(255, 255, 255, 0.70);
+}
+
+body.is-art-section .lang-btn:hover,
+body.is-art-section .lang-btn.is-active {
+  border-color: rgba(255, 218, 114, 0.56);
+  background: rgba(8, 28, 88, 0.76);
+  color: rgba(255, 232, 138, 0.96);
+}
+
 .intro {
   display: flex;
   flex-wrap: nowrap;
@@ -892,6 +938,48 @@ body.is-sidebar-collapsed .sidebar__bottom {
 
 .studio-hero p span {
   white-space: normal;
+}
+
+body.is-art-section .gallery-section .section-label,
+body.is-art-section .beyond-section .section-label,
+body.is-art-section .studio-section .section-label {
+  color: rgba(255, 218, 114, 0.92);
+}
+
+body.is-art-section .gallery-section .section-title,
+body.is-art-section .beyond-section .section-title,
+body.is-art-section .studio-section .section-title {
+  color: rgba(255, 252, 242, 0.94);
+}
+
+body.is-art-section .gallery-hero {
+  border-color: rgba(255, 255, 255, 0.24);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 213, 105, 0.14), transparent 30%),
+    linear-gradient(135deg, rgba(2, 10, 38, 0.52), rgba(4, 20, 70, 0.42));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+body.is-art-section .gallery-hero p {
+  color: rgba(255, 250, 226, 0.96);
+}
+
+body.is-art-section .gallery-hero cite,
+body.is-art-section .gallery-empty,
+body.is-art-section .gallery-item figcaption {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+body.is-art-section .gallery-empty {
+  border-top-color: rgba(255, 255, 255, 0.24);
+}
+
+body.is-art-section .gallery-empty__title {
+  color: rgba(255, 250, 226, 0.94);
+}
+
+body.is-art-section .gallery-hero__dash {
+  color: rgba(255, 218, 114, 0.94);
 }
 
 .reveal {
