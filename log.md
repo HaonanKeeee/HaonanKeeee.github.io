@@ -1011,3 +1011,69 @@ Make long text paragraphs visually align on both left and right edges.
 
 ### Known limitations or TODOs
 - Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Change the site background to a subtle, low-saturation natural gradient inspired by OpenAI's current light visual style.
+
+### Changed files
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/components.css`
+- `assets/css/responsive.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~7 lines
+- Modified: ~16 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added global background color variables and a fixed multi-layer soft gradient using warm gray, pale blue, muted rose, and soft yellow tones.
+- Added stronger translucent panel variables for hover states.
+
+### Removed functionality or changed behavior
+- Replaced the previous flat warm beige page background with a low-saturation natural gradient.
+- Updated sidebar, mobile navigation, mobile menu, project logo overlay, and Gallery/Studio quote hero backgrounds to sit more consistently on the new global background.
+- CSS cache-busting versions were updated to `20260713-01`.
+
+### Verification steps
+- Referenced OpenAI's current homepage visual direction, including its use of a soft abstract gradient with pink, blue, and warm yellow tones.
+- Searched CSS and HTML to confirm the new background variables, gradient rules, and cache-busting version are present.
+- Reviewed the local diff for all changed CSS and HTML files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+## 2026-07-13
+
+### Task goal
+Center the main content area inside the available space to reduce the left-heavy feeling on full-width browsers.
+
+### Changed files
+- `assets/css/layout.css`
+- `assets/css/main.css`
+- `index.html`
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~1 line
+- Modified: ~6 lines
+- Removed: 0 lines
+
+### Added functionality or content
+- Added `margin-inline: auto` to `.content` so the constrained content column centers within the sidebar-adjusted layout area.
+
+### Removed functionality or changed behavior
+- The main content no longer stays pinned to the left edge of the right-side grid column on wide screens.
+- CSS cache-busting versions were updated to `20260713-02`.
+
+### Verification steps
+- Searched CSS and HTML to confirm the new centering rule and cache-busting version are present.
+- Reviewed the local diff for the changed CSS and HTML files.
+
+### Known limitations or TODOs
+- Browser-based visual verification was not run because the user previously asked not to continue browser verification.

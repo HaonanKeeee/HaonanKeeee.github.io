@@ -1,6 +1,8 @@
 :root {
-  --bg: #f7f4ef;
-  --panel: #ffffff;
+  --bg: #f4f1ec;
+  --bg-rgb: 244, 241, 236;
+  --panel: rgba(255, 255, 255, 0.76);
+  --panel-strong: rgba(255, 255, 255, 0.88);
   --text: #171717;
   --text-sec: #68615a;
   --line: rgba(23, 23, 23, 0.12);
@@ -30,7 +32,12 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(186, 204, 212, 0.42), transparent 34vw),
+    radial-gradient(circle at 82% 16%, rgba(232, 207, 191, 0.48), transparent 32vw),
+    radial-gradient(circle at 66% 72%, rgba(220, 218, 184, 0.36), transparent 30vw),
+    linear-gradient(135deg, #f6f4ef 0%, #eef2f0 44%, #f5efe8 100%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }

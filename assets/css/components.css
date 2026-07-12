@@ -18,7 +18,7 @@
 
 .sidebar__toggle:hover {
   border-color: var(--line-strong);
-  background: var(--panel);
+  background: var(--panel-strong);
   color: var(--text);
 }
 
@@ -179,7 +179,7 @@ body.is-sidebar-collapsed .sidebar__bottom {
 .lang-btn:hover,
 .lang-btn.is-active {
   border-color: var(--line-strong);
-  background: var(--panel);
+  background: var(--panel-strong);
   color: var(--text);
 }
 
@@ -282,7 +282,7 @@ body.is-sidebar-collapsed .sidebar__bottom {
 
 .intro__link:hover {
   border-color: var(--text);
-  background: var(--panel);
+  background: var(--panel-strong);
   transform: translateY(-2px);
 }
 
@@ -565,7 +565,7 @@ body.is-sidebar-collapsed .sidebar__bottom {
   justify-content: center;
   gap: var(--s3);
   padding: var(--s4);
-  background: rgba(247, 244, 239, 0.82);
+  background: rgba(var(--bg-rgb), 0.84);
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
@@ -777,8 +777,10 @@ body.is-sidebar-collapsed .sidebar__bottom {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 16% 24%, rgba(47, 95, 143, 0.08), transparent 34%),
-    linear-gradient(135deg, rgba(247, 244, 239, 0.98), rgba(239, 234, 226, 0.72));
+    radial-gradient(circle at 14% 18%, rgba(187, 205, 214, 0.28), transparent 34%),
+    radial-gradient(circle at 86% 22%, rgba(232, 206, 190, 0.30), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(var(--bg-rgb), 0.36));
+  backdrop-filter: blur(2px);
 }
 
 .gallery-hero blockquote {

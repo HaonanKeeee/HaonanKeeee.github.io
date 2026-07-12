@@ -88,8 +88,8 @@
     gap: var(--s3);
     padding: 0 var(--s5);
     border-bottom: 1px solid var(--line);
-    background: rgba(247, 244, 239, 0.88);
-    backdrop-filter: blur(18px);
+    background: rgba(var(--bg-rgb), 0.82);
+    backdrop-filter: blur(22px) saturate(1.08);
   }
 
   .mobile-nav__name {
@@ -140,8 +140,8 @@
     gap: var(--s4);
     padding: var(--s5);
     border-bottom: 1px solid var(--line);
-    background: rgba(247, 244, 239, 0.96);
-    backdrop-filter: blur(18px);
+    background: rgba(var(--bg-rgb), 0.94);
+    backdrop-filter: blur(22px) saturate(1.08);
   }
 
   .mobile-menu.is-open {

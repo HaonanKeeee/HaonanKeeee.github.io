@@ -21,8 +21,8 @@ body.is-sidebar-collapsed .site {
   justify-content: space-between;
   padding: var(--s7) var(--s6);
   border-right: 1px solid var(--line);
-  background: rgba(247, 244, 239, 0.84);
-  backdrop-filter: blur(18px);
+  background: rgba(var(--bg-rgb), 0.72);
+  backdrop-filter: blur(24px) saturate(1.08);
   transition: width 220ms ease, padding 220ms ease;
 }
 
@@ -35,6 +35,7 @@ body.is-sidebar-collapsed .sidebar {
   grid-column: 2;
   width: 100%;
   max-width: 1320px;
+  margin-inline: auto;
   padding: var(--s9) var(--s7) var(--s7);
 }
 
