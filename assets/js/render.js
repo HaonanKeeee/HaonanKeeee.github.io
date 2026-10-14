@@ -1,5 +1,5 @@
-import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20260605-25";
-import { t } from "./i18n.js?v=20260605-25";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261015-3";
+import { t } from "./i18n.js?v=20261015-3";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -155,11 +155,13 @@ function renderProjects() {
   const items = projects.map((project) => `
     <a href="${project.href}" class="timeline-item reveal">
       <span class="timeline-item__date">${project.year}</span>
-      <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}">
+      <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}${project.image ? " timeline-item__img--photo" : ""}">
+        ${project.image ? `<img class="project-visual__image" src="${project.image.src}" alt="${t(project.image.altKey)}" data-i18n-alt="${project.image.altKey}" loading="lazy" width="1600" height="1200" />` : ""}
         <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
         ${renderLogos(project.logoKeys, "project-logo-overlay")}
       </div>
       <div class="timeline-item__info">
+        ${project.statusKey ? `<p class="timeline-item__status" data-i18n="${project.statusKey}">${t(project.statusKey)}</p>` : ""}
         ${renderProjectTitle(project)}
         <p class="timeline-item__desc" data-i18n="${project.descKey}">${t(project.descKey)}</p>
         <div class="timeline-item__tech">${renderProjectMeta(project)}</div>

@@ -1,4 +1,4 @@
-import { translations } from "./data/content.js?v=20260605-25";
+import { translations } from "./data/content.js?v=20261015-3";
 
 export function getValue(obj, path) {
   return path.split(".").reduce((current, key) => current && current[key], obj);
@@ -9,13 +9,16 @@ export function t(path, lang = "en") {
 }
 
 export function setLanguage(lang) {
-  const dictionary = translations[lang] || translations.en;
-
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const value = getValue(dictionary, element.dataset.i18n);
+    const value = t(element.dataset.i18n, lang);
     if (value) element.textContent = value;
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const value = t(element.dataset.i18nAlt, lang);
+    if (value) element.setAttribute("alt", value);
   });
 
   document.querySelectorAll(".lang-btn").forEach((button) => {

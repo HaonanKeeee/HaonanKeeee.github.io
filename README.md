@@ -33,6 +33,8 @@ Personal portfolio site for GitHub Pages. The page is intentionally kept as a st
 Most site content lives in `assets/js/data/content.js`.
 
 - Update `projects` to add or reorder selected work.
+- The completed VLA thesis links to `thesis.html`. Update `thesis.images` and the `thesis` translations for its case study; the page is rendered by `assets/js/thesis.js` and styled by `assets/css/thesis.css`.
+- Project cards can include an optional `image` with `src` and `altKey`, and a translated `statusKey`.
 - Update `experience` for institutional experience cards.
 - Update `gallery` to add photography entries with image paths, alt text, and optional captions.
 - Update `beyond` and `studio` copy for the Beyond Engineering section.

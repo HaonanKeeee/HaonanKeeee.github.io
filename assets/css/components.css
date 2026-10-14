@@ -634,6 +634,27 @@ body.is-art-section .lang-btn.is-active {
   padding-top: 2px;
 }
 
+.timeline-item__img--photo::before,
+.timeline-item__img--photo::after {
+  display: none;
+}
+
+.project-visual__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-item__status {
+  margin: 0 0 var(--s2);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .projects-timeline.is-grid .timeline-item__info {
   grid-area: info;
 }

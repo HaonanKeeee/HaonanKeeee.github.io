@@ -1366,3 +1366,44 @@ Make the art-section night-sky color system deeper and more subdued overall.
 
 ### Known limitations or TODOs
 - Browser-based visual verification was not run because the user previously asked not to continue browser verification.
+
+
+## 2026-10-15
+
+### Task goal
+Present the completed master's thesis using its final results and original imagery.
+
+### Changed files
+- `index.html`, `assets/js/main.js`, `assets/js/render.js`, `assets/js/i18n.js`, `assets/js/data/content.js`
+- `assets/css/main.css`, `assets/css/components.css`
+- New `thesis.html`, `assets/js/thesis.js`, `assets/css/thesis.css`
+- New `pic/thesis/{platform,architecture,results,demo}.webp` and image-provenance `README.md`
+- `README.md`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~725 text lines and four optimized WebP images (~526 KB total).
+- Modified: ~20 existing lines.
+- Removed: 0 files or functionality.
+
+### Added functionality or content
+- Completed-thesis card with a real platform photograph and a working case-study link.
+- Dedicated thesis page with official title, 2 October 2026 submission date, model compression and CPU/NPU/FPGA partition, results table, and physical gimbal demonstration.
+- Four authentic photographs/figures exported from the final thesis, with source attribution and full-size links.
+- English, Chinese, and German copy, captions, and translated image descriptions; biography now distinguishes the completed ECE thesis from ongoing HFE studies.
+- Accessible results table and language controls, responsive layouts, intrinsic figure sizes, and updated asset versions.
+
+### Removed functionality or changed behavior
+- Replaced the earlier FPGA high-rate tracking proposal with the final heterogeneous VLA implementation.
+- Distinguished the ~32% throughput gain over the compressed NPU baseline from its ~170 ms latency cost. Camera timing ends at the dry-run software command sink; physical demonstration results are presented separately.
+- Other projects and existing navigation, timeline/grid switching, experience, Gallery, and Studio remain available.
+
+### Verification steps
+- JavaScript syntax and whitespace checks passed.
+- Verified all four image files and EN/ZH/DE thesis translation keys, all seven existing projects, local page references, and consistent asset versions.
+- Cross-checked thesis titles, submission date, partition, throughput/latency values, and visual gimbal evidence against the final manuscript.
+- Browser-checked homepage timeline/grid modes, the thesis link and return link, language switching and localized image descriptions, and loaded figures.
+- Checked 1440 px desktop and 390 px mobile layouts with no horizontal page overflow; the mobile comparison table remains readable.
+
+### Known limitations or TODOs
+- Physical gimbal success was judged visually; no quantitative stability or energy claim is made.
+- The existing June 2026 CV is retained; this update does not regenerate it or publish the signed thesis PDF.
