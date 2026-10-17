@@ -1407,3 +1407,41 @@ Present the completed master's thesis using its final results and original image
 ### Known limitations or TODOs
 - Physical gimbal success was judged visually; no quantitative stability or energy claim is made.
 - The existing June 2026 CV is retained; this update does not regenerate it or publish the signed thesis PDF.
+
+
+## 2026-10-18
+
+### Task goal
+Restrict project hover feedback to the image area and keep the thesis photograph visible.
+
+### Changed files
+- `assets/css/components.css`
+- `assets/css/main.css`, `index.html`, `thesis.html` (stylesheet versions)
+- `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~60 lines including this log entry.
+- Modified: ~7 lines.
+- Removed: ~18 lines of obsolete whole-card hover styling; no files deleted.
+
+### Added functionality or content
+- Image-only hover feedback for all seven projects, guarded for devices with a precise hover pointer.
+- A small top-right institution badge over the thesis photograph instead of a full-image covering panel.
+- An explicit keyboard-focus outline that leaves project imagery visible.
+
+### Removed functionality or changed behavior
+- Text, dates, and card whitespace no longer activate image overlays or move the image.
+- Hover no longer lifts/recolors entire grid cards or changes titles and arrows from outside the image area.
+- Thumbnail bounds stay stationary, avoiding a hover boundary that moves away from the pointer.
+- Existing placeholder logo panels still appear when their own image area is hovered.
+
+### Verification steps
+- Reproduced the original live bug: card hovered, image not hovered, institution overlay opacity 1.
+- Browser-checked image, description, and whitespace for each of seven projects in both timeline and grid views: 42 state checks passed.
+- Confirmed hidden overlays outside image bounds, small photo badge inside bounds, and no image/arrow/card movement.
+- Confirmed Tab focus displays a clear outline without revealing an overlay.
+- Inspected saved before/after and keyboard-focus screenshots and independently reviewed the CSS changes.
+- Whitespace checks passed; both pages use stylesheet version `20261018-1`.
+
+### Known limitations or TODOs
+- The precise-pointer media guard was checked in source and desktop browser behavior; no physical touchscreen was used.

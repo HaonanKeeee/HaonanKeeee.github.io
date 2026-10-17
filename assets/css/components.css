@@ -452,10 +452,9 @@ body.is-art-section .lang-btn.is-active {
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-.projects-timeline.is-grid .timeline-item:hover {
-  border-color: var(--line-strong);
-  background: rgba(255, 255, 255, 0.80);
-  transform: translateY(-2px);
+.timeline-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
 }
 
 .timeline-item__date {
@@ -490,11 +489,6 @@ body.is-art-section .lang-btn.is-active {
   display: none;
 }
 
-.timeline-item:hover .timeline-item__title,
-.timeline-item:hover .timeline-item__arrow {
-  color: var(--accent);
-}
-
 .timeline-item__img {
   position: relative;
   display: flex;
@@ -507,16 +501,12 @@ body.is-art-section .lang-btn.is-active {
   background:
     linear-gradient(135deg, rgba(47, 95, 143, 0.18), transparent 40%),
     linear-gradient(160deg, #ece8df, #d9e1e5);
-  transition: transform 180ms ease;
+  transition: box-shadow 180ms ease;
 }
 
 .projects-timeline.is-grid .timeline-item__img {
   grid-area: image;
   width: 100%;
-}
-
-.timeline-item:hover .timeline-item__img {
-  transform: translateY(-1px);
 }
 
 .timeline-item__img::before,
@@ -617,9 +607,14 @@ body.is-art-section .lang-btn.is-active {
   transition: opacity 180ms ease;
 }
 
-.timeline-item:hover .project-logo-overlay,
-.timeline-item:focus-visible .project-logo-overlay {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .timeline-item__img:hover {
+    box-shadow: 0 0 0 2px rgba(47, 95, 143, 0.3);
+  }
+
+  .timeline-item__img:hover .project-logo-overlay {
+    opacity: 1;
+  }
 }
 
 .project-logo-overlay img {
@@ -637,6 +632,21 @@ body.is-art-section .lang-btn.is-active {
 .timeline-item__img--photo::before,
 .timeline-item__img--photo::after {
   display: none;
+}
+
+.timeline-item__img--photo .project-logo-overlay {
+  inset: var(--s2) var(--s2) auto auto;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.timeline-item__img--photo .project-logo-overlay img {
+  width: 52px;
+  height: 20px;
+  max-width: 52px;
+  max-height: 20px;
 }
 
 .project-visual__image {
@@ -693,10 +703,6 @@ body.is-art-section .lang-btn.is-active {
   grid-area: arrow;
   justify-self: end;
   padding-top: 0;
-}
-
-.timeline-item:hover .timeline-item__arrow {
-  transform: translateX(3px);
 }
 
 .timeline-item__desc {
