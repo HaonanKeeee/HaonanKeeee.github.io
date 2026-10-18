@@ -1652,3 +1652,29 @@ Vertically center thumbnails in horizontal project rows and keep Timeline/Grid b
 
 ### Known limitations or TODOs
 - Controls naturally wrap and stay right-aligned when a narrow window cannot fit the translated heading and buttons on one line.
+
+## 2026-10-18 — Make project hover overlays more transparent
+
+### Task goal
+Let more of the project image show through its hover overlay.
+
+### Changed files
+- `assets/css/components.css`, `assets/css/main.css`, `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~26 log lines. Modified: 4 CSS/cache-reference lines. Removed: 0 lines or files.
+
+### Added functionality or content
+- Reduced the shared overlay background alpha from 0.84 to 0.65.
+
+### Removed functionality or changed behavior
+- The background image remains clearer during hover; logo opacity, centered placement, and the 180ms fade are unchanged.
+- Refreshed the affected stylesheet references to `20261018-10`.
+
+### Verification steps
+- Browser-checked actual hover: background alpha 0.65, overlay and logo opacity 1, and unchanged fade duration.
+- Visually inspected the thesis photograph and TUM logo together.
+- Independent diff review and `git diff --check` passed.
+
+### Known limitations or TODOs
+- No known issue in this scoped visual adjustment.

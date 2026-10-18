@@ -662,7 +662,7 @@ body.is-art-section #experience > .section-label {
   justify-content: center;
   gap: var(--s3);
   padding: var(--s4);
-  background: rgba(var(--bg-rgb), 0.84);
+  background: rgba(var(--bg-rgb), 0.65);
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
