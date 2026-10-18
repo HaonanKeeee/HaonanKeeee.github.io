@@ -441,23 +441,20 @@ body.is-art-section #experience > .section-label {
   font-size: inherit;
 }
 
-.view-switcher__item::before {
-  content: "";
-  width: 13px;
-  height: 13px;
-  border: 1px solid currentColor;
-  opacity: 0.75;
+.view-switcher__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  opacity: 0.85;
 }
 
 .view-switcher__item.is-active {
   color: var(--text);
 }
 
-.view-switcher__item.is-active::before {
-  border-left: 2px solid currentColor;
-  border-top: 0;
-  border-right: 0;
-  box-shadow: inset 4px 0 0 transparent;
+.view-switcher__item.is-active .view-switcher__icon {
+  opacity: 1;
 }
 
 .view-switcher__item:focus-visible {

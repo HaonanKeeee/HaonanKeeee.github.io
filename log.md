@@ -1519,3 +1519,39 @@ Restore the user's preferred justified introduction and original Timeline/Grid a
 
 ### Known limitations or TODOs
 - No known issue in this scoped restoration.
+
+
+## 2026-10-18 — Add real project-layout miniatures
+
+### Task goal
+Replace the empty-box/L placeholders with distinct Timeline and Grid layout illustrations.
+
+### Changed files
+- `assets/js/render.js`, `assets/js/main.js`
+- `assets/css/components.css`, `assets/css/main.css`
+- `index.html`, `thesis.html`, `log.md`
+- New `assets/licenses/lucide.txt`
+
+### Approximate added / modified / removed lines
+- Added: ~95 lines including the icon license and this entry.
+- Modified: ~12 lines.
+- Removed: ~10 placeholder-icon styling lines; no files deleted.
+
+### Added functionality or content
+- Timeline now shows two stacked image-and-text rows; Grid shows a permanent 2x2 tile illustration.
+- Inline SVG geometry comes from Lucide 1.8.0 LayoutList and LayoutGrid; its license is included.
+- Translations target label spans rather than the entire button, so initialization and language changes preserve the SVGs.
+
+### Removed functionality or changed behavior
+- Removed the generic empty-square and selected-L pseudo-element icons. Selection changes emphasis without changing what each layout icon depicts.
+- Kept the unboxed button appearance and justified introduction.
+- Refreshed changed renderer and stylesheet entry points to `20261018-6`.
+
+### Verification steps
+- Reviewed reachable Git history: it contained placeholder shapes, not recoverable miniature-layout artwork.
+- Browser-tested EN/ZH/DE, Timeline/Grid selection, and 1440px/390px widths: all 12 combinations retain both SVGs and the correct distinct geometry, with no horizontal overflow.
+- Inspected the actual rendered icons and screenshot close-up; JavaScript syntax and whitespace checks passed.
+- Independent review confirmed translation isolation, decorative accessibility attributes, license presence, and cache references.
+
+### Known limitations or TODOs
+- These illustrations implement the requested layout cues; no exact historical miniature artwork was available in the repository.

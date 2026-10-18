@@ -151,6 +151,15 @@ function renderProjectTitle(project) {
   `;
 }
 
+function renderProjectViewIcon(view) {
+  // Lucide 1.8.0 LayoutList / LayoutGrid; see assets/licenses/lucide.txt.
+  const shapes = view === "timeline"
+    ? '<rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /><path d="M14 4h7" /><path d="M14 9h7" /><path d="M14 15h7" /><path d="M14 20h7" />'
+    : '<rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" />';
+
+  return `<svg class="view-switcher__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${shapes}</svg>`;
+}
+
 function renderProjects() {
   const items = projects.map((project) => {
     const linked = project.href && project.href !== "#";
@@ -182,8 +191,14 @@ function renderProjects() {
           <h2 class="section-title" data-i18n="projects.title">${t("projects.title")}</h2>
         </div>
         <div class="view-switcher" aria-label="${t("controls.projectView")}" data-i18n-aria-label="controls.projectView">
-          <button class="view-switcher__item is-active" type="button" data-project-view="timeline" data-i18n="projects.viewTimeline" aria-pressed="true">${t("projects.viewTimeline")}</button>
-          <button class="view-switcher__item" type="button" data-project-view="grid" data-i18n="projects.viewGrid" aria-pressed="false">${t("projects.viewGrid")}</button>
+          <button class="view-switcher__item is-active" type="button" data-project-view="timeline" aria-pressed="true">
+            ${renderProjectViewIcon("timeline")}
+            <span data-i18n="projects.viewTimeline">${t("projects.viewTimeline")}</span>
+          </button>
+          <button class="view-switcher__item" type="button" data-project-view="grid" aria-pressed="false">
+            ${renderProjectViewIcon("grid")}
+            <span data-i18n="projects.viewGrid">${t("projects.viewGrid")}</span>
+          </button>
         </div>
       </div>
       <div class="projects-timeline is-timeline" data-projects-view>${items}</div>
