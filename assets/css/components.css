@@ -299,7 +299,6 @@ body.is-art-section #experience > .section-label {
   line-height: 1.75;
 }
 
-:lang(en) .intro__text,
 :lang(en) .timeline-item__desc,
 :lang(en) .experience-card p {
   hyphens: manual;
@@ -362,9 +361,12 @@ body.is-art-section #experience > .section-label {
   font-size: clamp(18px, 1.65vw, 23px);
   line-height: 1.65;
   letter-spacing: 0;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
 }
 
-.intro__text,
 .timeline-item__desc,
 .experience-card p:not(.experience-card__role) {
   hyphens: auto;
@@ -421,7 +423,7 @@ body.is-art-section #experience > .section-label {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: var(--text-sec);
+  color: #a3a09b;
   font-size: 13px;
   white-space: nowrap;
 }
@@ -431,9 +433,7 @@ body.is-art-section #experience > .section-label {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 40px;
-  padding: 8px 10px;
-  border-radius: 6px;
+  padding: 0;
   border: 0;
   background: transparent;
   color: inherit;
@@ -451,7 +451,6 @@ body.is-art-section #experience > .section-label {
 
 .view-switcher__item.is-active {
   color: var(--text);
-  background: var(--accent-soft);
 }
 
 .view-switcher__item.is-active::before {

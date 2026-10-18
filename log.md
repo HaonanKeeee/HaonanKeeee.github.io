@@ -1488,3 +1488,34 @@ Audit the full site across window proportions and languages, fix concrete usabil
 ### Known limitations or TODOs
 - Verification used browser viewport simulation, not physical iOS/Android devices or a screen-reader session. Reduced-motion safeguards were reviewed without changing the user's system preference.
 - Gallery/Studio still rely on empty photography content and quotations. Other project covers/details, stronger primary-CTA hierarchy, and quieter background layers remain optional future content/design work.
+
+
+## 2026-10-18 — Restore intro alignment and view-switcher appearance
+
+### Task goal
+Restore the user's preferred justified introduction and original Timeline/Grid appearance.
+
+### Changed files
+- `assets/css/components.css`, `assets/css/main.css`
+- `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~32 lines including this entry.
+- Modified: ~6 lines.
+- Removed: ~4 added button-decoration rules; no files deleted.
+
+### Added functionality or content
+- Restored justified introduction text, left-aligned final line, and automatic hyphenation in all three languages.
+
+### Removed functionality or changed behavior
+- Restored the exact pre-audit Timeline/Grid CSS: original inactive color, zero padding, transparent selection background, and original icon definitions.
+- Removed the introduction from the shared left-alignment and English manual-hyphenation overrides.
+- Refreshed the affected stylesheet references to `20261018-5`.
+
+### Verification steps
+- Compared the complete view-switcher CSS with commit `9f951d1`; the blocks match exactly.
+- Browser-checked EN/ZH/DE at 1440px and 390px: justified text, left final line, original transparent controls, and no horizontal overflow.
+- Confirmed both Grid and Timeline still switch correctly; whitespace check passed.
+
+### Known limitations or TODOs
+- No known issue in this scoped restoration.
