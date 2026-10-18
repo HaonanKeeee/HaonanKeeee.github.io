@@ -689,21 +689,6 @@ body.is-art-section #experience > .section-label {
   display: none;
 }
 
-.timeline-item__img--photo .project-logo-overlay {
-  inset: var(--s2) var(--s2) auto auto;
-  padding: 7px 9px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.92);
-}
-
-.timeline-item__img--photo .project-logo-overlay img {
-  width: 52px;
-  height: 20px;
-  max-width: 52px;
-  max-height: 20px;
-}
-
 .project-visual__image {
   position: absolute;
   inset: 0;

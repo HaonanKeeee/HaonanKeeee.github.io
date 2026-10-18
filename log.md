@@ -1585,3 +1585,36 @@ Restore the user's original justified typography in Experience and the other hom
 
 ### Known limitations or TODOs
 - No known issue in this scoped typography restoration.
+
+
+## 2026-10-18 — Restore the thesis thumbnail's centered TUM hover logo
+
+### Task goal
+Restore the original centered institution-logo animation on the thesis image while keeping hover activation limited to the image itself.
+
+### Changed files
+- `assets/css/components.css`, `assets/css/main.css`
+- `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~30 lines including this entry.
+- Modified: ~3 stylesheet cache references.
+- Removed: 15 photo-specific corner-badge styling lines; no files deleted.
+
+### Added functionality or content
+- The thesis photograph now shares the original full-image translucent overlay, centered TUM logo, and 180ms fade with the other project thumbnails.
+
+### Removed functionality or changed behavior
+- Removed the unsolicited top-right badge appearance and small logo dimensions.
+- Kept image-only hover, keyboard focus outlines, precise-pointer gating, justified prose, and both layout miniature icons.
+- Refreshed the affected stylesheet references to `20261018-8`.
+
+### Verification steps
+- Compared the common overlay styles with commit `8350764`; the original centered appearance is preserved.
+- Browser-tested actual pointer hover in Timeline and Grid: the logo centers within 0.01px, and the overlay covers the full thumbnail.
+- Confirmed pointer over the thesis text leaves the card hovered but the image overlay at opacity 0.
+- Checked Timeline and Grid at 390px with no horizontal overflow; verified justified prose and both SVG layout icons remain intact.
+- Inspected a rendered screenshot; independent code review and `git diff --check` passed.
+
+### Known limitations or TODOs
+- No known issue in this scoped restoration.
