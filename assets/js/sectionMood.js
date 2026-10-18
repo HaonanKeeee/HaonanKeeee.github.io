@@ -1,25 +1,28 @@
 export function initSectionMood() {
-  const artSections = document.querySelectorAll("#beyond, #gallery, #studio");
-  if (!artSections.length) return;
+  const firstArtSection = document.querySelector("#beyond, #gallery, #studio");
+  if (!firstArtSection) return;
 
-  if (!("IntersectionObserver" in window)) {
-    document.body.classList.toggle("is-art-section", ["#beyond", "#gallery", "#studio"].includes(window.location.hash));
-    return;
+  function updateMood() {
+    const artHasReachedViewport = firstArtSection.getBoundingClientRect().top <= window.innerHeight * 0.45;
+    document.body.classList.toggle("is-art-section", artHasReachedViewport);
   }
 
-  const visibleSections = new Set();
-
-  const moodObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        visibleSections.add(entry.target.id);
-      } else {
-        visibleSections.delete(entry.target.id);
-      }
+  let scheduledFrame = 0;
+  function scheduleUpdate() {
+    if (scheduledFrame) return;
+    scheduledFrame = window.requestAnimationFrame(() => {
+      scheduledFrame = 0;
+      updateMood();
     });
+  }
 
-    document.body.classList.toggle("is-art-section", visibleSections.size > 0);
-  }, { rootMargin: "-26% 0px -38% 0px", threshold: 0 });
-
-  artSections.forEach((section) => moodObserver.observe(section));
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  window.addEventListener("pageshow", scheduleUpdate);
+  document.addEventListener("site:languagechange", scheduleUpdate);
+  if ("ResizeObserver" in window) {
+    const layoutObserver = new ResizeObserver(scheduleUpdate);
+    layoutObserver.observe(document.querySelector(".content") || document.documentElement);
+  }
+  updateMood();
 }

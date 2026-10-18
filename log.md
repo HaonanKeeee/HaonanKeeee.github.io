@@ -1445,3 +1445,46 @@ Restrict project hover feedback to the image area and keep the thesis photograph
 
 ### Known limitations or TODOs
 - The precise-pointer media guard was checked in source and desktop browser behavior; no physical touchscreen was used.
+
+
+## 2026-10-18 — Responsive UI/UX audit and readability pass
+
+### Task goal
+Audit the full site across window proportions and languages, fix concrete usability defects, and improve readability while preserving the existing visual identity.
+
+### Changed files
+- `assets/css/{base,components,layout,responsive,main,thesis}.css`
+- `assets/js/{navigation,sidebar,reveal,sectionMood,i18n,render,main,thesis}.js`
+- `assets/js/data/content.js`, `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~350 lines, including this entry.
+- Modified: ~105 lines.
+- Removed: ~35 obsolete layout, observer, and placeholder-link lines; no files or project content deleted.
+
+### Added functionality or content
+- Readable narrow-window layout: top navigation through 1100px, continuous portrait sizing, wrapping quotations, full-width small-screen experience dates, and visible mobile project-view controls.
+- Bounded scrolling for short-window sidebars and menus; mobile anchor offset clears the fixed header.
+- Menu dismissal with Escape, outside click, focus leaving, and breakpoint changes; correct focus return and collapsed-sidebar inert groups.
+- Height-based, resize-aware section navigation and art theme; deterministic final-section selection at the document bottom.
+- Reduced-motion behavior and reveal fallback; translated accessible control labels and language-button pressed state.
+- Natural body-text spacing/alignment, stronger small-text contrast, Chinese heading spacing, and a matching dark mobile header/menu.
+- Narrow thesis-table spacing, larger mobile language targets, and reserved height for stacked institutional logos.
+
+### Removed functionality or changed behavior
+- Six project summaries without real destinations are articles rather than links to the page top; the thesis detail link remains active.
+- Corrected project heading hierarchy. Existing image-only hover behavior is preserved.
+- Replaced width-sensitive observer margins and abrupt portrait/quote sizing; English prose no longer uses automatic hyphenation.
+- Main stylesheet/module references now use `20261018-4`.
+
+### Verification steps
+- Captured and inspected before/after views for the 901px timeline, 320px experience card, 800x280 menu, 1281px quote, and mobile art theme.
+- Homepage: 96 combinations covering EN/ZH/DE, timeline/grid, and 16 window sizes from 320 to 1920px, including breakpoint boundaries and short landscape windows. No page/text/quote horizontal overflow detected.
+- Thesis page: 48 language/window combinations; fixed the 320px English table-header overflow and rechecked 320/360/390px in all three languages.
+- Confirmed the 901px project text column increased from ~52px to ~524px, and the 320px date column from ~27px to ~215px.
+- Verified menu scroll reachability, Escape and resize closing, mobile anchor top at 88px below a 64px header, collapsed-sidebar Tab order, and visible short-window footer links.
+- Verified one real project link plus six descriptive cards, localized labels, empty browser error logs, JavaScript syntax, and whitespace checks.
+
+### Known limitations or TODOs
+- Verification used browser viewport simulation, not physical iOS/Android devices or a screen-reader session. Reduced-motion safeguards were reviewed without changing the user's system preference.
+- Gallery/Studio still rely on empty photography content and quotations. Other project covers/details, stronger primary-CTA hierarchy, and quieter background layers remain optional future content/design work.

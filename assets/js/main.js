@@ -1,10 +1,10 @@
-import { setLanguage } from "./i18n.js?v=20261015-3";
-import { initNavigation } from "./navigation.js?v=20260605-25";
-import { initProjectViewToggle } from "./projectView.js?v=20260605-25";
-import { initReveal } from "./reveal.js?v=20260605-25";
-import { renderSite } from "./render.js?v=20261015-3";
-import { initSectionMood } from "./sectionMood.js?v=20260713-13";
-import { initSidebarToggle } from "./sidebar.js?v=20260605-25";
+import { setLanguage } from "./i18n.js?v=20261018-4";
+import { initNavigation } from "./navigation.js?v=20261018-4";
+import { initProjectViewToggle } from "./projectView.js?v=20261018-4";
+import { initReveal } from "./reveal.js?v=20261018-4";
+import { renderSite } from "./render.js?v=20261018-4";
+import { initSectionMood } from "./sectionMood.js?v=20261018-4";
+import { initSidebarToggle } from "./sidebar.js?v=20261018-4";
 
 renderSite();
 

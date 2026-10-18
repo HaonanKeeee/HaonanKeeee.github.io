@@ -124,7 +124,7 @@ main > .thesis-back {
   color: var(--text-sec);
   font-size: clamp(18px, 2vw, 22px);
   line-height: 1.65;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
 }
 
 .thesis-figure {
@@ -367,5 +367,22 @@ main > .thesis-back {
 
   .thesis-figure__image-link {
     border-radius: 12px;
+  }
+}
+
+:lang(zh) .thesis-title,
+:lang(zh) .thesis-section__title {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+:lang(en) .thesis-prose {
+  hyphens: manual;
+}
+
+@media (max-width: 360px) {
+  .thesis-comparison th,
+  .thesis-comparison td {
+    padding-inline: 7px;
   }
 }

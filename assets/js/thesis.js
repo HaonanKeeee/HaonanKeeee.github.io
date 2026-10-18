@@ -1,5 +1,5 @@
-import { site, thesis } from "./data/content.js?v=20261015-3";
-import { t, setLanguage } from "./i18n.js?v=20261015-3";
+import { site, thesis } from "./data/content.js?v=20261018-4";
+import { t, setLanguage } from "./i18n.js?v=20261018-4";
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -21,7 +21,7 @@ function figure(image, eager = false) {
       </a>
       <figcaption id="figure-${escapeHtml(image.id)}-caption">
         ${localized("span", image.captionKey, "thesis-figure__caption")}
-        <a class="thesis-figure__open" href="${escapeHtml(image.src)}">
+        <a class="thesis-figure__open" href="${escapeHtml(image.src)}" aria-describedby="figure-${escapeHtml(image.id)}-caption">
           ${localized("span", "thesis.figureLink")}<span aria-hidden="true"> ↗</span>
         </a>
       </figcaption>
@@ -72,7 +72,7 @@ document.getElementById("site-root").innerHTML = `
         <img src="${escapeHtml(site.portrait.src)}" alt="${escapeHtml(site.portrait.alt)}" width="44" height="44" />
         ${localized("span", "name.display")}
       </a>
-      <div class="language-switcher" aria-label="Language selector">
+      <div class="language-switcher" aria-label="${escapeHtml(t("controls.languageSelector"))}" data-i18n-aria-label="controls.languageSelector">
         ${site.languages.map((language) => `<button class="lang-btn" type="button" data-lang="${language.code}" lang="${language.code}" aria-pressed="false">${escapeHtml(language.label)}</button>`).join("")}
       </div>
     </header>
@@ -90,7 +90,7 @@ document.getElementById("site-root").innerHTML = `
             ${localized("span", "thesis.date", "thesis-date")}
           </div>
           ${localized("h1", "thesis.title", "thesis-title")}
-          <div class="thesis-tags" aria-label="Technologies">
+          <div class="thesis-tags" aria-label="${escapeHtml(t("controls.technologies"))}" data-i18n-aria-label="controls.technologies">
             <span>FPGA</span><span>RK3588 NPU</span><span>ROS 2</span><span>Vision–Language–Action</span>
           </div>
           ${localized("p", "thesis.overview", "thesis-overview")}

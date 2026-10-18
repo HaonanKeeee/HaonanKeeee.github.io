@@ -40,7 +40,7 @@ body {
     linear-gradient(135deg, #f6f4ef 0%, #eef2f0 44%, #f5efe8 100%);
   background-attachment: fixed;
   color: var(--text);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 body::before {
@@ -105,4 +105,30 @@ a {
 
 button {
   font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+body.is-art-section a:focus-visible,
+body.is-art-section button:focus-visible {
+  outline-color: #f2d47b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

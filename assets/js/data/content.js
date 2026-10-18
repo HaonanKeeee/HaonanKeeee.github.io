@@ -213,6 +213,7 @@ export const thesis = {
 
 export const translations = {
   en: {
+    controls: {"languageSelector": "Language selector", "projectView": "Project view", "toggleMenu": "Toggle navigation menu", "expandSidebar": "Expand sidebar", "collapseSidebar": "Collapse sidebar", "pageSections": "Page sections", "technologies": "Technologies"},
     name: { display: "Haonan Ke", hero: "Haonan Ke" },
     nav: { about: "About", projects: "Selected Work", experience: "Experience", beyond: "Beyond Engineering", gallery: "Gallery", studio: "Studio" },
     institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "University of Virginia" },
@@ -324,8 +325,9 @@ export const translations = {
     footer: { text: "© 2026 Haonan Ke. Built with GitHub Pages." },
   },
   zh: {
+    controls: {"languageSelector": "选择语言", "projectView": "项目显示方式", "toggleMenu": "展开或收起导航菜单", "expandSidebar": "展开侧栏", "collapseSidebar": "收起侧栏", "pageSections": "页面章节", "technologies": "技术"},
     name: { display: "柯皓楠", hero: "柯皓楠" },
-    nav: { about: "关于我", projects: "代表项目", experience: "经历", gallery: "摄影" },
+    nav: { about: "关于我", projects: "代表项目", experience: "经历", beyond: "工程之外", gallery: "摄影", studio: "创作" },
     institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "弗吉尼亚大学" },
     intro: {
       eyebrow: "电子工程 · 人因工程",
@@ -379,9 +381,10 @@ export const translations = {
       card2: { period: "2024 年 1 月 - 2024 年 12 月", title: "IAV（艾尔维汽车工程，慕尼黑）", role: "学生助理 · 汽车智能座舱", desc: "参与车载信息娱乐系统中语音交互功能的自动化验证，使用 Python 和 ECU-Test 搭建测试流程，分析语音助手识别结果、系统响应和测试台行为，为智能座舱功能验证提供支持。" },
       card3: { period: "2023 年 4 月 - 2023 年 9 月", title: "奥迪（因戈尔施塔特）", role: "实习生 · 车辆电子", desc: "参与车辆热管理电子系统的测试与验证，围绕 LIN/CAN 通信、诊断数据和测试台调试开展工作。通过测试脚本、总线信号分析和实验数据处理，验证 ECU 在测试环境中的功能与通信行为。" },
     },
+    beyond: { label: "工程之外", title: "工程之外" },
     gallery: {
       label: "摄影",
-      title: "Gallery",
+      title: "摄影",
       quoteLine1: '"Make sure your offline world is',
       quoteLine2: 'better than your online one"',
       attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",
@@ -389,8 +392,8 @@ export const translations = {
       emptyText: "这里会留给光线、街景、旅行和离线世界里的片刻。",
     },
     studio: {
-      label: "Studio",
-      title: "Studio",
+      label: "创作",
+      title: "创作",
       quoteLine1: '"Science and engineering are how we stay alive;',
       quoteLine2: 'art and culture are what we live for."',
     },
@@ -431,8 +434,9 @@ export const translations = {
     footer: { text: "© 2026 柯皓楠。使用 GitHub Pages 构建。" },
   },
   de: {
+    controls: {"languageSelector": "Sprache auswählen", "projectView": "Projektansicht", "toggleMenu": "Navigationsmenü öffnen oder schließen", "expandSidebar": "Seitenleiste ausklappen", "collapseSidebar": "Seitenleiste einklappen", "pageSections": "Seitenabschnitte", "technologies": "Technologien"},
     name: { display: "Haonan Ke", hero: "Haonan Ke" },
-    nav: { about: "Über mich", projects: "Ausgewählte Projekte", experience: "Erfahrung", gallery: "Galerie" },
+    nav: { about: "Über mich", projects: "Ausgewählte Projekte", experience: "Erfahrung", beyond: "Abseits der Technik", gallery: "Galerie", studio: "Studio" },
     institutions: { tumAir: "TUM-AIR", tum: "TUM", uva: "University of Virginia" },
     intro: {
       eyebrow: "Elektrotechnik · Human Factors",
@@ -486,9 +490,10 @@ export const translations = {
       card2: { period: "Jan. 2024 - Dez. 2024", title: "IAV (München)", role: "Werkstudent · Sprachinteraktion im Fahrzeug", desc: "Automatisierte Validierung von Sprachinteraktion in Infotainment-Systemen, mit Python und ECU-Test für Testabläufe sowie Analyse von Spracherkennung, Systemreaktionen und Prüfstandsverhalten zur Unterstützung von Intelligent-Cockpit-Funktionen." },
       card3: { period: "Apr. 2023 - Sept. 2023", title: "AUDI (Ingolstadt)", role: "Praktikant · Fahrzeugelektronik", desc: "Unterstützung bei Test und Validierung elektronischer Systeme im Fahrzeug-Thermomanagement, mit LIN/CAN-Kommunikation, Diagnosedaten und Prüfstandsdebugging. Testskripte, Bussignalanalyse und Datenverarbeitung halfen, ECU-Verhalten in der Testumgebung zu validieren." },
     },
+    beyond: { label: "Abseits der Technik", title: "Abseits der Technik" },
     gallery: {
       label: "Fotografie",
-      title: "Gallery",
+      title: "Galerie",
       quoteLine1: '"Make sure your offline world is',
       quoteLine2: 'better than your online one"',
       attribution: "Ronny Chieng, Speech for Harvard Class Day 2026",

@@ -1,5 +1,5 @@
-import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261015-3";
-import { t } from "./i18n.js?v=20261015-3";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261018-4";
+import { t } from "./i18n.js?v=20261018-4";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -7,7 +7,7 @@ function attrsForExternalLink(item) {
 
 function languageSwitcher() {
   return `
-    <div class="language-switcher" aria-label="Language selector">
+    <div class="language-switcher" aria-label="${t("controls.languageSelector")}" data-i18n-aria-label="controls.languageSelector">
       ${site.languages.map((lang) => `<button class="lang-btn" type="button" data-lang="${lang.code}">${lang.label}</button>`).join("")}
     </div>
   `;
@@ -55,30 +55,30 @@ function renderMobileNav() {
       <a href="index.html" class="mobile-nav__name" data-i18n="name.display">${t("name.display")}</a>
       <div class="mobile-nav__right">
         ${languageSwitcher()}
-        <button class="mobile-nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <button class="mobile-nav__burger" id="burger" type="button" aria-label="${t("controls.toggleMenu")}" data-i18n-aria-label="controls.toggleMenu" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span>
         </button>
       </div>
     </header>
 
-    <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="${t("controls.pageSections")}" data-i18n-aria-label="controls.pageSections">
       ${navLinks("mobile-menu__link", true)}
-    </div>
+    </nav>
   `;
 }
 
 function renderSidebar() {
   return `
     <aside class="sidebar">
-      <button class="sidebar__toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" data-sidebar-toggle>
+      <button class="sidebar__toggle" type="button" aria-label="${t("controls.collapseSidebar")}" data-i18n-aria-label="controls.collapseSidebar" aria-expanded="true" data-sidebar-toggle>
         <span class="sidebar__toggle-icon"></span>
       </button>
-      <div>
+      <div class="sidebar__main">
         <a href="index.html" class="sidebar__name-link">
           <p class="sidebar__name" data-i18n="name.display">${t("name.display")}</p>
         </a>
 
-        <nav class="side-nav" aria-label="Page sections">
+        <nav class="side-nav" aria-label="${t("controls.pageSections")}" data-i18n-aria-label="controls.pageSections">
           ${navLinks("side-nav__item")}
         </nav>
 
@@ -144,16 +144,19 @@ function renderProjectTitle(project) {
       : "";
 
   return `
-    <h4 class="timeline-item__title">
+    <h3 class="timeline-item__title" id="${getProjectSlug(project)}">
       <span data-i18n="${project.titleKey}">${t(project.titleKey)}</span>
       ${institution}
-    </h4>
+    </h3>
   `;
 }
 
 function renderProjects() {
-  const items = projects.map((project) => `
-    <a href="${project.href}" class="timeline-item reveal">
+  const items = projects.map((project) => {
+    const linked = project.href && project.href !== "#";
+    const element = linked ? "a" : "article";
+    return `
+    <${element}${linked ? ` href="${project.href}"${attrsForExternalLink(project)}` : ""} class="timeline-item reveal" aria-labelledby="${getProjectSlug(project)}">
       <span class="timeline-item__date">${project.year}</span>
       <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}${project.image ? " timeline-item__img--photo" : ""}">
         ${project.image ? `<img class="project-visual__image" src="${project.image.src}" alt="${t(project.image.altKey)}" data-i18n-alt="${project.image.altKey}" loading="lazy" width="1600" height="1200" />` : ""}
@@ -166,9 +169,10 @@ function renderProjects() {
         <p class="timeline-item__desc" data-i18n="${project.descKey}">${t(project.descKey)}</p>
         <div class="timeline-item__tech">${renderProjectMeta(project)}</div>
       </div>
-      <span class="timeline-item__arrow">→</span>
-    </a>
-  `).join("");
+      ${linked ? '<span class="timeline-item__arrow" aria-hidden="true">→</span>' : ""}
+    </${element}>
+  `;
+  }).join("");
 
   return `
     <section class="content-section" id="projects">
@@ -177,7 +181,7 @@ function renderProjects() {
           <span class="section-label" data-i18n="projects.label">${t("projects.label")}</span>
           <h2 class="section-title" data-i18n="projects.title">${t("projects.title")}</h2>
         </div>
-        <div class="view-switcher" aria-label="Project view">
+        <div class="view-switcher" aria-label="${t("controls.projectView")}" data-i18n-aria-label="controls.projectView">
           <button class="view-switcher__item is-active" type="button" data-project-view="timeline" data-i18n="projects.viewTimeline" aria-pressed="true">${t("projects.viewTimeline")}</button>
           <button class="view-switcher__item" type="button" data-project-view="grid" data-i18n="projects.viewGrid" aria-pressed="false">${t("projects.viewGrid")}</button>
         </div>

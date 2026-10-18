@@ -1,7 +1,7 @@
 @media (max-width: 1280px) {
   .intro {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(78px, 10vw, 96px);
+    grid-template-columns: minmax(0, 1fr) var(--portrait-size);
     grid-template-areas:
       "heading media"
       "text text"
@@ -45,10 +45,6 @@
     margin-top: 0;
   }
 
-  .gallery-hero p {
-    font-size: clamp(30px, 4.4vw, 54px);
-    line-height: 1.1;
-  }
 
   .gallery-hero p span,
   .studio-hero p span {
@@ -56,13 +52,9 @@
     text-wrap: balance;
   }
 
-  .studio-hero p {
-    font-size: clamp(28px, 3.7vw, 48px);
-    line-height: 1.14;
-  }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .site {
     display: block;
   }
@@ -109,6 +101,8 @@
   }
 
   .mobile-nav .lang-btn {
+    min-width: 36px;
+    min-height: 36px;
     padding: 6px 8px;
     font-size: 11px;
   }
@@ -139,6 +133,10 @@
     flex-direction: column;
     gap: var(--s4);
     padding: var(--s5);
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border-bottom: 1px solid var(--line);
     background: rgba(var(--bg-rgb), 0.94);
     backdrop-filter: blur(22px) saturate(1.08);
@@ -176,14 +174,14 @@
     padding: 128px var(--s5) var(--s6);
   }
 
+  .content-section {
+    scroll-margin-top: 88px;
+  }
+
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
     gap: var(--s4);
-  }
-
-  .view-switcher {
-    display: none;
   }
 
   .projects-timeline::before {
@@ -239,9 +237,6 @@
     min-height: 300px;
   }
 
-  .studio-hero p {
-    font-size: clamp(26px, 3.8vw, 40px);
-  }
 
   .gallery-grid {
     column-count: 2;
@@ -249,10 +244,6 @@
 }
 
 @media (max-width: 620px) {
-  .intro__media {
-    width: clamp(72px, 20vw, 86px);
-  }
-
   .intro__portrait {
     border-radius: 10px;
   }
@@ -281,6 +272,18 @@
       "info";
   }
 
+  .experience-card__logos {
+    min-height: 30px;
+    position: static;
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  .experience-card__period {
+    width: auto;
+    max-width: none;
+  }
+
   .gallery-hero {
     min-height: 280px;
   }
@@ -289,14 +292,7 @@
     min-height: 220px;
   }
 
-  .studio-hero p {
-    font-size: clamp(22px, 7vw, 32px);
-    line-height: 1.16;
-  }
 
-  .gallery-hero p {
-    font-size: clamp(28px, 9vw, 42px);
-  }
 
   .gallery-hero p span {
     white-space: normal;
@@ -310,5 +306,16 @@
 
   .gallery-grid {
     column-count: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-nav {
+    gap: var(--s2);
+    padding-inline: 20px;
+  }
+
+  .content {
+    padding-inline: 20px;
   }
 }
