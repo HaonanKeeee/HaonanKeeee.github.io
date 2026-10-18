@@ -1555,3 +1555,33 @@ Replace the empty-box/L placeholders with distinct Timeline and Grid layout illu
 
 ### Known limitations or TODOs
 - These illustrations implement the requested layout cues; no exact historical miniature artwork was available in the repository.
+
+
+## 2026-10-18 — Restore justified homepage descriptions consistently
+
+### Task goal
+Restore the user's original justified typography in Experience and the other homepage descriptions affected by the same audit change.
+
+### Changed files
+- `assets/css/components.css`, `assets/css/main.css`
+- `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~32 lines including this entry.
+- Modified: ~4 lines.
+- Removed: ~9 redundant alignment/English-hyphenation override lines; no files deleted.
+
+### Added functionality or content
+- Restored one shared pre-audit rule for the introduction, project descriptions, and Experience descriptions: justify, final line left, automatic hyphenation.
+
+### Removed functionality or changed behavior
+- Removed remaining left-alignment and manual-hyphenation overrides affecting homepage description text.
+- Refreshed affected stylesheet references to `20261018-7`.
+
+### Verification steps
+- Confirmed the shared prose rule matches commit `9f951d1` exactly.
+- Browser-checked all 12 homepage description paragraphs in EN/ZH/DE at 1440px, 390px, and 320px: all justified with left final lines and no horizontal overflow.
+- Confirmed both layout miniature icons remain present; inspected Experience visually; whitespace check passed.
+
+### Known limitations or TODOs
+- No known issue in this scoped typography restoration.
