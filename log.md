@@ -1618,3 +1618,37 @@ Restore the original centered institution-logo animation on the thesis image whi
 
 ### Known limitations or TODOs
 - No known issue in this scoped restoration.
+
+## 2026-10-18 — Center project thumbnails and align the view controls
+
+### Task goal
+Vertically center thumbnails in horizontal project rows and keep Timeline/Grid beside the Selected Work heading whenever there is room.
+
+### Changed files
+- `assets/css/components.css`, `assets/css/responsive.css`, `assets/css/main.css`
+- `index.html`, `thesis.html`, `log.md`
+
+### Approximate added / modified / removed lines
+- Added: ~50 lines including this entry.
+- Modified: ~4 stylesheet cache references.
+- Removed: 2 rules forcing the project heading into a vertical layout; no files deleted.
+
+### Added functionality or content
+- Vertically centered images in horizontal Timeline rows and horizontal Grid cards.
+- Title and view controls share a bottom-aligned row, with the controls anchored to the right.
+- Content-based wrapping accommodates long translations and narrow windows.
+
+### Removed functionality or changed behavior
+- Removed the premature heading/control split at 1100px.
+- Kept stacked images at their natural starting position at 620px and below.
+- Preserved image-only logo hover, justified prose, and the layout miniature icons.
+- Refreshed affected stylesheet references to `20261018-9`.
+
+### Verification steps
+- Checked both views at 1440, 1101, 1100, 1000, 768, 621, 620, 390, and 320px in English.
+- Checked both views at 1100, 621, 390, and 320px in Chinese and German: 34 layout/language combinations total, with no horizontal overflow.
+- Measured all seven horizontal thumbnails: vertical center error below 0.004px; wide heading/control bottom and right alignment errors are 0px.
+- Visually inspected the heading and horizontal cards; confirmed justified prose and both SVG icons; `git diff --check` passed.
+
+### Known limitations or TODOs
+- Controls naturally wrap and stay right-aligned when a narrow window cannot fit the translated heading and buttons on one line.

@@ -179,8 +179,6 @@
   }
 
   .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
     gap: var(--s4);
   }
 
@@ -223,6 +221,10 @@
       "image date arrow"
       "image info info";
     padding: var(--s5);
+  }
+
+  .projects-timeline.is-grid .timeline-item__img {
+    align-self: center;
   }
 
   .experience-grid {
@@ -270,6 +272,11 @@
       "image"
       "date"
       "info";
+  }
+
+  .projects-timeline.is-timeline .timeline-item__img,
+  .projects-timeline.is-grid .timeline-item__img {
+    align-self: start;
   }
 
   .experience-card__logos {

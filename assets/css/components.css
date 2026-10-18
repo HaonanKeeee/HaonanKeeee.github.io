@@ -407,6 +407,7 @@ body.is-art-section #experience > .section-label {
 
 .section-heading {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--s6);
@@ -415,6 +416,7 @@ body.is-art-section #experience > .section-label {
 
 .view-switcher {
   display: flex;
+  margin-left: auto;
   align-items: center;
   gap: 14px;
   color: #a3a09b;
@@ -562,6 +564,10 @@ body.is-art-section #experience > .section-label {
 .projects-timeline.is-grid .timeline-item__img {
   grid-area: image;
   width: 100%;
+}
+
+.projects-timeline.is-timeline .timeline-item__img {
+  align-self: center;
 }
 
 .timeline-item__img::before,
