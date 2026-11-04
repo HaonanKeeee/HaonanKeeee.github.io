@@ -496,6 +496,7 @@ body.is-art-section #experience > .section-label {
 .projects-timeline.is-grid .timeline-item {
   display: grid;
   grid-template-columns: 1fr 22px;
+  grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "image image"
     "date arrow"
@@ -701,6 +702,11 @@ body.is-art-section #experience > .section-label {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.project-visual__image--contain {
+  object-fit: contain;
+  background: #fff;
 }
 
 .timeline-item__status {

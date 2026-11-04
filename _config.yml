@@ -1,0 +1,4 @@
+# Keep editorial source notes and local checks out of the published site.
+exclude:
+  - docs/case-studies
+  - scripts

@@ -1,5 +1,5 @@
-import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261018-4";
-import { t } from "./i18n.js?v=20261018-4";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261104-1";
+import { t } from "./i18n.js?v=20261104-1";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -168,7 +168,7 @@ function renderProjects() {
     <${element}${linked ? ` href="${project.href}"${attrsForExternalLink(project)}` : ""} class="timeline-item reveal" aria-labelledby="${getProjectSlug(project)}">
       <span class="timeline-item__date">${project.year}</span>
       <div class="timeline-item__img timeline-item__img--${getProjectSlug(project)}${project.image ? " timeline-item__img--photo" : ""}">
-        ${project.image ? `<img class="project-visual__image" src="${project.image.src}" alt="${t(project.image.altKey)}" data-i18n-alt="${project.image.altKey}" loading="lazy" width="1600" height="1200" />` : ""}
+        ${project.image ? `<img class="project-visual__image${project.image.fit === "contain" ? " project-visual__image--contain" : ""}" src="${project.image.src}" alt="${t(project.image.altKey)}" data-i18n-alt="${project.image.altKey}" loading="lazy" width="${project.image.width}" height="${project.image.height}" />` : ""}
         <span class="project-visual__label" data-i18n="${project.visualKey}">${t(project.visualKey)}</span>
         ${renderLogos(project.logoKeys, "project-logo-overlay")}
       </div>

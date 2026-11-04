@@ -33,8 +33,11 @@ Personal portfolio site for GitHub Pages. The page is intentionally kept as a st
 Most site content lives in `assets/js/data/content.js`.
 
 - Update `projects` to add or reorder selected work.
-- The completed VLA thesis links to `thesis.html`. Update `thesis.images` and the `thesis` translations for its case study; the page is rendered by `assets/js/thesis.js` and styled by `assets/css/thesis.css`.
-- Project cards can include an optional `image` with `src` and `altKey`, and a translated `statusKey`.
+- Six project pages share `assets/js/case-study.js` and `assets/css/case-study.css`: `thesis.html`, `chuma.html`, `hdc.html`, `lidar.html`, `takeover.html`, and `pcb.html`.
+- Their introductions, highlights, sections, figures, and comparison tables live in `assets/js/data/case-*.js`. Every prose field has English, Chinese, and German variants; a language change also updates image/video labels and page metadata.
+- Project cards include an `image` with `src`, `altKey`, `width`, and `height`. Use `fit: "contain"` for figures that must retain their axes or board boundaries. A translated `statusKey` is optional.
+- Curated media is under `pic/projects/`. Keep full report pages, signed documents, participant data, and raw project folders outside web assets.
+- Source provenance and measurement-scope notes are kept locally; only curated web content and media are committed to the public repository.
 - Update `experience` for institutional experience cards.
 - Update `gallery` to add photography entries with image paths, alt text, and optional captions.
 - Update `beyond` and `studio` copy for the Beyond Engineering section.
@@ -51,7 +54,7 @@ The page is rendered from this data by `assets/js/render.js`.
 Run a local static server from the repository root:
 
 ```bash
-python -m http.server 8000 --bind 127.0.0.1
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 Then open:

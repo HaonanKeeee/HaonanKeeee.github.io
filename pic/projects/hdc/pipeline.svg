@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="780" viewBox="0 0 1800 780" role="img" aria-labelledby="title description">
+  <title id="title">HDC workflow and hardware–software exploration</title>
+  <desc id="description">Text and character N-grams are encoded as a hypervector, compared in content-addressable memory and classified. Circuit settings and the classification result inform the accuracy–energy trade-off. This is a project-page summary based on the report.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M 2 2 L 10 6 L 2 10" fill="none" stroke="#406a91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;fill:#243342}
+      .heading{font-size:44px;font-weight:600;letter-spacing:-1.2px}
+      .subheading{font-size:26px;fill:#66717a}
+      .step{font-size:22px;font-weight:600;letter-spacing:2px;fill:#557895}
+      .label{font-size:35px;font-weight:600;letter-spacing:-.7px}
+      .detail{font-size:26px;fill:#61707b}
+      .connection{fill:none;stroke:#406a91;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1800" height="780" rx="28" fill="#f7f5f0"/>
+  <text x="80" y="88" class="heading">Text, circuits and a useful trade-off</text>
+  <text x="80" y="131" class="subheading">A workflow summary based on the project report</text>
+
+  <g fill="#fff" stroke="#d7dedf" stroke-width="2">
+    <rect x="80" y="200" width="350" height="200" rx="20"/>
+    <rect x="510" y="200" width="350" height="200" rx="20"/>
+    <rect x="940" y="200" width="350" height="200" rx="20"/>
+    <rect x="1370" y="200" width="350" height="200" rx="20"/>
+  </g>
+  <g>
+    <text x="108" y="240" class="step">01 · INPUT</text>
+    <text x="108" y="293" class="label">Text / N-grams</text>
+    <text x="108" y="340" class="detail">Groups of characters</text>
+
+    <text x="538" y="240" class="step">02 · ENCODING</text>
+    <text x="538" y="293" class="label">Hypervector</text>
+    <text x="538" y="340" class="detail">Text represented as</text>
+    <text x="538" y="374" class="detail">a long vector</text>
+
+    <text x="968" y="240" class="step">03 · COMPARISON</text>
+    <text x="968" y="293" class="label">CAM comparison</text>
+    <text x="968" y="340" class="detail">Distance represented</text>
+    <text x="968" y="374" class="detail">by discharge timing</text>
+
+    <text x="1398" y="240" class="step">04 · OUTPUT</text>
+    <text x="1398" y="293" class="label">Classification</text>
+    <text x="1398" y="340" class="detail">A predicted class</text>
+  </g>
+  <path d="M 443 300 H 495" class="connection"/>
+  <path d="M 873 300 H 925" class="connection"/>
+  <path d="M 1303 300 H 1355" class="connection"/>
+
+  <rect x="80" y="520" width="800" height="186" rx="20" fill="#eaf0f4" stroke="#c7d6e2" stroke-width="2"/>
+  <text x="112" y="567" class="label">Circuit settings</text>
+  <text x="112" y="614" class="detail">Voltage · transistor strength · capacitance</text>
+  <text x="112" y="654" class="detail">Block size · comparison precision</text>
+
+  <rect x="1040" y="520" width="680" height="186" rx="20" fill="#e2ebf2" stroke="#9bb5ca" stroke-width="2"/>
+  <text x="1072" y="567" class="label">Accuracy–energy trade-off</text>
+  <text x="1072" y="614" class="detail">Compare configurations and choose</text>
+  <text x="1072" y="654" class="detail">a useful operating point</text>
+  <path d="M 897 613 H 1021" class="connection"/>
+  <path d="M 1545 414 V 501" class="connection"/>
+  <text x="80" y="755" class="subheading">Text encoding and circuit behavior explored together</text>
+</svg>

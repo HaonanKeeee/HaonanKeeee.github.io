@@ -1678,3 +1678,50 @@ Let more of the project image show through its hover overlay.
 
 ### Known limitations or TODOs
 - No known issue in this scoped visual adjustment.
+
+## 2026-11-04 — Publish six consistent, source-backed project stories
+
+### Task goal
+Turn the supplied thesis, HDC, robotics, takeover-study, PCB, and Chuma materials into concise, visually consistent detail pages, with working homepage links and thumbnails in all three languages.
+
+### Changed files
+- Detail entry points: `thesis.html`, `hdc.html`, `lidar.html`, `takeover.html`, `pcb.html`, `chuma.html`.
+- Shared presentation: `assets/js/case-study.js`, `assets/css/case-study.css`.
+- Curated content: `assets/js/data/case-thesis.js`, `case-hardware.js`, `case-uva.js`, `case-chuma.js`.
+- Homepage integration: `assets/js/data/content.js`, `render.js`, `i18n.js`, `main.js`, `sidebar.js`, `assets/css/components.css`, `responsive.css`, `main.css`, `index.html`.
+- Source-backed media in `pic/projects/`; editorial provenance notes retained locally and excluded from the public commit.
+- `.gitignore`, `_config.yml`, `README.md`, `log.md`.
+
+### Approximate added / modified / removed lines
+- Added: ~1,650 published text/code lines plus 24 curated image/video assets, about 4.6 MB.
+- Modified: ~65 existing content, cache-reference, and layout lines.
+- Removed: no files or project functionality; replaced the thesis entry point's individual renderer with the shared presentation.
+
+### Added functionality or content
+- Six real homepage project links and six representative thumbnails, including a Chuma cover built around real development screenshots.
+- One reusable detail-page system: introduction, three highlights, original images, concise sections, comparison tables, section navigation, full-size media links, and next-project navigation.
+- Natural English, Chinese, and German copy; 211–239 English body words per project, generally three sections and three to four visuals. The thesis retains four sections and five representative images to cover its model, architecture, timing, and physical prototype.
+- Thesis results distinguish the combined 2.6x throughput / approximately 14% lower median latency versus the original model from the separate FPGA/NPU trade-off. Original TikZ figures illustrate compression and final execution.
+- HDC shows the accuracy/energy trade-off with its HSPICE scope; PCB shows the built board, layout, firmware display, and thermal states; the study describes the actual 14-person design without inventing a winning warning modality.
+- LiDAR includes a compact, silent H.264 demonstration with a poster and native play/pause controls. Chuma is presented as beta development with test-screen captions.
+
+### Removed functionality or changed behavior
+- Replaced five placeholder project destinations with real pages; the material-free sound/light project remains unchanged.
+- Kept the homepage's justified prose, image-only centered logo hover, 65% overlay background alpha, layout icons, and centered horizontal thumbnails.
+- Stabilized Grid image/date rows and preserved diagrams with contain-fit thumbnails.
+- Added narrow-screen table guidance and corrected a German next-project title that pushed its arrow outside a 320px viewport.
+- Added initial hash navigation after asynchronous rendering; headings clear the sticky header.
+- Editorial provenance and local source paths stay outside the public repository. No complete reports, signed theses, source project folders, contact details, or participant identities were added to the media collection. Existing legacy assets and the unused local GIF were retained.
+- Refreshed the affected homepage and shared detail dependencies to `20261104-1`.
+
+### Verification steps
+- Independently cross-checked claims, final report pages, media provenance, translation fields, image dimensions, and table/note semantics.
+- Actually clicked all six homepage cards into their pages and returned through the page navigation.
+- Browser-checked 72 detail combinations: six pages, three languages, and 1440/768/390/320px widths. Fixed the one German footer overflow, then rechecked all six German pages at 320px.
+- Browser-checked 24 homepage combinations: three languages, Timeline/Grid, and 1440/1000/390/320px. All retain six links/thumbnails, both SVG controls, justified descriptions, and no horizontal overflow.
+- Confirmed a direct thesis section link lands below the sticky header; visually inspected rendered figures, result tables, screenshots, and narrow-screen text.
+- Confirmed video decoding, playback/pause, 540x304 dimensions, a 7.733-second duration, no autoplay, and no media error. JavaScript syntax, console error review, and `git diff --check` passed.
+
+### Known limitations or TODOs
+- The sound/light project needs source material before a detail page can be prepared.
+- Technical labels inside original report diagrams remain in their source language; surrounding explanations, captions, and alternative text are localized.

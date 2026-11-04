@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="670" viewBox="0 0 1600 670" fill="none">
+  <title>Chuma: four ways to exchange, one considered matching journey</title>
+  <desc>Fixed price, bidding, free items and wanted posts lead into discovery, requests, publisher selection, contact release and local handover.</desc>
+  <rect width="1600" height="670" fill="#F7FAF9"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="80" y="100" fill="#107D68" font-size="22" font-weight="600" letter-spacing="3">CHUMA · PRODUCT FLOW</text>
+    <text x="80" y="165" fill="#172A27" font-size="44" font-weight="600">Four ways to exchange. One clear journey.</text>
+    <g fill="#FFFFFF" stroke="#BFD9D1" stroke-width="2">
+      <rect x="80" y="215" width="330" height="74" rx="15"/>
+      <rect x="450" y="215" width="330" height="74" rx="15"/>
+      <rect x="820" y="215" width="330" height="74" rx="15"/>
+      <rect x="1190" y="215" width="330" height="74" rx="15"/>
+    </g>
+    <g fill="#107D68" font-size="26" font-weight="500" text-anchor="middle">
+      <text x="245" y="261">Fixed price</text><text x="615" y="261">Bidding</text>
+      <text x="985" y="261">Free items</text><text x="1355" y="261">Wanted</text>
+    </g>
+    <path d="M245 289V328H1355V289M615 289V328M985 289V328M800 328V365" stroke="#99BCB1" stroke-width="2"/>
+    <path d="M350 441H387M642 441H679M934 441H971M1226 441H1263" stroke="#8CA9A0" stroke-width="3"/>
+    <g fill="#8CA9A0"><path d="m379 434 10 7-10 7z"/><path d="m671 434 10 7-10 7z"/><path d="m963 434 10 7-10 7z"/><path d="m1255 434 10 7-10 7z"/></g>
+    <g stroke-width="2">
+      <rect x="80" y="365" width="270" height="150" rx="18" fill="#FFFFFF" stroke="#D9E4DF"/>
+      <rect x="390" y="365" width="252" height="150" rx="18" fill="#FFFFFF" stroke="#D9E4DF"/>
+      <rect x="682" y="365" width="252" height="150" rx="18" fill="#FFFFFF" stroke="#D9E4DF"/>
+      <rect x="974" y="365" width="252" height="150" rx="18" fill="#E1F2EC" stroke="#15957D"/>
+      <rect x="1266" y="365" width="254" height="150" rx="18" fill="#FFFFFF" stroke="#D9E4DF"/>
+    </g>
+    <g font-size="28" font-weight="600" text-anchor="middle" fill="#203B34">
+      <text x="215" y="425">Discover</text><text x="516" y="425">Request</text><text x="808" y="425">Choose</text>
+      <text x="1100" y="425">Connect</text><text x="1393" y="425">Handover</text>
+    </g>
+    <g font-size="19" text-anchor="middle" fill="#62756E">
+      <text x="215" y="468">Local items &amp; filters</text><text x="516" y="468">Express interest</text><text x="808" y="468">Publisher decides</text>
+      <text x="1100" y="468">Release contact</text><text x="1393" y="468">Arrange offline</text>
+    </g>
+    <rect x="80" y="555" width="1440" height="58" rx="12" fill="#E9EFEC"/>
+    <text x="800" y="592" fill="#4D6D60" font-size="22" text-anchor="middle">Contact details stay gated until a match is selected.</text>
+  </g>
+</svg>

@@ -217,6 +217,7 @@
 
   .projects-timeline.is-grid .timeline-item {
     grid-template-columns: clamp(150px, 32vw, 210px) minmax(0, 1fr) 22px;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
       "image date arrow"
       "image info info";
@@ -268,6 +269,7 @@
 
   .projects-timeline.is-grid .timeline-item {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
       "image"
       "date"

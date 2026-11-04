@@ -1,4 +1,4 @@
-import { translations } from "./data/content.js?v=20261018-4";
+import { translations } from "./data/content.js?v=20261104-1";
 
 function normalizeLanguage(language) {
   const code = String(language || "en").toLowerCase().split("-")[0];
