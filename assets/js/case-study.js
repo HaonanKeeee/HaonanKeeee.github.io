@@ -1,6 +1,6 @@
-import { site } from "./data/content.js?v=20261104-1";
+import { site } from "./data/content.js?v=20261104-2";
 
-const version = "20261104-1";
+const version = "20261104-2";
 const loaders = {
   thesis: () => import(`./data/case-thesis.js?v=${version}`).then((module) => module.thesisCase),
   hdc: () => import(`./data/case-hardware.js?v=${version}`).then((module) => module.hdcCase),

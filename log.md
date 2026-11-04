@@ -1725,3 +1725,35 @@ Turn the supplied thesis, HDC, robotics, takeover-study, PCB, and Chuma material
 ### Known limitations or TODOs
 - The sound/light project needs source material before a detail page can be prepared.
 - Technical labels inside original report diagrams remain in their source language; surrounding explanations, captions, and alternative text are localized.
+
+## 2026-11-04 — Use PCB layout and thermal images instead of physical photos
+
+### Task goal
+Replace the PCB project's physical-board imagery with the cleaner layout and thermal visuals requested by the user.
+
+### Changed files
+- `assets/js/data/case-hardware.js`, `assets/js/data/content.js`.
+- Cache references in `assets/js/case-study.js`, `render.js`, `i18n.js`, `main.js`, `sidebar.js`, and the seven page entry points.
+- `log.md`.
+
+### Approximate added / modified / removed lines
+- Added: ~29 log lines.
+- Modified: ~23 content/reference lines.
+- Removed: 32 unused photo-metadata lines; no asset files deleted.
+
+### Added functionality or content
+- PCB homepage thumbnail and detail-page hero now use the original PCB layout, preserving the complete image with contain-fit.
+- English, Chinese, and German thumbnail alternatives now describe the layout.
+
+### Removed functionality or changed behavior
+- Removed the assembled-board and OLED-display photos from the PCB presentation; retained the thermal states and all three explanatory sections.
+- Avoided repeating the layout in the design section. Existing image files remain in the repository.
+- Refreshed the affected JavaScript entry points to `20261104-2`.
+
+### Verification steps
+- Browser-checked EN/ZH/DE at 1280px and 390px: exactly the layout and thermal figures appear, with localized alternatives and no horizontal overflow.
+- Verified the homepage PCB link, new thumbnail, and contain-fit.
+- Confirmed the HDC export is byte-for-byte equivalent as serialized data; JavaScript syntax and `git diff --check` passed.
+
+### Known limitations or TODOs
+- No known issue in this focused image substitution.

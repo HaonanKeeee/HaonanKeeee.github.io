@@ -129,22 +129,6 @@ export const hdcCase = {
   ],
 };
 
-const pcbBoard = {
-  src: "pic/projects/pcb/reference-board.webp",
-  width: 2400,
-  height: 1301,
-  alt: L(
-    "Assembled reference PCB with an OLED display, power electronics, selectable resistive loads and an external coil",
-    "已组装的参考电路板，包括 OLED、电力电子电路、可选电阻负载及外接线圈",
-    "Bestückte Referenzplatine mit OLED-Anzeige, Leistungselektronik, schaltbaren Widerstandslasten und externer Spule"
-  ),
-  caption: L(
-    "The assembled reference board used for bench-powered electrical and thermal validation.",
-    "用于台式电源供电下电气与热像验证的实物参考板。",
-    "Die bestückte Referenzplatine für elektrische und thermische Tests mit Labornetzteil."
-  ),
-};
-
 const pcbLayout = {
   src: "pic/projects/pcb/pcb-layout.webp",
   width: 2400,
@@ -158,22 +142,6 @@ const pcbLayout = {
     "The PCB layout integrates load control, measurement circuits and the microcontroller.",
     "PCB 布局将负载控制、测量电路与微控制器集成在同一块板上。",
     "Das Platinenlayout integriert Laststeuerung, Messschaltungen und Mikrocontroller."
-  ),
-};
-
-const pcbDisplay = {
-  src: "pic/projects/pcb/firmware-display.webp",
-  width: 2000,
-  height: 816,
-  alt: L(
-    "Two OLED display states showing measured electrical quantities and commanded PWM duty cycles",
-    "OLED 的两种显示状态：测量得到的电气量及设定的 PWM 占空比",
-    "Zwei OLED-Anzeigen mit gemessenen elektrischen Größen und eingestellten PWM-Tastverhältnissen"
-  ),
-  caption: L(
-    "Live measurements and PWM settings displayed directly on the board.",
-    "在电路板上直接查看实时测量值与 PWM 设置。",
-    "Messwerte und PWM-Einstellungen werden direkt auf der Platine angezeigt."
   ),
 };
 
@@ -206,7 +174,7 @@ export const pcbCase = {
     "热像能看出电路哪里发热，但要进一步估算损耗，还需要合适的参考对象。在本科毕业论文中，我设计、组装并编程实现了一块能切换不同发热场景的 PCB，从最初的原理图一路做到固件和实物测试，完整走过了硬件落地的过程。",
     "Wärmebilder zeigen, wo eine Schaltung warm wird. Um daraus Verlustleistung abzuschätzen, braucht es eine passende Referenz. Für meine Bachelorarbeit entwarf, bestückte und programmierte ich eine Platine mit wählbaren Erwärmungsszenarien. Dabei durchlief ich den gesamten Prozess, vom ersten Schaltplan über die Firmware bis zu Tests an der fertigen Platine."
   ),
-  hero: pcbBoard,
+  hero: pcbLayout,
   highlights: [
     {
       value: "8",
@@ -233,7 +201,7 @@ export const pcbCase = {
         "电路板把可独立控制的电阻和外接线圈放进同一套实验装置。MOSFET、H 桥与开关逻辑产生不同的发热模式，电压、电流和温度测量则帮助观察实际发生了什么。我还把模拟与数字供电分开，为测量电路保留独立的供电路径。",
         "Die Platine vereint unabhängig steuerbare Widerstände und eine externe Spule in einem Aufbau. MOSFETs, H-Brücken und Schaltlogik erzeugen unterschiedliche Wärmemuster. Spannungs-, Strom- und Temperaturmessungen helfen dabei, das Verhalten nachzuvollziehen. Analoge und digitale Versorgungen habe ich getrennt, damit die Messschaltungen einen eigenen Versorgungspfad haben."
       ),
-      figures: [pcbLayout],
+      figures: [],
     },
     {
       id: "firmware",
@@ -243,7 +211,7 @@ export const pcbCase = {
         "ATmega328PB 上的 C 固件把电脑发来的指令转换为 PWM 设置和 SPI 输出：先选器件，再给参数。固件也会把 ADC 读数换算成物理量。OLED 可以在测量值和占空比之间切换，方便边调整实验、边直接查看反馈。",
         "C-Firmware auf dem ATmega328PB setzt PC-Befehle in PWM-Einstellungen und SPI-Ausgaben um: Bauteil auswählen, Wert übertragen. Außerdem rechnet sie ADC-Werte in physikalische Größen um. Das OLED wechselt zwischen Messwerten und Tastverhältnissen. So lässt sich ein Versuch einstellen und die Reaktion direkt beobachten."
       ),
-      figures: [pcbDisplay],
+      figures: [],
     },
     {
       id: "validation",

@@ -1,5 +1,5 @@
-import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261104-1";
-import { t } from "./i18n.js?v=20261104-1";
+import { experience, gallery, logoAssets, projects, site } from "./data/content.js?v=20261104-2";
+import { t } from "./i18n.js?v=20261104-2";
 
 function attrsForExternalLink(item) {
   return item.external ? ' target="_blank" rel="noopener"' : "";

@@ -154,7 +154,7 @@ export const projects = [
   {
     year: "2024",
     href: "pcb.html",
-    image: { src: "pic/projects/pcb/reference-board.webp", altKey: "project6.alt", width: 2400, height: 1301, fit: "contain" },
+    image: { src: "pic/projects/pcb/pcb-layout.webp", altKey: "project6.alt", width: 2400, height: 1527, fit: "contain" },
     visualKey: "project6.visual",
     titleKey: "project6.title",
     institutionKey: "institutions.tum",
@@ -266,7 +266,7 @@ export const translations = {
     project3: { visual: "TurtleBot4 · LiDAR · ROS 2", title: "LiDAR-Based Robot Following", desc: "A TurtleBot4 that notices an approaching target, follows it, and returns home. LiDAR tracking, camera gestures, and a state controller connect perception to physical behaviour in a working indoor robot.", alt: "TurtleBot4 used for the following and interaction demonstrations" },
     project4: { visual: "Human Factors · MetaDrive", title: "Multimodal Takeover Requests", desc: "How should a car ask a distracted driver to take back control? A simulator study with 14 participants compares five warning modalities across two distraction contexts, combining driving behaviour with subjective feedback.", alt: "MetaDrive highway scene with a visual takeover warning" },
     project5: { visual: "Spatial Audio · Light", title: "Immersive Sound & Light Composition", desc: "An immersive media project exploring spatial audio and interactive lighting with Meyer Constellation 20.1, Spacemap Go, and QLab, resulting in an original exhibited composition." },
-    project6: { visual: "PCB · Firmware · Thermography", title: "Thermography Reference PCB", desc: "A custom board that turns software commands into controlled heating patterns. Circuit design, embedded firmware, and thermal imaging come together in a physical reference platform for studying electrical power loss.", alt: "Assembled reference PCB with sensing circuits and controllable loads" },
+    project6: { visual: "PCB · Firmware · Thermography", title: "Thermography Reference PCB", desc: "A custom board that turns software commands into controlled heating patterns. Circuit design, embedded firmware, and thermal imaging come together in a physical reference platform for studying electrical power loss.", alt: "PCB layout with control, sensing and load circuits" },
     project7: { visual: "WeChat · Product · Beta", title: "Chuma · Student Marketplace", desc: "A WeChat mini program for passing useful things between students. Four matching modes, local discovery, and contact sharing after selection bring product design and cloud engineering together in a working beta.", alt: "Chuma marketplace preview with real development interface screenshots" },
     experience: {
       label: "Experience",
@@ -378,7 +378,7 @@ export const translations = {
     project3: { visual: "TurtleBot4 · LiDAR · ROS 2", title: "基于 LiDAR 的机器人跟随", desc: "让 TurtleBot4 发现靠近的目标、保持跟随，再返回起点。LiDAR 跟踪、相机手势与状态控制器协同工作，把感知与决策变成室内机器人的实际动作。", alt: "用于跟随与交互演示的 TurtleBot4 实物平台" },
     project4: { visual: "人因工程 · MetaDrive", title: "多模态驾驶接管研究", desc: "当驾驶员分心时，汽车该如何提醒人重新接管？通过 14 人的模拟驾驶实验，在两种分心情境下比较五类提醒，结合驾驶行为与主观反馈理解不同设计的取舍。", alt: "带有视觉接管警告的 MetaDrive 高速公路场景" },
     project5: { visual: "空间音频 · 灯光", title: "沉浸式声音与灯光作品", desc: "一个沉浸式媒体项目，使用 Meyer Constellation 20.1、Spacemap Go 和 QLab 探索空间音频与互动灯光，并完成原创展演作品。" },
-    project6: { visual: "PCB · 固件 · 热成像", title: "热像分析参考电路板", desc: "把软件指令变成可控的发热状态。从电路设计、PCB 组装到嵌入式固件与热像验证，搭建可用于研究电气损耗的实体参考平台。", alt: "带有测量电路和可控负载的实物参考电路板" },
+    project6: { visual: "PCB · 固件 · 热成像", title: "热像分析参考电路板", desc: "把软件指令变成可控的发热状态。从电路设计、PCB 组装到嵌入式固件与热像验证，搭建可用于研究电气损耗的实体参考平台。", alt: "包含控制、测量与负载电路的 PCB 布局图" },
     project7: { visual: "微信小程序 · 产品 · Beta", title: "出吗 · 留学生闲置平台", desc: "让仍然好用的物品找到下一个需要它的人。一口价、竞价、免费送与求购，配合同城搜索和选择后开放联系方式，将产品设计与云端开发整合成完整的 Beta 体验。", alt: "出吗闲置平台缩略图，包含真实开发界面截图" },
     experience: {
       label: "经历",
@@ -487,7 +487,7 @@ export const translations = {
     project3: { visual: "TurtleBot4 · LiDAR · ROS 2", title: "LiDAR-gestütztes Folgen mit TurtleBot4", desc: "Ein TurtleBot4 erkennt ein näher kommendes Ziel, folgt ihm und kehrt zum Ausgangspunkt zurück. LiDAR-Tracking, Kameragesten und Zustandssteuerung verbinden Wahrnehmung mit dem Verhalten eines realen Indoor-Roboters.", alt: "TurtleBot4 für die Vorführungen zum Folgen und zur Interaktion" },
     project4: { visual: "Human Factors · MetaDrive", title: "Multimodale Übernahmeaufforderungen", desc: "Wie fordert ein Auto abgelenkte Menschen zur Übernahme auf? Eine Simulatorstudie mit 14 Personen vergleicht fünf Warnformen in zwei Ablenkungskontexten und verbindet Fahrverhalten mit subjektivem Feedback.", alt: "MetaDrive-Autobahnszene mit visueller Übernahmeaufforderung" },
     project5: { visual: "Spatial Audio · Licht", title: "Immersive Klang- und Lichtkomposition", desc: "Ein immersives Medienprojekt zu räumlichem Audio und interaktivem Lichtdesign mit Meyer Constellation 20.1, Spacemap Go und QLab, aus dem eine ausgestellte Originalkomposition entstanden ist." },
-    project6: { visual: "PCB · Firmware · Thermografie", title: "Thermografie-Referenzplatine", desc: "Eine eigene Platine setzt Softwarebefehle in kontrollierte Erwärmung um. Schaltungsentwurf, eingebettete Firmware und Wärmebilder bilden gemeinsam eine physische Referenzplattform zur Untersuchung elektrischer Verlustleistung.", alt: "Bestückte Referenzplatine mit Messschaltungen und steuerbaren Lasten" },
+    project6: { visual: "PCB · Firmware · Thermografie", title: "Thermografie-Referenzplatine", desc: "Eine eigene Platine setzt Softwarebefehle in kontrollierte Erwärmung um. Schaltungsentwurf, eingebettete Firmware und Wärmebilder bilden gemeinsam eine physische Referenzplattform zur Untersuchung elektrischer Verlustleistung.", alt: "Platinenlayout mit Steuerung, Messschaltungen und Lasten" },
     project7: { visual: "WeChat · Produkt · Beta", title: "Chuma · Marktplatz für Studierende", desc: "Ein WeChat-Mini-Programm, über das Studierende gebrauchte Dinge finden und weitergeben können. Vier Vermittlungsarten, lokale Suche und Kontaktfreigabe nach der Auswahl verbinden Produktgestaltung und Cloud-Entwicklung zu einer durchdachten Beta-Anwendung.", alt: "Chuma-Marktplatz mit echten Ansichten des Entwicklungsstands" },
     experience: {
       label: "Erfahrung",
