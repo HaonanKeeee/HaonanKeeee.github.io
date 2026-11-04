@@ -16,16 +16,14 @@ export const lidarCase = {
   "year": "2025",
   "affiliation": "University of Virginia",
   "tags": [
-    "Robotics",
-    "ROS 2",
-    "TurtleBot4",
     "LiDAR",
-    "Finite-State Control"
+    "ROS 2",
+    "TurtleBot4"
   ],
   "intro": {
-    "en": "This TurtleBot4 project explores a simple idea: a robot that notices someone approaching, follows along, and returns to its starting point. LiDAR, a camera, and wheel odometry work together in a ROS 2 controller, bringing sensing and everyday gestures into one physical prototype.",
-    "zh": "这个 TurtleBot4 项目从一个简单想法出发：让机器人注意到有人靠近，跟着对方走，再回到出发的位置。LiDAR、相机与轮式里程计通过 ROS 2 控制器协同工作，把环境感知和日常手势连接到同一个实物原型中。",
-    "de": "Die Idee hinter diesem TurtleBot4-Projekt ist einfach: Der Roboter bemerkt, wenn jemand näher kommt, folgt der Person und kehrt zum Ausgangspunkt zurück. LiDAR, Kamera und Radodometrie arbeiten in einer ROS-2-Steuerung zusammen und verbinden Umgebungswahrnehmung und alltägliche Gesten in einem realen Prototyp."
+    "en": "This indoor TurtleBot4 prototype notices someone approaching, follows along, and returns to its starting point, bringing hands-free interaction onto a real mobile robot.",
+    "zh": "这个室内 TurtleBot4 原型能注意到有人靠近，跟着对方走，再回到起点，让无需操作设备的交互成为真实机器人的一部分。",
+    "de": "Dieser TurtleBot4-Prototyp für Innenräume bemerkt, wenn jemand näher kommt, folgt der Person und kehrt zum Ausgangspunkt zurück. So wird freihändige Interaktion auf einem echten mobilen Roboter erlebbar."
   },
   "hero": {
     "src": "pic/projects/lidar/robot.webp",
@@ -37,49 +35,46 @@ export const lidarCase = {
       "de": "TurtleBot4-Prototyp neben einer Person mit sichtbaren Sensoren und mobiler Basis"
     },
     "caption": {
-      "en": "The physical TurtleBot4 platform used for indoor following and interaction demonstrations.",
-      "zh": "用于室内跟随与交互演示的 TurtleBot4 实物平台。",
-      "de": "Die reale TurtleBot4-Plattform für die Vorführungen zum Folgen und zur Interaktion in Innenräumen."
+      "en": "The TurtleBot4 indoor prototype.",
+      "zh": "室内 TurtleBot4 实物原型。",
+      "de": "Der TurtleBot4-Prototyp für Innenräume."
     }
   },
   "highlights": [
     {
-      "value": "ROS 2",
-      "label": {
-        "en": "Sensing to motion",
-        "zh": "从感知到运动",
-        "de": "Von Sensoren zu Bewegung"
+      "value": {
+        "en": "Follow",
+        "zh": "跟随",
+        "de": "Folgen"
       },
-      "detail": {
-        "en": "Sensors, state control, and safety checks in one node.",
-        "zh": "在一个节点中整合传感器、状态控制与安全检查。",
-        "de": "Sensoren, Zustandssteuerung und Sicherheitsprüfungen in einem Knoten."
+      "label": {
+        "en": "Hands-free movement",
+        "zh": "无需操作设备",
+        "de": "Freihändig unterwegs"
       }
     },
     {
-      "value": "6",
-      "label": {
-        "en": "Behavior states",
-        "zh": "行为状态",
-        "de": "Verhaltenszustände"
+      "value": {
+        "en": "Return",
+        "zh": "返航",
+        "de": "Zurück"
       },
-      "detail": {
-        "en": "From idle and approach to following, retreat, and homing.",
-        "zh": "涵盖等待、接近、跟随、退避与返航。",
-        "de": "Vom Warten und Annähern bis zum Folgen, Ausweichen und Zurückkehren."
+      "label": {
+        "en": "Back to the start",
+        "zh": "回到起点",
+        "de": "Zum Ausgangspunkt"
       }
     },
     {
-      "value": "3",
-      "label": {
-        "en": "Sensing sources",
-        "zh": "感知来源",
-        "de": "Sensorquellen"
+      "value": {
+        "en": "Gestures",
+        "zh": "手势",
+        "de": "Gesten"
       },
-      "detail": {
-        "en": "LiDAR, RGB camera, and wheel odometry.",
-        "zh": "LiDAR、RGB 相机与轮式里程计。",
-        "de": "LiDAR, RGB-Kamera und Radodometrie."
+      "label": {
+        "en": "Wave or thumbs-up",
+        "zh": "挥手与竖拇指",
+        "de": "Winken oder Daumen hoch"
       }
     }
   ],
@@ -87,14 +82,14 @@ export const lidarCase = {
     {
       "id": "perception-control",
       "title": {
-        "en": "How the robot decides what to do",
-        "zh": "机器人如何决定下一步",
-        "de": "Wie der Roboter seine nächste Aktion auswählt"
+        "en": "From seeing to moving",
+        "zh": "从观察到行动",
+        "de": "Vom Wahrnehmen zum Handeln"
       },
       "text": {
-        "en": "LiDAR scans help detect an approaching target and estimate its direction and distance. A state controller then decides when to wait, approach, follow, move away, or return home. Before each movement reaches the base, a separate safety layer checks nearby obstacles and adjusts the command. Camera gestures and odometry contribute different pieces of the same loop.",
-        "zh": "LiDAR 扫描用于检测靠近的目标，并估计其方向和距离。状态控制器再决定何时等待、接近、跟随、退避或返航。运动指令发送到底盘之前，独立的安全层会检查周围障碍物并作出调整。相机提供手势指令，里程计提供位姿信息，各自参与同一个控制闭环。",
-        "de": "LiDAR-Scans erkennen ein näher kommendes Ziel und schätzen dessen Richtung und Abstand. Eine Zustandssteuerung entscheidet, wann der Roboter wartet, sich nähert, folgt, Abstand schafft oder zurückkehrt. Bevor ein Bewegungsbefehl die Basis erreicht, prüft eine separate Sicherheitsschicht nahe Hindernisse und passt den Befehl an. Kameragesten und Odometrie liefern weitere Informationen für denselben Regelkreis."
+        "en": "Perception connects nearby movement to following and return-to-home behavior, with obstacle checks helping shape the robot's next action.",
+        "zh": "机器人把对周围运动的感知连接到跟随和返航，并通过障碍检查调整下一步行动。",
+        "de": "Die Wahrnehmung verbindet Bewegungen in der Umgebung mit Folgen und Rückkehr; Hindernisprüfungen helfen, die nächste Aktion anzupassen."
       },
       "figures": [
         {
@@ -107,9 +102,9 @@ export const lidarCase = {
             "de": "Projektübersicht: LiDAR, RGB-Kamera und Odometrie speisen Zustandssteuerung, Sicherheitsprüfungen und Roboterbasis mit Sensorrückkopplung"
           },
           "caption": {
-            "en": "Project overview, redrawn from the final report and code.",
-            "zh": "项目总览，依据最终报告与代码重新绘制。",
-            "de": "Projektübersicht, auf Grundlage des Abschlussberichts und Codes neu gezeichnet."
+            "en": "Project overview, redrawn from report and code.",
+            "zh": "依据报告与代码重绘的项目总览。",
+            "de": "Projektübersicht, nach Bericht und Code neu gezeichnet."
           }
         }
       ]
@@ -117,14 +112,14 @@ export const lidarCase = {
     {
       "id": "physical-following",
       "title": {
-        "en": "Following in the hallway",
-        "zh": "走廊里的跟随演示",
-        "de": "Zielverfolgung im Flur"
+        "en": "Following in practice",
+        "zh": "实际跟随体验",
+        "de": "Zielverfolgung in der Praxis"
       },
       "text": {
-        "en": "The hallway demo shows the robot following a walking target. It turns toward the target before moving forward, keeps a short following distance, and stops when the person pauses nearby. The video captures this LiDAR-driven behavior. The camera reads hand gestures as a separate command input, while wheel odometry supports the return trip.",
-        "zh": "走廊演示展示了机器人跟随行走目标的过程。它先转向目标，再向前移动，保持短距离跟随，并在目标于附近停下时停止。视频呈现的是 LiDAR 驱动的行为；相机读取手势，构成独立的指令输入，轮式里程计则支持返程。",
-        "de": "Die Flurvorführung zeigt, wie der Roboter einem gehenden Ziel folgt. Er richtet sich vor der Vorwärtsfahrt auf das Ziel aus, hält einen kurzen Abstand und stoppt, wenn die Person in der Nähe stehen bleibt. Das Video zeigt dieses LiDAR-gesteuerte Verhalten. Die Kamera liest Handgesten als eigenen Befehlskanal; Radodometrie unterstützt die Rückfahrt."
+        "en": "The hallway clip shows automatic following, while wave and thumbs-up commands offer a simple way to call or stop the robot.",
+        "zh": "走廊视频展示自动跟随；挥手与竖拇指则提供了呼叫或停止机器人的简单方式。",
+        "de": "Der Flurclip zeigt das automatische Folgen; Winken und Daumen hoch bieten einfache Möglichkeiten, den Roboter heranzurufen oder zu stoppen."
       },
       "figures": [
         {
@@ -137,27 +132,16 @@ export const lidarCase = {
             "de": "Video, in dem der TurtleBot4 einem gehenden Ziel im Flur automatisch folgt"
           },
           "caption": {
-            "en": "Automatic following during the hallway demo, driven by LiDAR approach detection and target tracking.",
-            "zh": "由 LiDAR 接近检测与目标跟踪驱动的走廊自动跟随演示。",
-            "de": "Automatisches Folgen im Flur, gesteuert durch LiDAR-basierte Annäherungserkennung und Zielverfolgung."
+            "en": "Automatic following in the hallway.",
+            "zh": "走廊中的自动跟随演示。",
+            "de": "Automatisches Folgen im Flur."
           },
           "poster": "pic/projects/lidar/follow-poster.webp"
         }
+      ],
+      "aliases": [
+        "interaction-limits"
       ]
-    },
-    {
-      "id": "interaction-limits",
-      "title": {
-        "en": "Simple ways to interact",
-        "zh": "用简单手势交流",
-        "de": "Mit einfachen Gesten interagieren"
-      },
-      "text": {
-        "en": "A wave from farther away asks the robot to come over. A nearby wave asks it to make room and head home, while thumbs-up brings it to a stop. These commands let us explore both hands-free following and explicit interaction on the same platform. This remains a qualitative indoor prototype: fast targets, clutter, and odometry drift can still interrupt the behavior.",
-        "zh": "远处挥手可以呼叫机器人；近处挥手让它退开并返回，竖起拇指则让它停止。同一平台因此既能尝试无需操作设备的自动跟随，也能接受明确的手势指令。这仍是一个定性的室内原型：快速移动的目标、杂乱环境和里程计漂移都可能打断行为。",
-        "de": "Winken aus größerer Entfernung ruft den Roboter heran. Winken aus der Nähe fordert ihn auf, Platz zu machen und zurückzukehren; ein erhobener Daumen stoppt ihn. So lassen sich automatisches Folgen und ausdrückliche Gestenbefehle auf derselben Plattform erproben. Es bleibt ein qualitativer Indoor-Prototyp: Schnelle Ziele, unübersichtliche Umgebungen und Odometriefehler können das Verhalten unterbrechen."
-      },
-      "figures": []
     }
   ]
 };
@@ -179,14 +163,13 @@ export const takeoverCase = {
   "affiliation": "University of Virginia",
   "tags": [
     "Human Factors",
-    "MetaDrive",
-    "Multimodal Interaction",
-    "User Study"
+    "User Study",
+    "Multimodal Alerts"
   ],
   "intro": {
-    "en": "How should a car ask a distracted driver to take back control? This MetaDrive study explored visual, sound, vibration, and combined warnings with 14 volunteers. Each person tried five alert types while either chatting or using a phone, so we could compare both their response and how the alerts felt.",
-    "zh": "驾驶员分心时，汽车该怎样提醒他们重新接管？这项 MetaDrive 研究邀请了 14 名志愿者，体验视觉、声音、振动及其组合提醒。每人在交谈或使用手机的情境下试用五种提醒方式，让我们能同时观察接管反应和提醒带来的感受。",
-    "de": "Wie sollte ein Auto eine abgelenkte Person auffordern, wieder die Kontrolle zu übernehmen? Diese MetaDrive-Studie erprobte visuelle Hinweise, Töne, Vibrationen und kombinierte Warnungen mit 14 Freiwilligen. Jede Person testete fünf Warnformen beim Gespräch oder bei der Handynutzung. So konnten wir sowohl die Reaktion als auch das Erleben der Warnung vergleichen."
+    "en": "Fourteen participants tried five takeover alerts in two distraction contexts, conversation and smartphone use, to explore how a car can help drivers refocus.",
+    "zh": "14 名参与者在交谈和使用手机两种分心情境下体验五种接管提醒，探索汽车如何帮助驾驶员重新集中注意力。",
+    "de": "Vierzehn Personen erprobten fünf Übernahmeaufforderungen bei zwei Ablenkungen: Gespräch und Handynutzung. Untersucht wurde, wie ein Auto die Aufmerksamkeit wieder aufs Fahren lenken kann."
   },
   "hero": {
     "src": "pic/projects/takeover/scenario.webp",
@@ -198,9 +181,9 @@ export const takeoverCase = {
       "de": "MetaDrive-Autobahnszene mit Verkehr und einer eingeblendeten Übernahmeaufforderung"
     },
     "caption": {
-      "en": "The customized MetaDrive scenario presents a visual takeover warning when the driver must resume control.",
-      "zh": "定制 MetaDrive 场景在驾驶员需要重新接管时显示视觉警告。",
-      "de": "Das angepasste MetaDrive-Szenario zeigt eine visuelle Warnung, sobald die fahrende Person die Kontrolle übernehmen soll."
+      "en": "Takeover warning in the simulator.",
+      "zh": "模拟器中的接管提醒。",
+      "de": "Übernahmeaufforderung im Simulator."
     }
   },
   "highlights": [
@@ -210,52 +193,37 @@ export const takeoverCase = {
         "en": "Participants",
         "zh": "参与者",
         "de": "Teilnehmende"
-      },
-      "detail": {
-        "en": "Each experienced all five alert modalities.",
-        "zh": "每人均体验五种提醒方式。",
-        "de": "Jede Person erprobte alle fünf Warnformen."
       }
     },
     {
-      "value": "5 × 2",
+      "value": "5",
       "label": {
-        "en": "Alerts and distractions",
-        "zh": "提醒与分心情境",
-        "de": "Warnformen und Ablenkungen"
-      },
-      "detail": {
-        "en": "Every alert type, one distraction context per person.",
-        "zh": "每人体验全部提醒方式，并保持一种分心情境。",
-        "de": "Alle Warnformen, ein Ablenkungskontext pro Person."
+        "en": "Alert types",
+        "zh": "提醒方式",
+        "de": "Warnformen"
       }
     },
     {
-      "value": "MetaDrive",
+      "value": "2",
       "label": {
-        "en": "Driving simulator",
-        "zh": "驾驶模拟器",
-        "de": "Fahrsimulator"
-      },
-      "detail": {
-        "en": "Fanatec wheel, pedals, and a fixed-base cockpit.",
-        "zh": "Fanatec 方向盘、踏板与固定式座舱。",
-        "de": "Fanatec-Lenkrad, Pedale und stationäres Cockpit."
+        "en": "Distraction contexts",
+        "zh": "分心情境",
+        "de": "Ablenkungskontexte"
       }
     }
   ],
   "sections": [
     {
-      "id": "alert-design",
+      "id": "study-protocol",
       "title": {
-        "en": "One scenario, five kinds of warning",
-        "zh": "一个场景，五种提醒",
-        "de": "Ein Szenario, fünf Warnformen"
+        "en": "Study at a glance",
+        "zh": "实验一览",
+        "de": "Die Studie auf einen Blick"
       },
       "text": {
-        "en": "A lead car changed lanes to reveal a stationary obstacle on a highway. The simulator then issued a visual, auditory, haptic, audio-visual, or audio-visual-haptic alert. A large screen message, a disengagement chime, and force-feedback steering-wheel vibration provided the three channels. Combined alerts arrived together, keeping the driving situation consistent while we changed how the request reached the driver.",
-        "zh": "实验中的前车变道后，会露出高速公路上的静止障碍物。模拟器随后发出视觉、听觉、触觉、视听组合或视听触组合提醒。三个通道分别通过屏幕大字提示、退出自动驾驶提示音和方向盘力反馈振动实现。组合提醒同步到达，在保持驾驶场景一致的同时，改变接管请求传达给驾驶员的方式。",
-        "de": "Ein vorausfahrendes Auto wechselte die Spur und gab ein stehendes Hindernis auf der Autobahn frei. Danach erschien eine visuelle, akustische, haptische, audiovisuelle oder dreifach kombinierte Warnung. Eine große Bildschirmmeldung, ein Hinweiston und die Vibration des Force-Feedback-Lenkrads bildeten die drei Kanäle. Kombinierte Signale kamen gleichzeitig an. Das Fahrszenario blieb gleich, während sich die Art der Übernahmeaufforderung änderte."
+        "en": "Each person experienced every alert type in one distraction context, combining a repeatable driving scenario with reaction-time, collision, and experience measures.",
+        "zh": "每人在一种分心情境下体验全部提醒方式，以同一驾驶场景记录反应、碰撞与主观感受。",
+        "de": "Jede Person erprobte alle Warnformen bei einer Ablenkungsart; dasselbe Fahrszenario verband Reaktionszeit, Kollisionen und subjektives Erleben."
       },
       "figures": [
         {
@@ -268,26 +236,11 @@ export const takeoverCase = {
             "de": "Diagramm zu automatisierter Fahrt, Übernahmeaufforderung, Fahrereingriff und verbleibendem Zeitbudget"
           },
           "caption": {
-            "en": "The study separates warning onset, the first driver intervention, and the remaining time before the system limit.",
-            "zh": "实验区分警告出现、首次驾驶干预以及到达系统限制前的剩余时间。",
-            "de": "Die Studie unterscheidet Warnbeginn, ersten Fahrereingriff und verbleibende Zeit bis zur Systemgrenze."
+            "en": "From warning to driver response.",
+            "zh": "从提醒出现到驾驶员响应。",
+            "de": "Von der Warnung zur Fahrerreaktion."
           }
-        }
-      ]
-    },
-    {
-      "id": "study-protocol",
-      "title": {
-        "en": "Measuring the handover",
-        "zh": "记录驾驶员如何接管",
-        "de": "Die Übernahme messen"
-      },
-      "text": {
-        "en": "Each person tried all five alerts in a randomized order, staying with either the conversation or smartphone task. Python timestamps captured the time from warning onset to the first steering or braking input. The researcher noted collisions, and short questionnaires asked about clarity, noticeability, urgency, attention, and workload. The wheel and pedals made it possible to connect those ratings with an actual control response.",
-        "zh": "每人以随机顺序体验全部五种提醒，全程进行交谈或手机任务。Python 时间戳记录提醒出现到首次转向或制动输入的间隔；研究者记录碰撞，简短问卷询问清晰度、可察觉性、紧迫感、注意力与负荷。方向盘和踏板让这些主观评分能够对应到实际的控制反应。",
-        "de": "Jede Person erprobte alle fünf Warnformen in zufälliger Reihenfolge und blieb bei der Gesprächs- oder Smartphone-Aufgabe. Python-Zeitstempel erfassten die Zeit vom Warnbeginn bis zur ersten Lenk- oder Bremseingabe. Die Versuchsleitung notierte Kollisionen; kurze Fragebögen erfassten Klarheit, Wahrnehmbarkeit, Dringlichkeit, Aufmerksamkeit und Belastung. Lenkrad und Pedale ermöglichten es, diese Bewertungen mit einer tatsächlichen Steuerungsreaktion zu verbinden."
-      },
-      "figures": [
+        },
         {
           "src": "pic/projects/takeover/cockpit.webp",
           "width": 1800,
@@ -298,24 +251,27 @@ export const takeoverCase = {
             "de": "Detailansicht des stationären Simulators mit Lenkradsteuerung und Pedalen"
           },
           "caption": {
-            "en": "A fixed-base cockpit with a force-feedback steering wheel and pedals supported the controlled simulator trials.",
-            "zh": "固定式座舱、力反馈方向盘与踏板用于受控驾驶模拟实验。",
-            "de": "Ein stationäres Cockpit mit Force-Feedback-Lenkrad und Pedalen diente den kontrollierten Simulatorversuchen."
+            "en": "The study's driving setup.",
+            "zh": "实验使用的驾驶装置。",
+            "de": "Der Fahrsimulator der Studie."
           }
         }
+      ],
+      "aliases": [
+        "alert-design"
       ]
     },
     {
       "id": "findings",
       "title": {
-        "en": "What the study taught us",
-        "zh": "这项研究带来的认识",
-        "de": "Was wir aus der Studie mitnehmen"
+        "en": "What we learned",
+        "zh": "得到的认识",
+        "de": "Was wir mitnehmen"
       },
       "text": {
-        "en": "The small study found no statistically reliable differences between alert types in reaction time or collision avoidance. Participants’ ratings still varied in perceived effectiveness and mental effort. Together, the measurements and questionnaires offered a starting point for exploring how clarity, comfort, and distraction context fit together. A larger study and a more realistic driving setup would help test those observations.",
-        "zh": "这项小样本研究没有发现提醒类型之间在反应时间或避碰上的统计显著差异。参与者对感知有效性和心理负荷的评分仍有所不同。行为测量与问卷共同提供了一个起点，帮助我们继续探索清晰度、舒适度与分心情境之间的关系；这些观察还需要更大样本和更真实的驾驶条件来检验。",
-        "de": "Die kleine Studie zeigte keine statistisch belastbaren Unterschiede zwischen den Warnformen bei Reaktionszeit oder Kollisionsvermeidung. Die Bewertungen der wahrgenommenen Wirksamkeit und mentalen Anstrengung variierten dennoch. Messungen und Fragebögen lieferten zusammen einen Ausgangspunkt, um das Zusammenspiel von Klarheit, Komfort und Ablenkungskontext weiter zu untersuchen. Eine größere Studie mit einem realitätsnäheren Fahrszenario könnte diese Beobachtungen prüfen."
+        "en": "Within this small sample, no alert showed a reliable performance advantage, highlighting the need to weigh clarity, comfort, and distraction context together.",
+        "zh": "在这个小样本中，没有哪种提醒表现出可靠的性能优势，设计仍需综合权衡清晰度、舒适度与分心情境。",
+        "de": "In dieser kleinen Stichprobe zeigte keine Warnform einen belastbaren Leistungsvorteil; Klarheit, Komfort und Ablenkungskontext müssen gemeinsam abgewogen werden."
       },
       "figures": []
     }

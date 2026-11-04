@@ -1,6 +1,6 @@
-import { site } from "./data/content.js?v=20261104-2";
+import { site } from "./data/content.js?v=20261104-3";
 
-const version = "20261104-2";
+const version = "20261104-3";
 const loaders = {
   thesis: () => import(`./data/case-thesis.js?v=${version}`).then((module) => module.thesisCase),
   hdc: () => import(`./data/case-hardware.js?v=${version}`).then((module) => module.hdcCase),
@@ -111,6 +111,7 @@ document.getElementById("site-root").innerHTML = `
       </header>
       <nav class="case-index"><ol>${study.sections.map((section, index) => `<li><a href="#${escapeHtml(section.id)}"><span class="case-index__number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>${text("span", section.title)}</a></li>`).join("")}</ol></nav>
       ${study.sections.map((section, index) => `<section class="case-section" id="${escapeHtml(section.id)}" aria-labelledby="${escapeHtml(section.id)}-title">
+        ${(section.aliases || []).map((alias) => `<span class="case-anchor" id="${escapeHtml(alias)}" aria-hidden="true"></span>`).join("")}
         <div class="case-section__intro"><div><span class="case-section__number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>${text("h2", section.title, "case-section__title", ` id="${escapeHtml(section.id)}-title"`)}</div>${text("p", section.text, "case-prose")}</div>
         ${tableMarkup(section.table, section.id, section.note)}
         ${!section.table && section.note ? text("p", section.note, "case-note") : ""}

@@ -1,4 +1,4 @@
-import { t } from "./i18n.js?v=20261104-2";
+import { t } from "./i18n.js?v=20261104-3";
 
 export function initSidebarToggle() {
   const toggle = document.querySelector("[data-sidebar-toggle]");

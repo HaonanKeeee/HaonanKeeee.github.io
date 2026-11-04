@@ -1757,3 +1757,41 @@ Replace the PCB project's physical-board imagery with the cleaner layout and the
 
 ### Known limitations or TODOs
 - No known issue in this focused image substitution.
+
+## 2026-11-04 — Distill project pages to the essentials
+
+### Task goal
+Aggressively shorten project copy while retaining the strongest visuals, outcomes and necessary measurement context in all three languages.
+
+### Changed files
+- All four `assets/js/data/case-*.js` modules and homepage `assets/js/data/content.js`.
+- `assets/js/case-study.js`, `assets/css/case-study.css`.
+- JavaScript cache references in `render.js`, `i18n.js`, `main.js`, `sidebar.js`, and all seven HTML entry points.
+- `log.md`.
+
+### Approximate added / modified / removed lines
+- Added: ~400 lines including data-formatting expansion, this entry and section-anchor compatibility.
+- Modified: ~180 authored content/reference lines, with Chuma data formatting expanded.
+- Removed: ~380 old copy/metadata lines; no media files deleted.
+
+### Added functionality or content
+- A consistent short format: one introduction, three value/label highlights, three tags and two brief sections.
+- English project body copy now totals 383 words instead of 1,350, a 72% reduction: thesis 63, HDC 66, PCB 64, LiDAR 62, takeover 66, Chuma 62.
+- Each homepage project description is one short sentence, with three tags.
+- Alias anchors preserve every previously published section link after sections are merged.
+
+### Removed functionality or changed behavior
+- Removed repeated highlight explanations, implementation lists, detailed operating procedures and long figure captions. Captions now generally use 3–7 English words.
+- Preserved all approved media and complete image/video alternative text. PCB still uses only layout and thermal imagery.
+- Retained the thesis baseline/measurement boundary, HDC simulation-energy scope, study sample limitation and Chuma beta status.
+- Refreshed affected JavaScript and detail stylesheet references to `20261104-3`.
+
+### Verification steps
+- Statically compared all old/new section IDs, media and alternatives; every old link and approved media item remains represented.
+- Browser-checked six pages in EN/ZH/DE at 1280px and 390px: 36 cases, each with two sections, three highlights/tags, no repeated detail blocks, empty translations or horizontal overflow.
+- Confirmed the old PCB firmware link lands below the sticky header and still shows only layout/thermal figures.
+- Checked 12 homepage language/view/width combinations and clicked the PCB card into its condensed page; all six links and thumbnails remain present with no overflow.
+- Independently reviewed the concise claims and corrected homepage baseline/energy wording; JavaScript syntax and `git diff --check` passed.
+
+### Known limitations or TODOs
+- Original report figures retain their technical labels; surrounding visible prose is intentionally brief.

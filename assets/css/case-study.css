@@ -290,6 +290,11 @@ main > .case-back {
   scroll-margin-top: 120px;
 }
 
+.case-anchor {
+  display: block;
+  scroll-margin-top: 120px;
+}
+
 .case-section__intro {
   display: grid;
   grid-template-columns: minmax(180px, 0.9fr) minmax(0, 2fr);
@@ -488,7 +493,7 @@ main > .case-back {
   .case-highlights > div { display: grid; grid-template-columns: minmax(110px, 0.8fr) minmax(0, 1fr); column-gap: 20px; }
   .case-highlight__value { grid-column: 1; grid-row: 1 / span 2; align-self: center; font-size: 30px; }
   .case-highlights dt, .case-highlight__detail { grid-column: 2; }
-  .case-section { scroll-margin-top: 100px; }
+  .case-section, .case-anchor { scroll-margin-top: 100px; }
   .case-screen-pair { gap: 16px; padding: 20px 14px; }
   .case-screen__label { padding: 10px 5px; font-size: 10px; }
 }
